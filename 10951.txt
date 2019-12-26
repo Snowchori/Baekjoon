@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+while True:
+	a = sys.stdin.readline()
+	if a == "":
+		break
+	else:
+		list = a.split()
+		print(int(list[0]) + int(list[1]))
