@@ -1,0 +1,7 @@
+# python3
+import sys
+
+a = int(input())
+for i in range(a):
+	list = sys.stdin.readline().split()
+	print(int(list[0])+int(list[1]))
