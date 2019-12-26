@@ -1,0 +1,12 @@
+# python3
+
+a = int(input())
+b = a
+count = 0
+
+while True:
+	b = (b%10)*10 + (int(b/10) + b%10)%10
+	count = count + 1
+	if a == b:
+		break
+print(count)
