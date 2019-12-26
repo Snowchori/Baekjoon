@@ -1,0 +1,23 @@
+# python3
+
+a = input()
+list = a.split()
+x = int(list[0])
+y = int(list[1])
+z = int(list[2])
+if x < y:
+	if y < z:
+		print(y)
+	else:
+		if x < z:
+			print(z)
+		else:
+			print(x)
+else:
+	if x < z:
+		print(x)
+	else:
+		if y < z:
+			print(z)
+		else:
+			print(y)
