@@ -1,0 +1,5 @@
+# python3
+
+a = input()
+list = a.split()
+print(int(list[0])/float(list[1]))
