@@ -1,0 +1,12 @@
+# python3
+
+a = int(input())
+list = input().split()
+max = int(list[0])
+min = int(list[0])
+for i in list:
+	if int(i) < min:
+		min = int(i)
+	if int(i) > max:
+		max = int(i)
+print(str(min) + " " + str(max))
