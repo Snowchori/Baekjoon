@@ -1,0 +1,7 @@
+# python3
+
+while True:
+	list = input().split()
+	if int(list[0]) == 0 and int(list[1]) == 0:
+		break
+	print(int(list[0]) + int(list[1]))
