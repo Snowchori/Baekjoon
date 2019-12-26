@@ -1,0 +1,15 @@
+# python3
+
+a = input()
+list = a.split()
+x = int(list[0])
+y = int(list[1])
+if y-45 < 0:
+	y = y+15
+	if x-1 < 0:
+		x = x+23
+	else:
+		x = x-1
+else:
+	y = y-45
+print(str(x) + " " + str(y))
