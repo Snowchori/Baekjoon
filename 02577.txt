@@ -1,0 +1,21 @@
+# python3
+
+numlist = [0,0,0,0,0,0,0,0,0,0]
+result = 1
+for i in range(3):
+	a = int(input())
+	result = result * a
+inf = True
+for i in range(9,-1,-1):
+	if inf:
+		num = int(result/pow(10,i))
+		if num != 0:
+			numlist[num] += 1
+			result = result - num * pow(10,i)
+			inf = False
+	else:
+		num = int(result/pow(10,i))
+		numlist[num] += 1
+		result = result - num * pow(10,i)
+for i in numlist:
+	print(i)
