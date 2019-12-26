@@ -1,0 +1,11 @@
+# python3
+
+a = int(input())
+b = int(input())
+x = int(b/100)
+y = int((b-x*100)/10)
+z = int(b-x*100-y*10)
+print(a*z)
+print(a*y)
+print(a*x)
+print(a*(100*x+10*y+z))
