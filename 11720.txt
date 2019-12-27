@@ -1,0 +1,8 @@
+# python3
+
+a = input()
+numlist = list(input())
+result = 0
+for i in numlist:
+	result += int(i)
+print(result)
