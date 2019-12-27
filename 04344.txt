@@ -1,0 +1,13 @@
+# python3
+
+num = int(input())
+for i in range(num):
+	numlist = [int(x) for x in input().split()]
+	a = numlist[0]
+	del numlist[0]
+	avg = sum(numlist)/a
+	count = 0
+	for i in numlist:
+		if i > avg:
+			count += 1
+	print(format(count*100/a,".3f") + "%")
