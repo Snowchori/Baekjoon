@@ -1,0 +1,18 @@
+# python3
+
+def d(a):
+	numlist = list(str(a))
+	for i in numlist:
+		a += int(i)
+	return a
+
+list1 = set([])
+list2 = set([])
+for i in range(10000):
+	if d(i+1) <= 10000:
+		list1.add(d(i+1))
+	list2.add(i+1)
+for i in list1:
+	list2.remove(i)
+for i in list2:
+	print(i)
