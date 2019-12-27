@@ -1,0 +1,16 @@
+# python3
+
+word = list(input())
+alpha = []
+result = []
+for i in range(26):
+	alpha.append(0)
+for i in word:
+	alpha[(ord(i)-65)%32] += 1
+for i in range(26):
+	if alpha[i] == max(alpha):
+		result.append(chr(i+65))
+if len(result) >= 2:
+	print("?")
+else:
+	print(result[0])
