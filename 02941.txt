@@ -1,0 +1,22 @@
+# python3
+
+word = input()
+cro = ["c=","c-","d-","lj","nj","s=","z="]
+count = 0
+while True:
+	if word.find("dz=") != -1:
+		dz = word.find("dz=")
+		word = word[:dz] + " " + word[dz+3:]
+		count += 1
+	else:
+		break
+for i in cro:
+	while True:
+		if word.find(i) != -1:
+			cr = word.find(i)
+			word = word[:cr] + " " + word[cr+2:]
+			count += 1
+		else:
+			break
+word = word.replace(" ","")
+print(count + len(word))
