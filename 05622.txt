@@ -1,0 +1,10 @@
+# python3
+
+word = list(input())
+telenum = ["ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"]
+result = 0
+for i in word:
+	for j in range(8):
+		if telenum[j].find(i) != -1:
+			result += j + 3
+print(result)
