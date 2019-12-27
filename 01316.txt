@@ -1,0 +1,17 @@
+# python3
+
+num = int(input())
+count = 0
+for i in range(num):
+	word = input()
+	save = word[0]
+	isgroup = True
+	for j in word:
+		if save[-1] != j:
+			if save.find(j) == -1:
+				save += j
+			else:
+				isgroup = False
+	if isgroup:
+		count += 1
+print(count)
