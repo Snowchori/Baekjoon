@@ -1,0 +1,11 @@
+# python3
+
+num = int(input())
+for i in range(num):
+	a = input().split()
+	strlist = list(a[1])
+	for j in strlist:
+		for k in range(int(a[0])):
+			print(j,end="")
+	if int(i) != num-1:
+		print()
