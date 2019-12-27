@@ -1,0 +1,22 @@
+# python3
+
+def han(a):
+	numlist = [int(x) for x in list(str(a))]
+	ishan = True
+	num = len(numlist)
+	if num > 2:
+		gap = numlist[0] - numlist[1]
+		comp = numlist[0]
+		for i in range(num):
+			if i != 0 and gap != comp - numlist[i]:
+				ishan = False
+				break
+			comp = numlist[i]
+	return ishan
+
+num = int(input())
+count = 0
+for i in range(num):
+	if han(i+1):
+		count += 1
+print(count)
