@@ -1,0 +1,9 @@
+# python3
+
+num1 = input().split()
+num1[0] = num1[0][::-1]
+num1[1] = num1[1][::-1]
+if int(num1[0]) > int(num1[1]):
+	print(num1[0])
+else:
+	print(num1[1])
