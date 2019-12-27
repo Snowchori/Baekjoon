@@ -1,0 +1,14 @@
+# python3
+
+num = int(input())
+for i in range(num):
+	a = list(input())
+	count = 0
+	result = 0
+	for i in a:
+		if i == 'O':
+			count += 1
+			result += count
+		else:
+			count = 0
+	print(result)
