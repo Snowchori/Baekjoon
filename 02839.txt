@@ -1,0 +1,30 @@
+# python3
+
+num = int(input())
+kg3 = 0
+kg5 = 0
+kg1 = 0
+for i in range(num):
+   kg1 += 1
+   if kg1 == 3:
+      kg1 = 0
+      kg3 += 1
+   elif kg1 == 1 and kg5 >= 1:
+      kg1 = 0
+      kg5 -= 1
+      kg3 += 2
+   elif kg1 == 1 and kg3 >= 3:
+      kg1 = 0
+      kg3 -= 3
+      kg5 += 2
+   elif kg1 == 2 and kg3 >= 1:
+      kg1 = 0
+      kg3 -= 1
+      kg5 += 1
+   if kg3 >= 5:
+      kg3 -= 5
+      kg5 += 3
+if kg1 != 0:
+   print(-1)
+else:
+   print(kg3+kg5)
