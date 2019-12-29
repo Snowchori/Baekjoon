@@ -1,0 +1,14 @@
+# python3
+
+num = int(input())
+for i in range(num):
+	numlist = [int(x) for x in input().split()]
+	count = int(numlist[2]/numlist[0])+1
+	floor = numlist[2]%numlist[0]
+	if floor == 0:
+		floor += numlist[0]
+		count -= 1
+	if count < 10:
+		print(str(floor) + "0" + str(count))
+	else:
+		print(str(floor)+str(count))
