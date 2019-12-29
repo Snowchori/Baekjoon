@@ -1,0 +1,10 @@
+# python3
+
+numlist = [int(x) for x in input().split()]
+numlist[2] -= numlist[0]
+gap = numlist[0] - numlist[1]
+day = numlist[2]/gap + 1
+if day.is_integer():
+	print(int(day))
+else:
+	print(int(day)+1)
