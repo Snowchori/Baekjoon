@@ -1,0 +1,20 @@
+# python3
+
+num = int(input())
+for i in range(num):
+	floor = int(input())
+	count = int(input())
+	list1 = []
+	for i in range(floor+1):
+		list2 = []
+		if i == 0:
+			for j in range(count):
+				list2.append(j+1)
+		else:
+			for j in range(count):
+				if j == 0:
+					list2.append(j+1)
+				else:
+					list2.append(list2[-1] + list1[i-1][j])
+		list1.append(list2)
+	print(list1[floor][count-1])
