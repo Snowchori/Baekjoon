@@ -1,0 +1,14 @@
+# python3
+
+num = int(input())
+count = 1
+while True:
+	num -= count
+	if num <= 0:
+		num += count
+		break
+	count += 1
+if count%2 == 1:
+	print(str(count-num+1) + "/" + str(num))
+else:
+	print(str(num) + "/" + str(count-num+1))
