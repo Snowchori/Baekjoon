@@ -1,0 +1,12 @@
+# python3
+
+numlist = [int(x) for x in input().split()]
+
+if numlist[1] == numlist[2]:
+   print(-1)
+else:
+   x = int(numlist[0]/(numlist[2]-numlist[1]))+1
+   if x > 0:
+      print(x)
+   else:
+      print(-1)
