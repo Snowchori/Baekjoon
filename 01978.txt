@@ -1,0 +1,14 @@
+# python3
+
+num = int(input())
+numlist = [int(x) for x in input().split()]
+count = num
+for i in numlist:
+	if i == 1:
+		count -= 1
+	else:
+		for j in range(1,i):
+			if (j != 1 and i%j == 0):
+				count -= 1
+				break
+print(count)
