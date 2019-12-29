@@ -1,0 +1,23 @@
+# python3
+
+first = int(input())
+last = int(input())
+min = last
+result = 0
+for i in range(first,last+1):
+	isdeci = True
+	if i == 1:
+		isdeci = False
+	for j in range(1,i):
+		if j != 1 and i%j == 0:
+			isdeci = False
+			break
+	if isdeci:
+		result += i
+		if min > i:
+			min = i
+if result == 0:
+	print(-1)
+else:
+	print(result)
+	print(min)
