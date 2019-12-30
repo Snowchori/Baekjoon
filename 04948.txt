@@ -1,0 +1,29 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin]
+decilist = []
+maxnum = max(numlist)
+for i in range(2*maxnum+1):
+	decilist.append(True)
+decilist[0] = False
+decilist[1] = False
+for i in range(2*maxnum+1):
+	if i > maxnum:
+		break
+	if decilist[i]:
+		count = 2
+		while True:
+			decilist[i*count] = False
+			count += 1
+			if i*count > 2*maxnum:
+				break
+for i in numlist:
+	if i == 0:
+		break
+	numcount = 0
+	for i in range(i+1,2*i+1):
+		if decilist[i]:
+			numcount += 1
+	print(numcount)
