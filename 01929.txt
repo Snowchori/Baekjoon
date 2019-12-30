@@ -1,0 +1,21 @@
+# python3
+
+numlist = [int(x) for x in input().split()]
+decilist = []
+for i in range(numlist[1]+1):
+	decilist.append(True)
+decilist[0] = False
+decilist[1] = False
+for i in range(numlist[1]):
+	if i > numlist[1]/2:
+		break
+	if decilist[i]:
+		count = 2
+		while True:
+			decilist[i*count] = False
+			count += 1
+			if i*count > numlist[1]:
+				break
+for i in range(numlist[0],numlist[1]+1):
+	if decilist[i]:
+		print(i)
