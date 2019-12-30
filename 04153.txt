@@ -1,0 +1,11 @@
+# python3
+
+while True:
+	numlist = [int(x) for x in input().split()]
+	if numlist[0] == numlist[1] == numlist[2] == 0:
+		break
+	numlist.sort()
+	if numlist[0]*numlist[0] + numlist[1]*numlist[1] == numlist[2]*numlist[2]:
+		print("right")
+	else:
+		print("wrong")
