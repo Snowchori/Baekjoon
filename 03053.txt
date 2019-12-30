@@ -1,0 +1,7 @@
+# python3
+
+import math
+
+num = int(input())
+print(num*num*math.pi)
+print(num*num*2)
