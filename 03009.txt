@@ -1,0 +1,20 @@
+# python3
+
+ranclist = []
+for i in range(3):
+	numlist = [int(x) for x in input().split()]
+	ranclist.append(numlist)
+
+if ranclist[0][0] == ranclist[1][0]:
+	print(str(ranclist[2][0]), end = " ")
+elif ranclist[0][0] == ranclist[2][0]:
+	print(str(ranclist[1][0]), end = " ")
+elif ranclist[1][0] == ranclist[2][0]:
+	print(str(ranclist[0][0]), end = " ")
+
+if ranclist[0][1] == ranclist[1][1]:
+	print(str(ranclist[2][1]))
+elif ranclist[0][1] == ranclist[2][1]:
+	print(str(ranclist[1][1]))
+elif ranclist[1][1] == ranclist[2][1]:
+	print(str(ranclist[0][1]))
