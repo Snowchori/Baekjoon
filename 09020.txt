@@ -1,0 +1,27 @@
+# python3
+
+import sys
+
+num = int(input())
+numlist = [int(x) for x in sys.stdin]
+decilist = []
+maxnum = max(numlist)
+for i in range(maxnum+1):
+	decilist.append(True)
+decilist[0] = False
+decilist[1] = False
+for i in range(maxnum+1):
+	if i > maxnum/2:
+		break
+	if decilist[i]:
+		count = 2
+		while True:
+			decilist[i*count] = False
+			count += 1
+			if i*count > maxnum:
+				break
+for i in numlist:
+	for j in range(int(i/2),1,-1):
+		if decilist[j] and decilist[i-j]:
+			print(str(j) + " " + str(i-j))
+			break
