@@ -1,0 +1,12 @@
+# python3
+
+num = int(input())
+result = 0
+for i in range(num):
+	test = i
+	for j in str(i):
+		test += int(j)
+	if test == num:
+		result = i
+		break
+print(result)
