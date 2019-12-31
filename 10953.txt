@@ -1,0 +1,6 @@
+# python3
+
+num = int(input())
+for i in range(num):
+	numlist = [int(x) for x in input().split(',')]
+	print(numlist[0]+numlist[1])
