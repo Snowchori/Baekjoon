@@ -1,0 +1,4 @@
+# python3
+
+numlist = [int(x) for x in input().split()]
+print(numlist[0]+numlist[1])
