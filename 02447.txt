@@ -1,0 +1,27 @@
+# python3
+
+def star(n):
+	if n == 1:
+		return ["*"]
+	else:
+		starlist = []
+		for i in range(n):
+			starlist.append("")
+		prelist = star(int(n/3))
+		for i in range(3):
+			for j in range(len(prelist)):
+				starlist[j] += prelist[j]
+		for i in range(len(prelist)):
+			starlist[int(n/3)+i] += prelist[i]
+		for i in range(len(prelist)):
+			starlist[int(n/3)+i] += " "*int(n/3)
+		for i in range(len(prelist)):
+			starlist[int(n/3)+i] += prelist[i]
+		for i in range(3):
+			for j in range(len(prelist)):
+				starlist[int(2*n/3)+j] += prelist[j]
+		return starlist
+num = int(input())
+result = star(num)
+for i in result:
+	print(i)
