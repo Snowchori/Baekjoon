@@ -1,0 +1,15 @@
+# python3
+
+num = int(input())
+count = 0
+number = 665
+result = 0
+while True:
+	ncount = 0
+	if str(number).find('666') != -1:
+		result = number
+		count += 1
+	if count == num:
+		break
+	number += 1
+print(result)
