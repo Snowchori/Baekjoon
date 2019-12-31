@@ -1,0 +1,13 @@
+# python3
+
+num = int(input())
+numlist = []
+for i in range(num):
+	man = [int(x) for x in input().split()]
+	numlist.append(man)
+for a,b in numlist:
+	count = 1
+	for i in range(num):
+		if a < numlist[i][0] and b < numlist[i][1]:
+			count += 1
+	print(count,end=" ")
