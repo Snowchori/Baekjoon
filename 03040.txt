@@ -1,0 +1,19 @@
+# python3
+
+mlist =[]
+for i in range(9):
+	mlist.append(int(input()))
+dnum = sum(mlist)-100
+na1 = 0
+na2 = 0
+for i in range(9):
+	for j in range(i+1,9):
+		if mlist[i] + mlist[j] == dnum:
+			na1 = mlist[i]
+			na2 = mlist[j]
+			break
+mlist.remove(na1)
+mlist.remove(na2)
+mlist.sort()
+for i in mlist:
+	print(i)
