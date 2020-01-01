@@ -1,0 +1,21 @@
+# python3
+
+num = int(input())
+for i in range(num):
+	numlist = [int(x) for x in input().split()]
+	dist = numlist[1]-numlist[0]
+	count = 0
+	dh = 1
+	while True:
+		if dist == 0:
+			break
+		dist -= dh
+		count += 1
+		if dist <= 0:
+			break
+		dist -= dh
+		count += 1
+		if dist <= 0:
+			break
+		dh += 1
+	print(count)
