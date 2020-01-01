@@ -1,0 +1,9 @@
+# python3
+
+num = int(input())
+numlist = []
+for i in range(num):
+	numlist.append(int(input()))
+numlist.sort()
+for i in numlist:
+	print(i)
