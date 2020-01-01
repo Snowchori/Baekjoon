@@ -1,0 +1,17 @@
+# python3
+
+numlist = [int(x) for x in input().split()]
+chesslist = []
+countlist = []
+chesspan = ['WBWBWBWB','BWBWBWBW']
+for i in range(numlist[0]):
+	chesslist.append(input())
+for i in range(numlist[0]-7):
+	for j in range(numlist[1]-7):
+		count = 0
+		for a in range(8):
+			for b in range(8):
+				if chesslist[a+i][b+j] != chesspan[a%2][b]:
+					count += 1
+		countlist.append(min([count,64-count]))
+print(min(countlist))
