@@ -1,0 +1,24 @@
+# python3
+
+while True:
+	num = int(input())
+	if num == -1:
+		break
+	result = 0
+	numlist = []
+	for i in range(1,int(num/2)+1):
+		if num%i == 0:
+			result += i
+			numlist.append(i)
+		if result > num:
+			break
+	if result == num:
+		print(str(num) + " = ",end="")
+		for i in numlist:
+			print(i,end="")
+			if i != numlist[-1]:
+				print(" + ",end="")
+			else:
+				print()
+	else:
+		print(str(num) + " is NOT perfect.")
