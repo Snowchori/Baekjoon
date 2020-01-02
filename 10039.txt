@@ -1,0 +1,10 @@
+# python3
+
+numlist = []
+for i in range(5):
+	num = int(input())
+	if num < 40:
+		numlist.append(40)
+	else:
+		numlist.append(num)
+print(int(sum(numlist)/5))
