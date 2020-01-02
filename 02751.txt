@@ -1,0 +1,8 @@
+# python3
+
+import sys
+
+num = int(input())
+result = [int(x) for x in list(sys.stdin)]
+for i in sorted(result):
+	print(i)
