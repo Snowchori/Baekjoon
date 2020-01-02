@@ -1,0 +1,14 @@
+# python3
+
+num = int(input())
+numlist = []
+for i in range(num):
+	word = input()
+	numlist.append([len(word),word])
+numlist.sort()
+preword = numlist[0][1]
+print(numlist[0][1])
+for i in numlist:
+	if i[1] != preword:
+		print(i[1])
+	preword = i[1]
