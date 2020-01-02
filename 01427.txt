@@ -1,0 +1,6 @@
+# python3
+
+num = list(input())
+num.sort()
+for i in reversed(num):
+	print(i,end="")
