@@ -1,0 +1,17 @@
+# python3
+
+numlist = [int(x) for x in input().split()]
+date = ["SUN","MON","TUE","WED","THU","FRI","SAT"]
+month31 = [1,3,5,7,8,10,12]
+month30 = [4,6,9,11]
+month28 = [2]
+day = 0
+for i in range(1,numlist[0]):
+	if i in month31:
+		day += 31
+	elif i in month30:
+		day += 30
+	else:
+		day += 28
+day += numlist[1]
+print(date[day%7])
