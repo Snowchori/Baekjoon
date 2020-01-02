@@ -1,0 +1,26 @@
+# python3
+
+num = int(input())
+for i in range(num-1):
+	print(" "*i,end="")
+	if i == 0:
+		print("*"*num,end="")
+	else:
+		print("*"+" "*(num-2)+"*",end="")
+	print(" "*(2*(num-i)-3),end="")
+	if i == 0:
+		print("*"*num)
+	else:
+		print("*"+" "*(num-2)+"*")
+print(" "*(num-1)+("*"+" "*(num-2))*2+"*")
+for i in range(num-1):
+	print(" "*(num-i-2),end="")
+	if i == num-2:
+		print("*"*num,end="")
+	else:
+		print("*"+" "*(num-2)+"*",end="")
+	print(" "*(2*i+1),end="")
+	if i == num-2:
+		print("*"*num)
+	else:
+		print("*"+" "*(num-2)+"*")
