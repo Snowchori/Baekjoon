@@ -1,0 +1,11 @@
+# python3
+
+f = open(0)
+arr = [0] * 10001
+f.readline()
+
+for line in f:
+    arr[int(line)] += 1
+
+for i in range(1, 10001):
+    print("%s\n" % i * arr[i], end='')
