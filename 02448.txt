@@ -1,0 +1,20 @@
+# python3
+
+def tristar(n):
+	if n == 3:
+		nlist = []
+		nlist.append("  *  ")
+		nlist.append(" * * ")
+		nlist.append("*****")
+		return nlist
+	slist = [""]*n
+	list1 = tristar(int(n/2))
+	for i in range(len(list1)):
+		slist[i] += " "*(int(n/2)) + list1[i] + " "*(int(n/2))
+	for i in range(len(list1)):
+		slist[len(list1)+i] += list1[i] + " " + list1[i]
+	return slist
+
+num = int(input())
+for i in tristar(num):
+	print(i)
