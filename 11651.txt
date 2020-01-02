@@ -1,0 +1,11 @@
+# python3
+
+num = int(input())
+numlist = []
+for i in range(num):
+	nlist = [int(x) for x in input().split()]
+	nlist.reverse()
+	numlist.append(nlist)
+numlist.sort()
+for i in numlist:
+	print(i[1],i[0])
