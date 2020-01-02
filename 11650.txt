@@ -1,0 +1,10 @@
+# python3
+
+num = int(input())
+numlist = []
+for i in range(num):
+	nlist = [int(x) for x in input().split()]
+	numlist.append(nlist)
+numlist.sort()
+for i in numlist:
+	print(i[0],i[1])
