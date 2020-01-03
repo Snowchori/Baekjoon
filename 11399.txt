@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = int(input())
+numlist = [int(x) for x in sys.stdin.readline().split()]
+numlist.sort()
+result = 0
+for i in range(num):
+	result += numlist[i]*(num-i)
+print(result)
