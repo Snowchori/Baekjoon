@@ -1,0 +1,10 @@
+# python3
+
+word = input()
+revword = ""
+for i in reversed(word):
+	revword += i
+if word == revword:
+	print(1)
+else:
+	print(0)
