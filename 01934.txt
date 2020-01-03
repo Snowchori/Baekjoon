@@ -1,0 +1,14 @@
+# python3
+
+num = int(input())
+for i in range(num):
+	numlist = [int(x) for x in input().split()]
+	maxnum = numlist[1]
+	minnum = numlist[0]
+	while True:
+		maxnum %= minnum
+		if maxnum == 0:
+			break
+		else:
+			(maxnum,minnum) = (minnum,maxnum)
+	print(int(numlist[0]*numlist[1]/minnum))
