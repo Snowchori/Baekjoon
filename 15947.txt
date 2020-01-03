@@ -1,0 +1,18 @@
+# python3
+
+num = int(input())
+a = int((num-1)/14)
+b = (num-1)%14
+sing = ["baby","sukhwan","tururu","turu","very","cute","tururu","turu","in","bed","tururu","turu","baby","sukhwan"]
+if b == 2 or b == 6 or b == 10:
+	if a > 2:
+		print("tu+ru*"+str(a+2))
+	else:
+		print("tu"+"ru"*(2+a))
+elif b == 3 or b == 7 or b == 11:
+	if a > 3:
+		print("tu+ru*"+str(a+1))
+	else:
+		print("tu"+"ru"*(1+a))
+else:
+		print(sing[b])
