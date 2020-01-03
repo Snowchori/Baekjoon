@@ -1,0 +1,12 @@
+# python3
+
+num = int(input())
+for i in range(num):
+	snum = int(input())
+	grade = 0
+	score = 0 
+	for j in range(snum):
+		slist = input().split()
+		grade += int(slist[0])
+		score += int(slist[0])*float(slist[1])
+	print(grade,"%.1f"%(score/grade))
