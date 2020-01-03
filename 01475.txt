@@ -1,0 +1,11 @@
+# python3
+
+num = input()
+nlist = [0]*9
+for i in num:
+	n = int(i)
+	if n == 9:
+		n = 6
+	nlist[n] += 1
+nlist[6] = int((nlist[6]+1)/2)
+print(max(nlist))
