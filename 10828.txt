@@ -1,0 +1,29 @@
+# python3
+
+import sys
+
+stack = []
+num = int(input())
+for i in range(num):
+	slist = sys.stdin.readline().split()
+	snum = len(stack)
+	if slist[0] == "push":
+		stack.append(slist[1])
+	elif slist[0] == "pop":
+		if snum == 0:
+			print(-1)
+		else:
+			print(stack[-1])
+			stack = stack[:snum-1]
+	elif slist[0] == "size":
+		print(snum)
+	elif slist[0] == "empty":
+		if snum == 0:
+			print(1)
+		else:
+			print(0)
+	elif slist[0] == "top":
+		if snum == 0:
+			print(-1)
+		else:
+			print(stack[-1])
