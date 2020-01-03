@@ -1,0 +1,7 @@
+# python3
+
+numlist = [int(x) for x in input().split()]
+result = 0
+for i in range(numlist[0]):
+	result += numlist[1]*(i+1) + numlist[2]*(i+1)*(i+1)
+print(result)
