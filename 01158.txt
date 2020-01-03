@@ -1,0 +1,18 @@
+# python3
+
+numlist = [int(x) for x in input().split()]
+count = 0
+round = []
+for i in range(numlist[0]):
+	round.append(i+1)
+print("<",end="")
+for i in range(numlist[0]):
+	count += numlist[1]-1
+	if count >= len(round):
+		count %= len(round)
+	result = round[count]
+	print(result,end="")
+	round.remove(result)
+	if i != numlist[0]-1:
+		print(", ",end="")
+print(">")
