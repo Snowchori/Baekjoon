@@ -1,0 +1,12 @@
+# python3
+
+num = int(input())
+if num%2 == 0:
+	print("I LOVE CBNU")
+else:
+	print("*"*num)
+	for i in range(int((num+1)/2)):
+		if i == 0:
+			print(" "*(int((num+1)/2)-1)+"*")
+		else:
+			print(" "*(int((num+1)/2)-1-i)+"*"+" "*(2*i-1)+"*")
