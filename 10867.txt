@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(input())
+numlist = [int(x) for x in sys.stdin.readline().split()]
+numlist.sort()
+prenum = numlist[0]
+print(numlist[0],end="")
+for i in numlist:
+	if prenum < i:
+		print(" "+str(i),end="")
+	prenum = i
