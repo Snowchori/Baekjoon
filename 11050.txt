@@ -1,0 +1,10 @@
+# python3
+
+numlist = [int(x) for x in input().split()]
+num = min([numlist[0]-numlist[1],numlist[1]])
+up = 1
+down = 1
+for i in range(num):
+	up *= numlist[0]-i
+	down *= i+1
+print(int(up/down))
