@@ -1,0 +1,42 @@
+# python3
+
+import sys
+
+stack = []
+num = int(input())
+for i in range(num):
+	slist = sys.stdin.readline().split()
+	snum = len(stack)
+	if slist[0] == "push_front":
+		stack = [slist[1]]+stack
+	elif slist[0] == "push_back":
+		stack.append(slist[1])
+	elif slist[0] == "pop_front":
+		if snum == 0:
+			print(-1)
+		else:
+			print(stack[0])
+			stack = stack[1:]
+	elif slist[0] == "pop_back":
+		if snum == 0:
+			print(-1)
+		else:
+			print(stack[-1])
+			stack = stack[:snum-1]
+	elif slist[0] == "size":
+		print(snum)
+	elif slist[0] == "empty":
+		if snum == 0:
+			print(1)
+		else:
+			print(0)
+	elif slist[0] == "front":
+		if snum == 0:
+			print(-1)
+		else:
+			print(stack[0])
+	elif slist[0] == "back":
+		if snum == 0:
+			print(-1)
+		else:
+			print(stack[-1])
