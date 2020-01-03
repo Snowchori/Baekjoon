@@ -1,0 +1,10 @@
+# python3
+
+maxnum = 0
+nownum = 0
+for i in range(4):
+	numlist = [int(x) for x in input().split()]
+	nownum += numlist[1]-numlist[0]
+	if maxnum < nownum:
+		maxnum = nownum
+print(maxnum)
