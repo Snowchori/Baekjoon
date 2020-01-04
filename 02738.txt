@@ -1,0 +1,19 @@
+# python3
+
+num = [int(x) for x in input().split()]
+rlist = []
+result = []
+for i in range(2):
+	nlist = []
+	for j in range(num[0]):
+		nlist.append([int(x) for x in input().split()])
+	rlist.append(nlist)
+for i in range(num[0]):
+	nlist = []
+	for j in range(num[1]):
+		nlist.append(rlist[0][i][j]+rlist[1][i][j])
+	result.append(nlist)
+for i in range(num[0]):
+	for j in range(num[1]):
+		print(result[i][j],end=" ")
+	print()
