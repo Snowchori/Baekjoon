@@ -1,0 +1,7 @@
+# python3
+
+import sys
+
+num = int(input())
+numlist = [int(x) for x in sys.stdin]
+print(sum(numlist)-num+1)
