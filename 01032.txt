@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+num = int(input())
+flist = sys.stdin.read().split()
+count = len(flist[0])
+wlist = [True]*count
+for i in range(1,len(flist)):
+	for j in range(count):
+		if wlist[j]:
+			if flist[0][j] != flist[i][j]:
+				wlist[j] = False
+for i in range(count):
+	if wlist[i]:
+		print(flist[0][i],end="")
+	else:
+		print("?",end="")
