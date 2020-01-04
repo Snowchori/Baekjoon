@@ -1,0 +1,4 @@
+# python3
+
+num = [int(x) for x in input().split()]
+print(num[0]+num[1])
