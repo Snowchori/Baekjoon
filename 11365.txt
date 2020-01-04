@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+senlist = sys.stdin.read().split("\n")
+for i in senlist:
+	if i == "END":
+		break
+	else:
+		i = i[::-1]
+		print(i)
