@@ -1,0 +1,10 @@
+# python3
+
+while True:
+	numlist = [int(x) for x in input().split()]
+	if numlist[0] == 0 and numlist[1] == 0:
+		break
+	elif numlist[0] > numlist[1]:
+		print("Yes")
+	else:
+		print("No")
