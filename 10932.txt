@@ -1,0 +1,7 @@
+# python3
+
+import hashlib
+
+word = input()
+whash = hashlib.sha512(str(word).encode("utf-8")).hexdigest()
+print(whash)
