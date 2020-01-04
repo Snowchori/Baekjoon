@@ -1,0 +1,10 @@
+# python3
+
+num = int(input())
+count = 0
+result = 1
+for i in range(num):
+	if i == 0 or i%3 != 0:
+		count += 1
+	result += count
+print(result)
