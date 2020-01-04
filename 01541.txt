@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+numlist = sys.stdin.readline().split("-")
+result = 0
+for i in range(len(numlist)):
+	nlist = [int(x) for x in numlist[i].split("+")]
+	r = 0
+	for j in nlist:
+		r += j
+	if i == 0:
+		result += r
+	else:
+		result -= r
+print(result)
