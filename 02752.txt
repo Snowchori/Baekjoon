@@ -1,0 +1,5 @@
+# python3
+
+num = [int(x) for x in input().split()]
+num.sort()
+print(num[0],num[1],num[2])
