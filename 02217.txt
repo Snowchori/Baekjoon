@@ -1,0 +1,14 @@
+# python3
+
+num = int(input())
+numlist = []
+for i in range(num):
+	numlist.append(int(input()))
+numlist.sort()
+numlist.reverse()
+result = 0
+for i in range(num):
+	n = numlist[i]*(i+1)
+	if result <= n:
+		result = n
+print(result)
