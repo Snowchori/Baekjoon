@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+numlist = sys.stdin.readline().split()
+nlist1 = []
+nlist2 = []
+nlist1.append(int(numlist[0].replace("5","6")))
+nlist1.append(int(numlist[0].replace("6","5")))
+nlist2.append(int(numlist[1].replace("5","6")))
+nlist2.append(int(numlist[1].replace("6","5")))
+print(min(nlist1)+min(nlist2),max(nlist1)+max(nlist2))
