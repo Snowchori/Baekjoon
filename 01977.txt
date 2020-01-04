@@ -1,0 +1,17 @@
+# python3
+
+import math
+
+num1 = int(input())
+num2 = int(input())
+n1 = math.sqrt(num1)
+n2 = math.sqrt(num2)
+nlist = []
+for i in range(int(n2)):
+	if i+1 >= n1:
+		nlist.append(pow(i+1,2))
+if len(nlist) == 0:
+	print(-1)
+else:
+	print(sum(nlist))
+	print(nlist[0])
