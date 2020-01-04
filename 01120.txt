@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+wordlist = sys.stdin.readline().split()
+mincount = len(wordlist[0])
+for i in range(len(wordlist[1])-len(wordlist[0])+1):
+	count = 0
+	for j in range(len(wordlist[0])):
+		if wordlist[0][j] != wordlist[1][j+i]:
+			count += 1
+	if count < mincount:
+		mincount = count 
+print(mincount)
