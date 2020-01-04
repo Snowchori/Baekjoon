@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+testlist = [int(x) for x in sys.stdin.readline().split()]
+numlist = [int(x) for x in sys.stdin.readline().split()]
+resultlist = []
+for i in range(testlist[0]):
+	for j in range(len(resultlist)):
+		resultlist.append(resultlist[j]+numlist[i])
+	resultlist.append(numlist[i])
+count = 0
+for i in resultlist:
+	if testlist[1] == i:
+		count += 1
+print(count)
