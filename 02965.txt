@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.readline().split()]
+print(max([numlist[1]-numlist[0],numlist[2]-numlist[1]])-1)
