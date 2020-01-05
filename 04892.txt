@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+count = 0
+while True:
+	num = int(sys.stdin.readline())
+	count += 1
+	if num == 0:
+		break
+	n1 = 3*num
+	if n1%2 == 0:
+		n2 = int(n1/2)
+		n4 = int(n2/3)
+		print(str(count)+". even "+str(n4))
+	else:
+		n2 = int((n1+1)/2)
+		n4 = int(n2/3)
+		print(str(count)+". odd "+str(n4))
