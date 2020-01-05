@@ -1,0 +1,4 @@
+# python3
+
+word = input()
+print(word.upper())
