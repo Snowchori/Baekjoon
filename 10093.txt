@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+num = [int(x) for x in sys.stdin.readline().split()]
+num.sort()
+if num[0] == num[1]:
+	print(0)
+else:
+	print(num[1]-num[0]-1)
+	for i in range(num[0]+1,num[1]):
+		if i != num[1]-1:
+			print(i,end=" ")
+		else:
+			print(i)
