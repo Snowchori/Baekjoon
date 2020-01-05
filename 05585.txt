@@ -1,0 +1,15 @@
+# python3
+
+money = int(input())
+mlist = [500,100,50,10,5,1]
+count = 0
+for i in mlist:
+	while True:
+		money += i
+		if money > 1000:
+			money -= i
+			break
+		count += 1
+	if money == 1000:
+		break
+print(count)
