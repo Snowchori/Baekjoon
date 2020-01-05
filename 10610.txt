@@ -1,0 +1,15 @@
+# python3
+
+num = input()
+if num.find("0") == -1:
+	print(-1)
+else:
+	nlist = []
+	for i in num:
+		nlist.append(int(i))
+	if sum(nlist)%3 == 0:
+		nlist.sort()
+		for i in nlist[::-1]:
+			print(i,end="")
+	else:
+		print(-1)
