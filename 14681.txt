@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.read().split()]
+if numlist[0] > 0 and numlist[1] > 0:
+	print(1)
+elif numlist[0] < 0 and numlist[1] > 0:
+	print(2)
+elif numlist[0] < 0 and numlist[1] < 0:
+	print(3)
+else:
+	print(4)
