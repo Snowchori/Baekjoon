@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+count = 0
+
+while True:
+	camplist = [int(x) for x in sys.stdin.readline().split()]
+	if camplist[0] == 0 and camplist[1] == 0 and camplist[2] == 0:
+		break
+	lnum = int(camplist[2]/camplist[1])*camplist[0]
+	rnum = camplist[2]%camplist[1]
+	if rnum < camplist[0]:
+		lnum += rnum
+	else:
+		lnum += camplist[0]
+	count += 1
+	print("Case "+str(count)+": "+str(lnum))
