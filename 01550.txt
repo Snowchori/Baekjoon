@@ -1,0 +1,23 @@
+# python3
+
+num = input()
+result = 0
+bn = len(num)
+for i in range(bn):
+	n = 0
+	if num[i] == "A":
+		n = 10
+	elif num[i] == "B":
+		n = 11
+	elif num[i] == "C":
+		n = 12
+	elif num[i] == "D":
+		n = 13
+	elif num[i] == "E":
+		n = 14
+	elif num[i] == "F":
+		n = 15
+	else:
+		n = int(num[i])
+	result += pow(16,bn-i-1)*n
+print(result)
