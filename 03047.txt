@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.readline().split()]
+word = sys.stdin.readline()
+numlist.sort()
+for i in range(len(word)):
+	if word[i] == "A":
+		print(numlist[0],end = " ")
+	elif word[i] == "B":
+		print(numlist[1],end = " ")
+	elif word[i] == "C":
+		print(numlist[2],end = " ")
