@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+alphalist = ["A","E","I","O","U","a","e","i","o","u"]
+num = int(sys.stdin.readline())
+for i in range(num):
+	sen = sys.stdin.readline().replace(" ","")
+	c1 = 0
+	c2 = 0
+	for i in sen:
+		if i != "\n":
+			if i in alphalist:
+				c1 += 1
+			else:
+				c2 += 1
+	print(c2,c1)
