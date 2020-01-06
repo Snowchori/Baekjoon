@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+num = int(input())
+numlist = [int(x) for x in sys.stdin.readline().split()]
+if num == 1:
+	print(sum(numlist)-max(numlist))
+else:
+	a = min(numlist[0],numlist[5])
+	b = min(numlist[1],numlist[4])
+	c = min(numlist[2],numlist[3])
+	result = (5*num*num-16*num+12)*min(a,b,c)+(8*num-12)*min(a+b,a+c,b+c)+4*(a+b+c)
+	print(result)
