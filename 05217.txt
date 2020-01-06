@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	nlist = []
+	for j in range(1,int(n/2)+1):
+		if j < n-j:
+			nlist.append([j,n-j])
+	print("Pairs for "+str(n)+": ",end="")
+	ln = len(nlist)
+	for j in range(ln):
+		print(nlist[j][0],nlist[j][1],end="")
+		if j != ln-1:
+			print(", ",end="")
+	print()
