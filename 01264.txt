@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+alphalist = ["A","E","I","O","U","a","e","i","o","u"]
+sen = sys.stdin.read().split("\n")
+for i in range(len(sen)):
+	if sen[i] == "#":
+		break
+	count = 0
+	for j in sen[i]:
+		if j in alphalist:
+			count += 1
+	print(count)
