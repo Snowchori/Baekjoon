@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	bnum = sys.stdin.readline()
+	result = 0
+	for j in range(24):
+		result += pow(2,j)*int(bnum[23-j])
+	print(result)
