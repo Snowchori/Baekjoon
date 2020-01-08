@@ -1,0 +1,9 @@
+# python3
+
+numlist = [int(x) for x in input().split()]
+num = int(input())
+sn = sum(numlist)
+if sn-2*num < 0:
+	print(sn)
+else:
+	print(sn-2*num)
