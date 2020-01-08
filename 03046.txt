@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.readline().split()]
+print(2*numlist[1]-numlist[0])
