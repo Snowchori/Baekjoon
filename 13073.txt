@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	r1 = int(n*(n+1)/2)
+	r2 = n*n
+	r3 = n*n+n
+	print(r1,r2,r3)
