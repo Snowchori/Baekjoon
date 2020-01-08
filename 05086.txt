@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+while True:
+	numlist = [int(x) for x in sys.stdin.readline().split()]
+	if numlist[0] == 0 and numlist[1] == 0:
+		break
+	if numlist[0]%numlist[1] == 0:
+		print("multiple")
+	elif numlist[1]%numlist[0] == 0:
+		print("factor")
+	else:
+		print("neither")
