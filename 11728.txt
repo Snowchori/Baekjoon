@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = [int(x) for x in sys.stdin.readline().split()]
+nlist1 = [int(x) for x in sys.stdin.readline().split()]
+nlist2 = [int(x) for x in sys.stdin.readline().split()]
+nlist3 = nlist1 + nlist2
+nlist3.sort()
+for i in nlist3:
+	print(i,end=" ")
