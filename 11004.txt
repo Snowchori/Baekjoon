@@ -1,0 +1,8 @@
+# python3
+
+import sys
+
+num = [int(x) for x in sys.stdin.readline().split()]
+numlist = [int(x) for x in sys.stdin.readline().split()]
+numlist.sort()
+print(numlist[num[1]-1])
