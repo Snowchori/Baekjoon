@@ -1,0 +1,8 @@
+# python3
+
+num = int(input())
+filist = [1,1,1]
+if num > 2:
+	for i in range(3,num):
+		filist.append(filist[i-1]+filist[i-3])
+print(filist[num-1])
