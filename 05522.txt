@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.read().split()]
+print(sum(numlist))
