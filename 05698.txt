@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+while True:
+	sen = sys.stdin.readline().lower().split()
+	if sen[0] == "*":
+		break
+	ista = True
+	fword = sen[0][0]
+	for i in sen:
+		if fword != i[0]:
+			ista = False
+			break
+	if ista:
+		print("Y")
+	else:
+		print("N")
