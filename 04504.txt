@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+while True:
+	n = int(sys.stdin.readline())
+	if n == 0:
+		break
+	else:
+		print(str(n)+" is",end=" ")
+		if n%num != 0:
+			print("NOT",end=" ")
+		print("a multiple of "+str(num)+".")
