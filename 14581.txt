@@ -1,0 +1,6 @@
+# python3
+
+word = input()
+print(":fan:"*3)
+print(":fan::"+word+"::fan:")
+print(":fan:"*3)
