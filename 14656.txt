@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+numlist = [int(x) for x in sys.stdin.readline().split()]
+count = 0
+for i in range(num):
+	if numlist[i] != i+1:
+		count += 1
+print(count)
