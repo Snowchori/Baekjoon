@@ -1,0 +1,27 @@
+# python3
+
+import sys
+
+isbn = sys.stdin.readline()
+result = 0
+iseven = False
+for i in range(13):
+	if isbn[i] != "*":
+		if i%2 == 0:
+			result += int(isbn[i])
+		else:
+			result += int(isbn[i])*3
+	elif isbn[i] == "*":
+		if i%2 == 1:
+			iseven = True
+result = 10-result%10
+if result == 10:
+	result = 0
+if iseven:
+	for i in range(3):
+		if result%3 == 0:
+			result /= 3
+			break
+		else:
+			result += 10
+print(int(result))
