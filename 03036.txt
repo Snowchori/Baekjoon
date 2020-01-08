@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+numlist = [int(x) for x in sys.stdin.readline().split()]
+for i in range(1,num):
+	n1 = numlist[0]
+	n2 = numlist[i]
+	while True:
+		n3 = n1%n2
+		if n3 == 0:
+			break
+		else:
+			n1 = n2
+			n2 = n3
+	print(str(int(numlist[0]/n2))+"/"+str(int(numlist[i]/n2)))
