@@ -1,0 +1,15 @@
+# python3
+
+numlist = [int(x) for x in input().split(":")]
+n1 = max(numlist)
+n2 = min(numlist)
+while True:
+	n3 = n1%n2
+	if n3 == 0:
+		break
+	else:
+		n1 = n2
+		n2 = n3
+num1 = int(numlist[0]/n2)
+num2 = int(numlist[1]/n2)
+print(str(num1)+":"+str(num2))
