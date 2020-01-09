@@ -1,0 +1,22 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+rlist = [0]*num
+flist = [float(x) for x in sys.stdin.readline().split()]
+flist.sort()
+l = round(1/num,7)
+count = 0
+for i in range(len(flist)):
+	if flist[i] < l:
+		rlist[count] += 1
+	else:
+		while True:
+			count += 1
+			l = round(1/num*(count+1),7)
+			if flist[i] < l:
+				rlist[count] += 1
+				break
+for i in rlist:
+	print(i,end=" ")
