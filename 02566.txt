@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+mnum = max(nlist)
+print(mnum)
+b = nlist.index(mnum)
+n1 = int(b/9)+1
+n2 = b%9+1
+print(n1,n2)
