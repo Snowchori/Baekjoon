@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.read().split()]
+num = len(numlist)
+for i in range(0,len(numlist),2):
+	count = numlist[i]
+	rem = numlist[i]
+	while True:
+		if int(rem/numlist[i+1]) == 0:
+			break
+		else:
+			count += int(rem/numlist[i+1])
+			rem = int(rem/numlist[i+1])+rem%numlist[i+1]
+	print(count)
