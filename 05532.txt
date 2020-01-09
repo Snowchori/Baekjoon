@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+day = int(sys.stdin.readline())
+assign = [int(x) for x in sys.stdin.read().split()]
+aday = []
+n1 = assign[0]/assign[2]
+n2 = assign[1]/assign[3]
+if assign[0]%assign[2] == 0:
+	aday.append(int(n1))
+else:
+	aday.append(int(n1)+1)
+if assign[1]%assign[3] == 0:
+	aday.append(int(n2))
+else:
+	aday.append(int(n2)+1)
+print(day-max(aday))
