@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n1 = nlist[0]+nlist[1]
+n2 = nlist[2]
+count = 0
+while True:
+	n = int(n1/n2)
+	count += n
+	n1 = n + n1%n2
+	if n1 < n2:
+		break
+print(count)
