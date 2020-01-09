@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+n = int(sys.stdin.readline())
+if n == 1:
+	print(1)
+else:
+	n1 = int((n-2)/4)
+	n2 = (n-2)%4
+	if n1%2 == 0:
+		print(n2+2)
+	else:
+		print(4-n2)
