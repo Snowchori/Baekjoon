@@ -1,0 +1,8 @@
+# python3
+
+import sys
+
+numlist = sys.stdin.readline().split()
+n1 = numlist[0]+numlist[1]
+n2 = numlist[2]+numlist[3]
+print(int(n1)+int(n2))
