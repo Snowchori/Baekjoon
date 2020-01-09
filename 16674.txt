@@ -1,0 +1,22 @@
+# python3
+
+num = input()
+nlist = [0,0,0,0,0]
+for i in range(len(num)):
+	n = int(num[i])
+	if n <= 2:
+		nlist[n] += 1
+	elif n == 8:
+		nlist[3] += 1
+	else:
+		nlist[4] += 1
+if nlist[4] == 0:
+	if nlist[0] > 0 and nlist[1] > 0 and nlist[2] > 0 and nlist[3] > 0:
+		if nlist[0] == nlist[1] and nlist[1] == nlist[2] and nlist[2] == nlist[3]:
+			print(8)
+		else:
+			print(2)
+	else:
+		print(1)
+else:
+	print(0)
