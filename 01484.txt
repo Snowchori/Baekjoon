@@ -1,0 +1,21 @@
+# python3
+
+import sys
+import math
+
+num = int(sys.stdin.readline())
+wlist = []
+count = 1
+while True:
+	w = pow(count,2)+num
+	if w < pow(count+1,2):
+		break
+	sw = math.sqrt(w)
+	if sw == int(sw):
+		wlist.append(int(sw))
+	count += 1
+if len(wlist) == 0:
+	print(-1)
+else:
+	for i in wlist:
+		print(i)
