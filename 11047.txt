@@ -1,0 +1,22 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.readline().split()]
+moneylist = []
+money = numlist[1]
+nlist = [int(x) for x in sys.stdin.read().split()]
+for i in nlist:
+	if i <= money:
+		moneylist = [i] + moneylist
+	else:
+		break
+count = 0
+for i in moneylist:
+	if i <= money:
+		n1 = int(money/i)
+		count += n1
+		money -= n1*i
+		if money == 0:
+			break
+print(count)
