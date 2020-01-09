@@ -1,0 +1,8 @@
+# python3
+
+from datetime import datetime
+
+now = datetime.now()
+print(now.year)
+print(str(now.month).zfill(2))
+print(str(now.day).zfill(2))
