@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+count = 2
+while True:
+	sen = sys.stdin.readline().strip()
+	if sen == "Was it a cat I saw?":
+		break
+	else:
+		for i in range(0,len(sen),count):
+			print(sen[i],end="")
+		print()
+		count += 1
