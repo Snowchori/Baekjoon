@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+mlist = []
+for i in range(num):
+	person = sys.stdin.readline().split()
+	mlist.append([int(person[3]),int(person[2]),int(person[1]),person[0]])
+mlist.sort()
+print(mlist[num-1][3])
+print(mlist[0][3])
