@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+while True:
+	sen = sys.stdin.readline().lower().strip()
+	if sen == "#":
+		break
+	n = len(sen)
+	count = 0
+	alpha = sen[0]
+	for i in range(1,n):
+		if alpha == sen[i]:
+			count += 1
+	print(alpha,count)
