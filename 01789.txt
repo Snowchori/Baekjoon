@@ -1,0 +1,17 @@
+# python3
+
+import math
+
+num = int(input())
+n = int(math.sqrt(num))
+r = 0
+while True:
+	r = int(n*(n+1)/2)
+	if r >= num:
+		break
+	else:
+		n += 1
+if num-r < 0:
+	print(n-1)
+else:
+	print(n)
