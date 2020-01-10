@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+n = int(sys.stdin.readline())
+t = 0
+for i in range(n):
+	nlist = sys.stdin.readline().split()
+	t += int(nlist[0])
+	if t >= 210:
+		break
+	if nlist[1] == "T":
+		num += 1
+		if num > 8:
+			num %= 8
+print(num)
