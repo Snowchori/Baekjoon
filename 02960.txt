@@ -1,0 +1,23 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.readline().split()]
+plist = [True]*(numlist[0]+1)
+plist[0] = False
+plist[1] = False
+rlist = []
+for i in range(numlist[0]+1):
+	muti = 2
+	if plist[i]:
+		rlist.append(i)
+		while True:
+			if i*muti > numlist[0]:
+				break
+			if plist[i*muti]:
+				plist[i*muti] = False
+				rlist.append(i*muti)
+			muti += 1
+	if len(rlist) >= numlist[1]:
+		break
+print(rlist[numlist[1]-1])
