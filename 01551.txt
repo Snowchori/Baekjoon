@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+num = [int(x) for x in sys.stdin.readline().split()]
+nlist = [int(x) for x in sys.stdin.readline().split(",")]
+for i in range(num[1]):
+	nlist2 = []
+	for j in range(len(nlist)-1):
+		nlist2.append(nlist[j+1]-nlist[j])
+	nlist = nlist2
+n = len(nlist)
+for i in range(n):
+	if i != n-1:
+		print(nlist[i],end=",")
+	else:
+		print(nlist[i])
