@@ -1,0 +1,9 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.readline().split()]
+result = 0
+for i in numlist:
+	result += i*i
+print(result%10)
