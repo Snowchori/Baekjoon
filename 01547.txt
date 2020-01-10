@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+cuplist = [1,0,0]
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	n1 = nlist[0]-1
+	n2 = nlist[1]-1
+	(cuplist[n1],cuplist[n2]) = (cuplist[n2],cuplist[n1])
+print(cuplist.index(1)+1)
