@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.read().split()]
+result = 0
+if numlist[0] == 1 or numlist[0] == 5:
+	result = 8*numlist[1]+numlist[0]-1
+else:
+	result = 4*numlist[1]+2
+	if numlist[1]%2 == 1:
+		result -= numlist[0]-3
+	else:
+		result += numlist[0]-3
+print(result)
