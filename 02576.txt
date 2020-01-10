@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+numlist = [int(x) for x in sys.stdin.read().split()]
+nlist = []
+for i in numlist:
+	if i%2 == 1:
+		nlist.append(i)
+if len(nlist) == 0:
+	print(-1)
+else:
+	print(sum(nlist))
+	print(min(nlist))
