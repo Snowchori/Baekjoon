@@ -1,0 +1,20 @@
+# python3
+
+import math
+
+num = int(input())
+count = 0
+while True:
+	n = int(math.sqrt(num))
+	while True:
+		r = int(n*(n+1)/2)
+		if r > num:
+			n -= 1
+			break
+		else:
+			n += 1
+	num -= int(n*(n+1)/2)
+	count += n
+	if num == 0:
+		break
+print(count)
