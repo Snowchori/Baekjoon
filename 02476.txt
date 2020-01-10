@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+moneylist = []
+for i in range(num):
+	numlist = [int(x) for x in sys.stdin.readline().split()]
+	if numlist[0] == numlist[1] == numlist[2]:
+		moneylist.append(10000+numlist[0]*1000)
+	elif numlist[0] == numlist[1] or numlist[0] == numlist[2]:
+		moneylist.append(1000+numlist[0]*100)
+	elif numlist[1] == numlist[2]:
+		moneylist.append(1000+numlist[1]*100)
+	else:
+		moneylist.append(max(numlist)*100)
+print(max(moneylist))
