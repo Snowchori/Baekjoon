@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+score = []
+for i in range(5):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	score.append(sum(nlist))
+maxs = max(score)
+maxi = score.index(maxs)+1
+print(maxi,maxs)
