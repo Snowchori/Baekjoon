@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+while True:
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if nlist[0] == nlist[1] == nlist[2] == 0:
+		break
+	if nlist[0]*nlist[2] == nlist[1]*nlist[1]:
+		r = int(nlist[1]/nlist[0])
+		print("GP "+str(nlist[2]*r))
+	else:
+		d = nlist[1]-nlist[0]
+		print("AP "+str(nlist[2]+d))
