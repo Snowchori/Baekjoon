@@ -1,0 +1,5 @@
+# python3
+
+import sys
+
+print("파이팅!!")
