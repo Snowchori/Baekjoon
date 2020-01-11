@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	u = nlist[1]*2-nlist[0]
+	t = nlist[1]-u
+	print(u,t)
