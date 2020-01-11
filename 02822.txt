@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+score = []
+for i in range(8):
+	num = int(sys.stdin.readline())
+	score.append([num,i+1])
+score.sort()
+result = 0
+rlist = []
+for i in range(5):
+	result += score[7-i][0]
+	rlist.append(score[7-i][1])
+print(result)
+rlist.sort()
+for i in rlist:
+	print(i,end=" ")
