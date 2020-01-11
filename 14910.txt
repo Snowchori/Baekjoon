@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+isdisc = True
+prenum = nlist[0]
+for i in nlist:
+	if prenum > i:
+		isdisc = False
+	prenum = i
+if isdisc:
+	print("Good")
+else:
+	print("Bad")
