@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+while True:
+	atmlist = sys.stdin.readline().split()
+	if atmlist[0] == atmlist[2] == "0" and atmlist[1] == "W":
+		break
+	if atmlist[1] == "W":
+		result = int(atmlist[0])-int(atmlist[2])
+	else:
+		result = int(atmlist[0])+int(atmlist[2])
+	if result < -200:
+		print("Not allowed")
+	else:
+		print(result)
