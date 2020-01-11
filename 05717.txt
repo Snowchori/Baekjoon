@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+while True:
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if nlist[0] == nlist[1] == 0:
+		break
+	else:
+		print(sum(nlist))
