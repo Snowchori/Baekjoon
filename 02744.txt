@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+word = sys.stdin.readline()
+word2 = ""
+for i in word:
+	n = ord(i)
+	if n >= 65 and n <= 90:
+		word2 += chr(n+32)
+	elif n >= 97 and n <= 122:
+		word2 += chr(n-32)
+print(word2)
