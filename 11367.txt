@@ -1,0 +1,27 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	hlist = sys.stdin.readline().split()
+	print(hlist[0],end=" ")
+	score = int(hlist[1])
+	if score >= 97:
+		print("A+")
+	elif score >= 90:
+		print("A")
+	elif score >= 87:
+		print("B+")
+	elif score >= 80:
+		print("B")
+	elif score >= 77:
+		print("C+")
+	elif score >= 70:
+		print("C")
+	elif score >= 67:
+		print("D+")
+	elif score >= 60:
+		print("D")
+	else:
+		print("F")
