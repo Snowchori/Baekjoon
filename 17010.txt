@@ -1,0 +1,8 @@
+# python3
+
+import sys
+
+n = int(sys.stdin.readline())
+for i in range(n):
+	nlist = sys.stdin.readline().split()
+	print(nlist[1]*int(nlist[0]))
