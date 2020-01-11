@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+camlist = ["C","A","M","B","R","I","D","G","E"]
+word = sys.stdin.readline().strip()
+word2 = ""
+for i in word:
+	if i not in camlist:
+		word2 += i
+print(word2)
