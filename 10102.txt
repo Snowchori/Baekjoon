@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+ticket = sys.stdin.readline().strip()
+ca = 0
+cb = 0
+for i in ticket:
+	if i == "A":
+		ca += 1
+	else:
+		cb += 1
+if ca > cb:
+	print("A")
+elif ca < cb:
+	print("B")
+else:
+	print("Tie")
