@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+alist = [int(x) for x in sys.stdin.read().split()]
+if alist[0] == alist[1] == alist[2] == 60:
+	print("Equilateral")
+elif alist[0]+alist[1]+alist[2] == 180:
+	if alist[0] == alist[1] or alist[0] == alist[2] or alist[1] == alist[2]:
+		print("Isosceles")
+	else:
+		print("Scalene")
+else:
+	print("Error")
