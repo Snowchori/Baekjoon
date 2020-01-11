@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+sen = sys.stdin.readline().split()
+if sen[0] == "true":
+	sen[0] = True
+else:
+	sen[0] = False
+if sen[2] == "true":
+	sen[2] = True
+else:
+	sen[2] = False
+if sen[1] == "AND":
+	result = sen[0] and sen[2]
+else:
+	result = sen[0] or sen[2]
+if result:
+	print("true")
+else:
+	print("false")
