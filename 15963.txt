@@ -1,0 +1,9 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+if nlist[0] == nlist[1]:
+	print(1)
+else:
+	print(0)
