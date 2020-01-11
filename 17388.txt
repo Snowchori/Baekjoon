@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+n = [int(x) for x in sys.stdin.readline().split()]
+if n[0]+n[1]+n[2] >= 100:
+	print("OK")
+else:
+	nindex = n.index(min(n))
+	if nindex == 0:
+		print("Soongsil")
+	elif nindex == 1:
+		print("Korea")
+	else:
+		print("Hanyang")
