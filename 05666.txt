@@ -1,0 +1,7 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+for i in range(0,len(nlist),2):
+	print("%.2f"%(nlist[i]/nlist[i+1]))
