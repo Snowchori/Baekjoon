@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+apple = nlist[0]*3+nlist[1]*2+nlist[2]
+banana = nlist[3]*3+nlist[4]*2+nlist[5]
+if apple > banana:
+	print("A")
+elif banana > apple:
+	print("B")
+else:
+	print("T")
