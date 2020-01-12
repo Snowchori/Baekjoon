@@ -1,0 +1,27 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+answer = sys.stdin.readline().strip()
+A = ["A","B","C"]
+B = ["B","A","B","C"]
+G = ["C","C","A","A","B","B"]
+a = 0
+b = 0
+g = 0
+for i in range(len(answer)):
+	if answer[i] == A[i%3]:
+		a += 1
+	if answer[i] == B[i%4]:
+		b += 1
+	if answer[i] == G[i%6]:
+		g += 1
+m = max(a,b,g)
+print(m)
+if a == m:
+	print("Adrian")
+if b == m:
+	print("Bruno")
+if g == m:
+	print("Goran")
