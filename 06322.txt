@@ -1,0 +1,27 @@
+# python3
+
+import sys
+import math
+
+count = 1
+while True:
+	slist = [int(x) for x in sys.stdin.readline().split()]
+	if slist[0] == slist[1] == slist[2] == 0:
+		break
+	print("Triangle #"+str(count))
+	if slist[0] == -1:
+		result = slist[2]*slist[2]-slist[1]*slist[1]
+		tri = "a"
+	elif slist[1] == -1:
+		result = slist[2]*slist[2]-slist[0]*slist[0]
+		tri = "b"
+	else:
+		result = slist[0]*slist[0]+slist[1]*slist[1]
+		tri = "c"
+	if result <= 0:
+		print("Impossible.")
+	else:
+		result = math.sqrt(result)
+		print(tri+" = "+"%.3f"%result)
+	count += 1
+	print()
