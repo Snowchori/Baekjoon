@@ -1,0 +1,12 @@
+# python3
+
+import sys
+import math
+
+num = int(sys.stdin.readline())
+n = int(math.sqrt(num))
+while True:
+	if n*n >= num:
+		break
+	n += 1
+print(n)
