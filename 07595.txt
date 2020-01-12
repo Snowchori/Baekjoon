@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+while True:
+	num = int(sys.stdin.readline())
+	if num == 0:
+		break
+	for i in range(num):
+		print("*"*(i+1))
