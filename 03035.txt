@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+slist = []
+for i in range(nlist[0]):
+	s = sys.stdin.readline().strip()
+	slist.append(s)
+for i in range(nlist[0]):
+	for j in range(nlist[2]):
+		for k in range(nlist[1]):
+			print(slist[i][k]*nlist[3],end="")
+		print()
