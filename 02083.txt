@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+while True:
+	member = sys.stdin.readline().split()
+	if member[0] == "#" and member[1] == member[2] == "0":
+		break
+	print(member[0],end=" ")
+	if int(member[1]) > 17 or int(member[2]) >= 80:
+		print("Senior")
+	else:
+		print("Junior")
