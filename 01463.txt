@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+onelist = [0,0]
+count = 1
+while True:
+	count += 1
+	if count%2 == 0 and count%3 ==0:
+		onelist.append(min(onelist[int(count/2)],onelist[int(count/3)],onelist[count-1])+1)
+	elif count%2 == 0:
+		onelist.append(min(onelist[int(count/2)],onelist[count-1])+1)
+	elif count%3 == 0:
+		onelist.append(min(onelist[int(count/3)],onelist[count-1])+1)
+	else:
+		onelist.append(onelist[count-1]+1)
+	if count >= num:
+		break
+print(onelist[num])
