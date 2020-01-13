@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+isbuf = True
+nlist = [int(x) for x in sys.stdin.read().split()]
+carlos = nlist[0]
+for i in range(num):
+	if carlos < nlist[i]:
+		isbuf = False
+		break
+if isbuf:
+	print("S")
+else:
+	print("N")
