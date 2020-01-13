@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+slist = sys.stdin.read().split("\n")
+for i in slist:
+	if i == "***":
+		break
+	i = i[::-1]
+	print(i)
