@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+n = max(nlist)
+palist = [1,1,1,2,2]
+if n > 5:
+	for i in range(5,n):
+		palist.append(palist[i-1]+palist[i-5])
+for i in nlist:
+	print(palist[i-1])
