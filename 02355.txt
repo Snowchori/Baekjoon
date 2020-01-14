@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+result = 0
+nlist.sort()
+if nlist[0] > 0:
+	result = nlist[0]
+elif nlist[1] < 0:
+	result = nlist[1]
+big = abs(nlist[1])
+small = abs(nlist[0])
+result += int(big*(big+1)/2-small*(small+1)/2)
+print(result)
