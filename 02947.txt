@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+answer = [1,2,3,4,5]
+nlist = [int(x) for x in sys.stdin.readline().split()]
+while nlist != answer:
+	for i in range(4):
+		if nlist[i] > nlist[i+1]:
+			(nlist[i],nlist[i+1]) = (nlist[i+1],nlist[i])
+			for j in nlist:
+				print(j,end=" ")
+			print()
