@@ -1,0 +1,27 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+money = []
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if nlist[0] == nlist[1] == nlist[2] == nlist[3]:
+		money.append(50000+nlist[0]*5000)
+	elif nlist[0] == nlist[1] == nlist[2] or nlist[0] == nlist[1] == nlist[3] or nlist[0] == nlist[2] == nlist[3]:
+		money.append(10000+nlist[0]*1000)
+	elif nlist[1] == nlist[2] == nlist[3]:
+		money.append(10000+nlist[1]*1000)
+	elif (nlist[0] == nlist[1] and nlist[2] == nlist[3]) or (nlist[0] == nlist[2] and nlist[1] == nlist[3]):
+		money.append(2000+nlist[0]*500+nlist[3]*500)
+	elif nlist[1] == nlist[2] and nlist[0] == nlist[3]:
+		money.append(2000+nlist[1]*500+nlist[3]*500)
+	elif nlist[0] == nlist[1] or nlist[0] == nlist[2] or nlist[0] == nlist[3]:
+		money.append(1000+nlist[0]*100)
+	elif nlist[1] == nlist[2] or nlist[1] == nlist[3]:
+		money.append(1000+nlist[1]*100)
+	elif nlist[2] == nlist[3]:
+		money.append(1000+nlist[2]*100)
+	else:
+		money.append(max(nlist)*100)
+print(max(money))
