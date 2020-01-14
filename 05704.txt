@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+while True:
+	sen = sys.stdin.readline().strip().replace(" ","")
+	if sen == "*":
+		break
+	alphalist = [0]*26
+	for i in sen:
+		alphalist[ord(i)-97] += 1
+	ispan = True
+	for i in alphalist:
+		if i == 0:
+			ispan = False
+			break
+	if ispan:
+		print("Y")
+	else:
+		print("N")
