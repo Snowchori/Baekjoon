@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+klist = sys.stdin.readline().strip()
+key = sys.stdin.readline().strip()
+k = ""
+for i in klist:
+	if ord(i) < 48 or ord(i) > 57:
+		k += i
+if key in k:
+	print(1)
+else:
+	print(0)
