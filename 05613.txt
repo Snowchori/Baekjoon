@@ -1,0 +1,22 @@
+# python3
+
+import sys
+
+result = int(sys.stdin.readline())
+while True:
+	sign = sys.stdin.readline().strip()
+	if sign == "=":
+		break
+	elif sign == "+":
+		n = int(sys.stdin.readline())
+		result += n
+	elif sign == "-":
+		n = int(sys.stdin.readline())
+		result -= n
+	elif sign == "*":
+		n = int(sys.stdin.readline())
+		result *= n
+	elif sign == "/":
+		n = int(sys.stdin.readline())
+		result = int(result/n)
+print(result)
