@@ -1,0 +1,9 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = sys.stdin.readline().split()
+	result = int(nlist[0][::-1])+int(nlist[1][::-1])
+	print(int(str(result)[::-1]))
