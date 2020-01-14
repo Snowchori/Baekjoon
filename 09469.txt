@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = [float(x) for x in sys.stdin.readline().split()]
+	n = int(nlist[0])
+	second = nlist[1]/(nlist[2]+nlist[3])
+	dist = nlist[4]*second
+	print(str(n)+" "+str(dist))
