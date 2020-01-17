@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+if nlist[0] == nlist[1] == nlist[2]:
+	print(10000+nlist[0]*1000)
+elif nlist[0] == nlist[1] or nlist[0] == nlist[2]:
+	print(1000+nlist[0]*100)
+elif nlist[1] == nlist[2]:
+	print(1000+nlist[1]*100)
+else:
+	print(max(nlist)*100)
