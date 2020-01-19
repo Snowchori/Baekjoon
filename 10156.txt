@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+result = nlist[0]*nlist[1]-nlist[2]
+if result <= 0:
+	print(0)
+else:
+	print(result)
