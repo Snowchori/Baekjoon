@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+if nlist[0] < 2:
+	print("Before")
+elif nlist[0] > 2:
+	print("After")
+elif nlist[1] < 18:
+	print("Before")
+elif nlist[1] > 18:
+	print("After")
+else:
+	print("Special")
