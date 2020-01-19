@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+money = []
+money.append(nlist[0]*nlist[4])
+if nlist[4] <= nlist[2]:
+	money.append(nlist[1])
+else:
+	money.append(nlist[1]+(nlist[4]-nlist[2])*nlist[3])
+print(min(money))
