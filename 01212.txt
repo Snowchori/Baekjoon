@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+binary = ["000","001","010","011","100","101","110","111"]
+num = sys.stdin.readline().strip()
+result = ""
+n1 = int(binary[int(num[0])])
+for i in range(len(num)):
+	if i == 0:
+		result += str(n1)
+	else:
+		result += binary[int(num[i])]
+print(result)
