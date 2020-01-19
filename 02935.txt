@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+n1 = int(sys.stdin.readline())
+sign = sys.stdin.readline().strip()
+n2 = int(sys.stdin.readline())
+if sign == "+":
+	print(n1+n2)
+else:
+	print(n1*n2)
