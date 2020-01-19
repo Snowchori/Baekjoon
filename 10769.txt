@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+sen = sys.stdin.readline()
+happy = 0
+sad = 0
+for i in range(len(sen)-2):
+	if sen[i] == ":":
+		if sen[i:i+3] == ":-)":
+			happy += 1
+		elif sen[i:i+3] == ":-(":
+			sad += 1
+if happy == sad == 0:
+	print("none")
+elif happy == sad:
+	print("unsure")
+elif happy > sad:
+	print("happy")
+else:
+	print("sad")
