@@ -1,0 +1,38 @@
+# python3
+
+import sys
+
+def countpaper(i,j,n):
+	w = 0
+	b = 0
+	a = plist[i][j]
+	issame = True
+	for x in range(n):
+		for y in range(n):
+			if a != plist[i+x][j+y]:
+				n1 = int(n/2)
+				(r11, r12) = countpaper(i,j,n1)
+				(r21, r22) = countpaper(i,j+n1,n1)
+				(r31, r32) = countpaper(i+n1,j,n1)
+				(r41, r42) = countpaper(i+n1,j+n1,n1)
+				w = r11+r21+r31+r41
+				b = r12+r22+r32+r42
+				issame = False
+				break
+		if issame == False:
+			break
+	if issame:
+		if a == 0:
+			w = 1
+		else:
+			b = 1
+	return (w,b)
+
+num = int(sys.stdin.readline())
+plist = []
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	plist.append(nlist)
+(r1,r2) = countpaper(0,0,num)
+print(r1)
+print(r2)
