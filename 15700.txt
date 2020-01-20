@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n1 = min(nlist)
+n2 = max(nlist)
+if n1 == 1:
+	print(int(n2/2))
+elif n1 == 2:
+	print(n2)
+else:
+	if n1%2 == 0:
+		print(int(n1/2)*n2)
+	else:
+		print(int(n1/2)*n2+int(n2/2))
