@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+nlist = sys.stdin.readline().split()
+n1 = 0
+n2 = 0
+for i in nlist[0]:
+	n1 += int(i)
+for j in nlist[1]:
+	n2 += int(j)
+print(n1*n2)
