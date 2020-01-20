@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+trilist = []
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	trilist.append(nlist)
+for i in range(num-1):
+	n = len(trilist[num-2-i])
+	for j in range(n):
+		 trilist[num-2-i][j] = max(trilist[num-2-i][j]+trilist[num-1-i][j],trilist[num-2-i][j]+trilist[num-1-i][j+1])
+print(trilist[0][0])
