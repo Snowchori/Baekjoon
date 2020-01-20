@@ -1,0 +1,22 @@
+# python3
+
+import sys
+
+a = []
+b = []
+alist = [int(x) for x in sys.stdin.readline().split()]
+for i in range(alist[0]):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	a.append(nlist)
+blist = [int(x) for x in sys.stdin.readline().split()]
+for i in range(blist[0]):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	b.append(nlist)
+rlist = []
+for i in range(alist[0]):
+	for j in range(blist[1]):
+		result = 0
+		for k in range(alist[1]):
+			result += a[i][k]*b[k][j]
+		print(result,end=" ")
+	print()
