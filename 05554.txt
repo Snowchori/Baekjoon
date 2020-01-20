@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+n = sum(nlist)
+m = int(n/60)
+s = n%60
+print(m)
+print(s)
