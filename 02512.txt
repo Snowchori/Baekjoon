@@ -1,0 +1,26 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+maxnum = int(sys.stdin.readline())
+h = max(nlist)
+l = 0
+mlist = []
+while True:
+	if h < l:
+		break
+	result = 0
+	n = int((h+l)/2)
+	for i in nlist:
+		if i <= n:
+			result += i
+		else:
+			result += n
+	if result <= maxnum:
+		l = n+1
+		mlist.append(n)
+	else:
+		h = n-1
+print(mlist[-1])
