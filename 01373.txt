@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+binary = sys.stdin.readline().strip()
+n = len(binary)
+n = n%3
+if n != 0:
+	binary = "0"*(3-n)+binary
+ox = ""
+for i in range(0,len(binary),3):
+	result = 0
+	for j in range(3):
+		result += int(binary[i+j])*pow(2,2-j)
+	ox += str(result)
+print(int(ox))
