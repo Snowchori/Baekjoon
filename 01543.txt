@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+w1 = sys.stdin.readline().strip()
+w2 = sys.stdin.readline().strip()
+count = 0
+n = len(w2)
+while True:
+	f = w1.find(w2)
+	if f == -1:
+		break
+	else:
+		w1 = w1[f+n:]
+		count += 1
+print(count)
