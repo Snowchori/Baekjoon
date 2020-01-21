@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+slist = []
+for i in range(0,6,2):
+	up = nlist[i+1]*10
+	down = nlist[i]*10
+	if down >= 5000:
+		down -= 500
+	slist.append(up/down)
+if slist[0] > slist[1] and slist[0] > slist[2]:
+	print("S")
+elif slist[1] > slist[0] and slist[1] > slist[2]:
+	print("N")
+else:
+	print("U")
