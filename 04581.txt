@@ -1,0 +1,27 @@
+# python3
+
+import sys
+
+vlist = sys.stdin.read().split()
+for i in vlist:
+	if i == "#":
+		break
+	vn = len(i)
+	y = 0
+	n = 0
+	a = 0
+	for j in i:
+		if j == "Y":
+			y += 1
+		elif j == "N":
+			n += 1
+		elif j == "A":
+			a += 1
+	if a >= vn/2:
+		print("need quorum")
+	elif y > n:
+		print("yes")
+	elif y < n:
+		print("no")
+	elif y == n:
+		print("tie")
