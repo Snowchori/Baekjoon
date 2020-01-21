@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+result = 0
+for i in range(num):
+	r = nlist[i]*(i+1)
+	print(r-result,end=" ")
+	result = r
