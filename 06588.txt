@@ -1,0 +1,34 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+m = max(nlist)
+plist = [True]*(m+1)
+plist[0] = False
+plist[1] = False
+num = 2
+while True:
+	if num > int(m/2):
+		break
+	if plist[num]:
+		count = 2
+		while True:
+			if num*count > m:
+				break
+			plist[num*count] = False
+			count += 1
+	num += 1
+for i in range(len(nlist)):
+	w = ""
+	if nlist[i] == 0:
+		break
+	else:
+		for j in range(3,int(nlist[i]/2)+1):
+			if plist[j] and plist[nlist[i]-j]:
+				w = str(nlist[i])+" = "+str(j)+" + "+str(nlist[i]-j)
+				break
+	if w == "":
+		print("Goldbach's conjecture is wrong.")
+	else:
+		print(w)
