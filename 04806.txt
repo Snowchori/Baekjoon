@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+sen = sys.stdin.read().split("\n")
+count = 0
+for i in sen:
+	if i != "":
+		count += 1
+print(count)
