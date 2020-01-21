@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	d = nlist[0]%10
+	r = d
+	rlist = [d]
+	while True:
+		r = (r*d)%10
+		if r == rlist[0]:
+			break
+		else:
+			rlist.append(r)
+	result = rlist[(nlist[1]-1)%len(rlist)]
+	if result == 0:
+		result = 10
+	print(result)
