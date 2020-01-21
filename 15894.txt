@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+print(4*num)
