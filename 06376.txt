@@ -1,0 +1,25 @@
+# python3
+
+def factorial(n):
+	if n == 0 or n == 1:
+		return 1
+	else:
+		return n*factorial(n-1)
+
+def e(n):
+	result = 0
+	for i in range(n+1):
+		result += 1/factorial(i)
+	return result
+print("n e")
+print("- -----------")
+for i in range(10):
+	print(str(i),end=" ")
+	if i <= 1:
+		print(int(e(i)))
+	elif i == 2:
+		n = e(i)
+		print("%.1f"%n)
+	else:
+		n = e(i)
+		print("%.9f"%n)
