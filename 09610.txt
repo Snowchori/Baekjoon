@@ -1,0 +1,27 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+q1 = 0
+q2 = 0
+q3 = 0
+q4 = 0
+axis = 0
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if nlist[0] > 0 and nlist[1] > 0:
+		q1 += 1
+	elif nlist[0] < 0 and nlist[1] > 0:
+		q2 += 1
+	elif nlist[0] < 0 and nlist[1] < 0:
+		q3 += 1
+	elif nlist[0] > 0 and nlist[1] < 0:
+		q4 += 1
+	else:
+		axis += 1
+print("Q1: "+str(q1))
+print("Q2: "+str(q2))
+print("Q3: "+str(q3))
+print("Q4: "+str(q4))
+print("AXIS: "+str(axis))
