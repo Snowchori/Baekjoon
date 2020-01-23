@@ -1,0 +1,25 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+species = ["Bobcat","Coyote","Mountain Lion","Wolf"]
+for i in range(num):
+	slist = sys.stdin.readline().split()
+	b = slist[1].count("B")*2
+	c = slist[1].count("C")*1
+	m = slist[1].count("M")*4
+	w = slist[1].count("W")*3
+	mnum = max(b,c,m,w)
+	result = []
+	s = 0
+	for j in (b,c,m,w):
+		if j == mnum:
+			result.append(species[s])
+		s += 1
+	print(slist[0]+": ",end="")
+	if len(result) != 1:
+		print("There is no ",end="")
+	else:
+		print("The "+result[0]+" is the ",end="")
+	print("dominant species")
