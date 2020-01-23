@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	count = 0
+	for j in range(nlist[0]):
+		slist = [int(x) for x in sys.stdin.readline().split()]
+		if nlist[1]*slist[2]/slist[0] <= slist[1]:
+			count += 1
+	print(count)
