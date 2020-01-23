@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+car = sys.stdin.readline().strip().replace(" ","")
+num = int(sys.stdin.readline())
+carlist = sys.stdin.read().split()
+count = 0
+result = []
+for i in range(num):
+	iscor = True
+	for j in range(len(carlist[i])):
+		if car[j] != "*" and car[j] != carlist[i][j]:
+			iscor = False
+	if iscor:
+		count += 1
+		result.append(carlist[i])
+print(count)
+for i in result:
+	print(i)
