@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+cy = 100
+sd = 100
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if nlist[0] > nlist[1]:
+		sd -= nlist[0]
+	elif nlist[0] < nlist[1]:
+		cy -= nlist[1]
+print(cy)
+print(sd)
