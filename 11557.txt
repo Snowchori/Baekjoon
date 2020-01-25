@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	slist = []
+	for j in range(n):
+		nlist = sys.stdin.readline().split()
+		slist.append([int(nlist[1]),nlist[0]])
+	slist.sort()
+	print(slist[n-1][1])
