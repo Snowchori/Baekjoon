@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+alist = [int(x) for x in sys.stdin.readline().split()]
+blist = [int(x) for x in sys.stdin.readline().split()]
+a = 0
+b = 0
+iswin = False
+for i in range(9):
+	a += alist[i]
+	if a > b:
+		iswin = True
+	b += blist[i]
+if iswin and a < b:
+	print("Yes")
+else:
+	print("No")
