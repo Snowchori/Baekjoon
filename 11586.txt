@@ -1,0 +1,25 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+mlist = []
+for i in range(num):
+	m = sys.stdin.readline().strip()
+	mlist.append(m)
+n = int(sys.stdin.readline())
+if n == 1:
+	for i in range(num):
+		for j in range(num):
+			print(mlist[i][j],end="")
+		print()
+elif n == 2:
+	for i in range(num):
+		for j in range(num):
+			print(mlist[i][num-1-j],end="")
+		print()
+else:
+	for i in range(num):
+		for j in range(num):
+			print(mlist[num-1-i][j],end="")
+		print()
