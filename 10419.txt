@@ -1,0 +1,10 @@
+# python3
+
+import sys
+import math
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	result = int((-1+math.sqrt(1+4*n))/2)
+	print(result)
