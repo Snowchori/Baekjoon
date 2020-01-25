@@ -1,0 +1,17 @@
+# python3
+
+import sys
+import math
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = sys.stdin.readline().split()
+	if nlist[1] == "+":
+		result = int(nlist[0])+int(nlist[2])
+	else:
+		result = int(nlist[0])-int(nlist[2])
+	print("Case "+str(i+1)+": ",end="")
+	if result == int(nlist[4]):
+		print("YES")
+	else:
+		print("NO")
