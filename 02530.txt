@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n = int(sys.stdin.readline())
+h = n//3600
+m = (n%3600)//60
+s = n%60
+nlist[2] += s
+m += nlist[2]//60
+nlist[2] %= 60
+nlist[1] += m
+h += nlist[1]//60
+nlist[1] %= 60
+nlist[0] += h
+nlist[0] %= 24
+for i in nlist:
+	print(i,end=" ")
