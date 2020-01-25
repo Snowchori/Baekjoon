@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+plate = sys.stdin.readline().strip()
+result = 0
+a = plate[0]
+for i in range(len(plate)):
+	if i == 0:
+		result += 10
+	elif plate[i] == a:
+		result += 5
+	else:
+		result += 10
+	a = plate[i]
+print(result)
