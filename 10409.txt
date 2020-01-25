@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+wlist = [int(x) for x in sys.stdin.readline().split()]
+count = 0
+result = 0
+for i in wlist:
+	result += i
+	if result > nlist[1]:
+		break
+	count += 1
+print(count)
