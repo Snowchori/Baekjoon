@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+ma = max(nlist[0],nlist[1])
+mi = min(nlist[0],nlist[1])
+remain = ma - mi
+if remain < nlist[2]:
+	print(sum(nlist)-(nlist[2]-remain)%2)
+else:
+	print(2*(mi+nlist[2]))
