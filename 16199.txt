@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+birth = [int(x) for x in sys.stdin.readline().split()]
+present = [int(x) for x in sys.stdin.readline().split()]
+n2 = present[0] - birth[0] + 1
+n3 = n2 - 1
+if present[2] - birth[2] < 0:
+	present[1] -= 1
+if present[1] - birth[1] < 0:
+	present[0] -= 1
+n1 = present[0] - birth[0]
+for i in (n1,n2,n3):
+	print(i)
