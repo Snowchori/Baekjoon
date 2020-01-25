@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	y = 0
+	k = 0
+	for j in range(9):
+		nlist = [int(x) for x in sys.stdin.readline().split()]
+		y += nlist[0]
+		k += nlist[1]
+	if y > k:
+		print("Yonsei")
+	elif y < k:
+		print("Korea")
+	else:
+		print("Draw")
