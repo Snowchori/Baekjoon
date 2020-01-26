@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+result = 0
+if nlist[0] < 0:
+	result += (-nlist[0])*nlist[2]
+	nlist[0] = 0
+if nlist[0] == 0:
+	result += nlist[3]
+result += (nlist[1]-nlist[0])*nlist[4]
+print(result)
