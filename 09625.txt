@@ -1,0 +1,9 @@
+# python3
+
+import sys
+
+ab = [[1,0]]
+num = int(sys.stdin.readline())
+for i in range(num):
+	ab.append([ab[i][1],ab[i][0]+ab[i][1]])
+print(ab[num][0],ab[num][1])
