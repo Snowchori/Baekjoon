@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+for i in range(3):
+	n = int(sys.stdin.readline())
+	nlist = []
+	for j in range(n):
+		nn = int(sys.stdin.readline())
+		nlist.append(nn)
+	result = sum(nlist)
+	if result > 0:
+		print("+")
+	elif result == 0:
+		print(0)
+	else:
+		print("-")
