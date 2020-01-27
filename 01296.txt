@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+name = sys.stdin.readline().strip()
+l = name.count("L")
+o = name.count("O")
+v = name.count("V")
+e = name.count("E")
+num = int(sys.stdin.readline())
+nlist = sys.stdin.read().split()
+nlist.sort()
+nn = []
+for i in nlist:
+	ll = l + i.count("L")
+	oo = o + i.count("O")
+	vv = v + i.count("V")
+	ee = e + i.count("E")
+	result = ((ll+oo)*(ll+vv)*(ll+ee)*(oo+vv)*(oo+ee)*(vv+ee))%100
+	nn.append(result)
+print(nlist[nn.index(max(nn))])
