@@ -1,0 +1,23 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+slist = [True]*nlist[0]
+ind = nlist[1]-1
+slist[ind] = False
+print("<"+str(ind+1),end="")
+for i in range(nlist[0]-1):
+	r = 0
+	d = 0
+	while True:
+		d += 1
+		a = (ind+d)%nlist[0]
+		if slist[a]:
+			r += 1
+		if r == nlist[1]:
+			break
+	ind = (ind+d)%nlist[0]
+	print(", " + str(ind+1),end="")
+	slist[ind] = False
+print(">")
