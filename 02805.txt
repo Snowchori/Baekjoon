@@ -1,0 +1,23 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+tlist = [int(x) for x in sys.stdin.readline().split()]
+h = max(tlist)
+l = 0
+m = 0
+while True:
+	if h < l:
+		break
+	n = (h+l)//2
+	result = 0
+	for i in tlist:
+		if i > n:
+			result += i-n
+	if result < nlist[1]:
+		h = n-1
+	else:
+		l = n+1
+		m = n
+print(m)
