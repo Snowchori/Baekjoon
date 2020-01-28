@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+rlist = [int(x) for x in sys.stdin.readline().split()]
+nlist.sort()
+rlist.sort(reverse = True)
+result = 0
+for i in range(num):
+	result += nlist[i]*rlist[i]
+print(result)
