@@ -1,0 +1,24 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n = int(sys.stdin.readline())
+rlist = [int(x) for x in sys.stdin.readline().split()]
+nlist.sort()
+for i in rlist:
+	down = 0
+	up = num-1
+	while True:
+		if down > up:
+			print(0,end=" ")
+			break
+		mid = (up+down)//2
+		if nlist[mid] == i:
+			print(1,end=" ")
+			break
+		if nlist[mid] > i:
+			up = mid - 1
+		else:
+			down = mid + 1
