@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+s = []
+d = []
+for i in range(nlist[1]):
+	n = [int(x) for x in sys.stdin.readline().split()]
+	s.append(n[0])
+	d.append(n[1])
+result = min(min(s)*(nlist[0]//6),min(d)*(nlist[0]//6)*6)+min(min(s),(nlist[0]%6)*min(d))
+print(result)
