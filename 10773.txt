@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+stack = []
+for i in nlist:
+	if i == 0:
+		stack.pop()
+	else:
+		stack.append(i)
+print(sum(stack))
