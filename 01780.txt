@@ -1,0 +1,45 @@
+# python3
+
+import sys
+
+def cp(i,j,n):
+	a = plist[i][j]
+	n1 = 0
+	n2 = 0
+	n3 = 0
+	issame = True
+	for x in range(n):
+		for y in range(n):
+			if plist[i+x][j+y] != a:
+				issame = False
+				n11,n12,n13 = cp(i,j,n//3)
+				n21,n22,n23 = cp(i+n//3,j,n//3)
+				n31,n32,n33 = cp(i+2*(n//3),j,n//3)
+				n41,n42,n43 = cp(i,j+n//3,n//3)
+				n51,n52,n53 = cp(i+n//3,j+n//3,n//3)
+				n61,n62,n63 = cp(i+2*(n//3),j+n//3,n//3)
+				n71,n72,n73 = cp(i,j+2*(n//3),n//3)
+				n81,n82,n83 = cp(i+n//3,j+2*(n//3),n//3)
+				n91,n92,n93 = cp(i+2*(n//3),j+2*(n//3),n//3)
+				n1 += n11+n21+n31+n41+n51+n61+n71+n81+n91
+				n2 += n12+n22+n32+n42+n52+n62+n72+n82+n92
+				n3 += n13+n23+n33+n43+n53+n63+n73+n83+n93
+				break
+		if issame == False:
+			break
+	if issame:
+		if a == "-1":
+			n1 += 1
+		elif a == "0":
+			n2 += 1
+		else:
+			n3 += 1
+	return n1,n2,n3
+
+num = int(sys.stdin.readline())
+plist = []
+for i in range(num):
+	p = sys.stdin.readline().split()
+	plist.append(p)
+for i in cp(0,0,num):
+	print(i)
