@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+ulist = [int(x) for x in sys.stdin.readline().split()]
+dlist = [int(x) for x in sys.stdin.readline().split()]
+a = min(ulist[0]/dlist[0],ulist[1]/dlist[1],ulist[2]/dlist[2])
+for i in range(3):
+	r = ulist[i] - dlist[i]*a
+	print(r,end=" ")
