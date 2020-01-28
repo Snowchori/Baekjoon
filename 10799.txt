@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+stick = sys.stdin.readline().strip()
+stack = []
+result = 0
+pre = ""
+for i in stick:
+	if i == "(":
+		stack.append(i)
+	else:
+		if i == ")" and pre == "(":
+			stack.pop()
+			result += len(stack)
+		elif i == ")" and pre == ")":
+			stack.pop()
+			result += 1
+	pre = i
+print(result)
