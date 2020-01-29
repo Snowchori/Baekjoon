@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+pre = 0
+count = 0
+for i in reversed(nlist):
+	if i > pre:
+		count += 1
+		pre = i
+print(count)
