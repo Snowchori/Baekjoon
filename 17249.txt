@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+sen = sys.stdin.readline().split("(^0^)")
+print(sen[0].count("@"),sen[1].count("@"))
