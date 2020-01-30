@@ -1,0 +1,17 @@
+# python3
+
+import sys
+from collections import Counter
+
+nlist = sys.stdin.readline()
+human = sys.stdin.read().split()
+hcount = Counter()
+for i in human:
+	hcount[i] += 1
+hlist = []
+for i in sorted(hcount.keys()):
+	if hcount[i] == 2:
+		hlist.append(i)
+print(len(hlist))
+for i in hlist:
+	print(i)
