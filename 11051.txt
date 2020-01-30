@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n = nlist[0]
+k = min(nlist[1],nlist[0]-nlist[1])
+clist = []
+for i in range(n+1):
+	c = []
+	for j in range(k+1):
+		if i < j:
+			break
+		if j == 0 or i == j:
+			c.append(1)
+		else:
+			a = (clist[i-1][j-1]+clist[i-1][j])%10007
+			c.append(a)
+	clist.append(c)
+print(clist[n][k])
