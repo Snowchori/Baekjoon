@@ -1,0 +1,8 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+mi = min(nlist[1],nlist[2])
+ma = max(nlist[1],nlist[2])
+print((nlist[0]*ma)//mi)
