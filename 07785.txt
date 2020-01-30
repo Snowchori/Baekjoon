@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+cdict = {}
+for i in range(num):
+	clist = sys.stdin.readline().split()
+	cdict.update({clist[0]:clist[1]})
+for i in reversed(sorted(cdict.keys())):
+	if cdict.get(i) == "enter":
+		print(i)
