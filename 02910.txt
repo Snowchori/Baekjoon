@@ -1,0 +1,11 @@
+# python3
+
+import sys
+from collections import Counter
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n = [int(x) for x in sys.stdin.readline().split()]
+ncount = Counter(n)
+num = len(ncount)
+for i,j in ncount.most_common(num):
+	print((str(i)+" ")*j,end="")
