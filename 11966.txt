@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+issq = True
+while num > 1:
+	if num%2 == 1:
+		issq = False
+		break
+	num = num//2
+if issq:
+	print(1)
+else:
+	print(0)
