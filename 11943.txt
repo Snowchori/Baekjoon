@@ -1,0 +1,7 @@
+# python3
+
+import sys
+
+one = [int(x) for x in sys.stdin.readline().split()]
+two = [int(x) for x in sys.stdin.readline().split()]
+print(min(one[0]+two[1],one[1]+two[0]))
