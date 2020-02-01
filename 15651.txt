@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+num = []
+for i in range(nlist[0]):
+	num.append([i+1])
+result = list(num[:])
+for i in range(nlist[1]-1):
+	r = []
+	for a in result:
+		for b in num:
+			r.append(a+b)
+	result = r
+for i in result:
+	for j in i:
+		print(j,end=" ")
+	print()
