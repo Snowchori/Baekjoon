@@ -1,0 +1,22 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+num = ""
+result = []
+for i in range(nlist[0]):
+	num += str(i+1)
+	result.append(str(i+1))
+for i in range(nlist[1]-1):
+	r = []
+	for a in result:
+		for b in num:
+			if a[-1] <= b:
+				r.append(a+b)
+	result = r
+result = set(result)
+for i in sorted(list(result)):
+	for j in i:
+		print(j,end=" ")
+	print()
