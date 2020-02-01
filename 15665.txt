@@ -1,0 +1,28 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+rlist = [int(x) for x in sys.stdin.readline().split()]
+rlist.sort()
+num = ""
+result = []
+count = 0
+pre = rlist[0]
+for i in range(nlist[0]):
+	if pre != rlist[i]:
+		count = i
+	num += str(count)
+	result.append(str(count))
+	pre = rlist[i]
+for i in range(nlist[1]-1):
+	r = []
+	for a in result:
+		for b in num:
+			r.append(a+b)
+	result = r
+result = list(set(result))
+for i in sorted(result):
+	for j in i:
+		print(rlist[int(j)],end=" ")
+	print()
