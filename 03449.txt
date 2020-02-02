@@ -1,0 +1,14 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	s1 = sys.stdin.readline().strip()
+	s2 = sys.stdin.readline().strip()
+	count = 0
+	for j in range(len(s1)):
+		if s1[j] != s2[j]:
+			count += 1
+	print("Hamming distance is "+str(count)+".")
