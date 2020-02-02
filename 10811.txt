@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+c = []
+for i in range(nlist[0]):
+	c.append(i+1)
+for i in range(nlist[1]):
+	rlist = [int(x) for x in sys.stdin.readline().split()]
+	c = c[:rlist[0]-1]+list(reversed(c[rlist[0]-1:rlist[1]]))+c[rlist[1]:]
+for i in c:
+	print(i,end=" ")
