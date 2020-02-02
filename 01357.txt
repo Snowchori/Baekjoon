@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+def rev(s):
+	return int(s[::-1])
+
+nlist = sys.stdin.readline().split()
+result = rev(str(rev(nlist[0])+rev(nlist[1])))
+print(result)
