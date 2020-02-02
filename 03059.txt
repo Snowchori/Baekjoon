@@ -1,0 +1,13 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	s = sys.stdin.readline().strip()
+	sdict = Counter(s)
+	result = 2015
+	for j in sdict.keys():
+		result -= ord(j)
+	print(result)
