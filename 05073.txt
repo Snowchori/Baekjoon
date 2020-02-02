@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+while True:
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if nlist[0] == nlist[1] == nlist[2] == 0:
+		break
+	nlist.sort()
+	if nlist[0]+nlist[1] <= nlist[2]:
+		print("Invalid")
+	elif nlist[0] == nlist[1] == nlist[2]:
+		print("Equilateral")
+	elif nlist[0] == nlist[1] or nlist[0] == nlist[2] or nlist[1] == nlist[2]:
+		print("Isosceles")
+	else:
+		print("Scalene")
