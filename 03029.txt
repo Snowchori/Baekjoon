@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+stime = sys.stdin.readline().strip().split(":")
+ftime = sys.stdin.readline().strip().split(":")
+second = int(ftime[2]) - int(stime[2])
+minute = int(ftime[1]) - int(stime[1])
+hour = int(ftime[0]) - int(stime[0])
+if second < 0:
+	second += 60
+	minute -= 1
+if minute < 0:
+	minute += 60
+	hour -= 1
+if hour < 0:
+	hour += 24
+if hour == minute == second == 0:
+	hour += 24
+print("%02d"%hour+":"+"%02d"%minute+":"+"%02d"%second)
