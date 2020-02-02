@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = sys.stdin.readline().split()
+	n = int(nlist[0])
+	s = nlist[1]
+	print(s[:n-1]+s[n:])
