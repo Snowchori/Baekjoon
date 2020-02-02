@@ -1,0 +1,13 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	s = sys.stdin.readline()
+	if s[0] == "P":
+		print("skipped")
+	else:
+		slist = s.split("+")
+		print(int(slist[0])+int(slist[1]))
