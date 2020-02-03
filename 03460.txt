@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	b = bin(n)
+	bn = len(b)
+	for j,v in enumerate(b[::-1]):
+		if v == "1":
+			print(j,end=" ")
+	print()
