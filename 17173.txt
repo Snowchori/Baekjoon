@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+mlist = [int(x) for x in sys.stdin.readline().split()]
+numlist = [False]*(nlist[0]+1)
+for i in mlist:
+	if i > nlist[0]:
+		break
+	count = 1
+	if numlist[i]:
+		continue
+	while i*count <= nlist[0]:
+		numlist[i*count] = True
+		count += 1
+result = 0
+for i in range(nlist[0]+1):
+	if numlist[i]:
+		result += i
+print(result)
