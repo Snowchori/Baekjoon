@@ -1,0 +1,7 @@
+# python3
+
+import sys
+
+num = sys.stdin.readline().strip()
+n = int(num,2)
+print(oct(n)[2:])
