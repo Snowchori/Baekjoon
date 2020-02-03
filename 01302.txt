@@ -1,0 +1,9 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+book = sys.stdin.read().split()
+bdict = Counter(sorted(book))
+print(bdict.most_common(1)[0][0])
