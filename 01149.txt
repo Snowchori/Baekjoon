@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+house = []
+for i in range(num):
+	rgb = [int(x) for x in sys.stdin.readline().split()]
+	house.append(rgb)
+result = [house[0]]
+for i in range(num-1):
+	rlist = []
+	for j in range(3):
+		rlist.append(min(result[i][(j+1)%3],result[i][(j+2)%3])+house[i+1][j])
+	result.append(rlist)
+print(min(result[num-1]))
