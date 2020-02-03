@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+team = min(nlist[0]//2,nlist[1])
+r = nlist[0]+nlist[1]-3*team
+if r < nlist[2]:
+	rr = nlist[2] - r
+	if rr/3 == rr//3:
+		rr = rr//3
+	else:
+		rr = rr//3 + 1
+	team -= rr
+print(team)
