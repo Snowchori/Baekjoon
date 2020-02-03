@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+result = nlist[1]
+if nlist[0] == 15:
+	nlist[0] = 0
+if nlist[1] == 28:
+	nlist[1] = 0
+if nlist[2] == 19:
+	nlist[2] = 0
+while True:
+	if result%15 == nlist[0] and result%28 == nlist[1] and result%19 == nlist[2]:
+		break
+	result += 28
+print(result)
