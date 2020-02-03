@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+mlist = [0,1,2,4]
+m = max(nlist)
+if m > 3:
+	for i in range(4,m+1):
+		mlist.append(mlist[i-1]+mlist[i-2]+mlist[i-3])
+for i in nlist:
+	print(mlist[i])
