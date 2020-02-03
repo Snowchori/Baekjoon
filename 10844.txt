@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [[0,1,1,1,1,1,1,1,1,1]]
+for i in range(num-1):
+	nlist2 = []
+	for j in range(10):
+		if j == 0:
+			nlist2.append(nlist[i][1])
+		elif j == 9:
+			nlist2.append(nlist[i][8])
+		else:
+			nlist2.append(nlist[i][j-1]+nlist[i][j+1])
+	nlist.append(nlist2)
+print(sum(nlist[num-1])%1000000000)
