@@ -1,0 +1,15 @@
+# python3
+
+import sys
+from collections import Counter
+
+n1 = int(sys.stdin.readline())
+nlist1 = sys.stdin.readline().split()
+ndict = Counter(nlist1)
+n2 = int(sys.stdin.readline())
+nlist2 = sys.stdin.readline().split()
+for i in nlist2:
+	if ndict.get(i):
+		print(ndict.get(i),end=" ")
+	else:
+		print(0,end=" ")
