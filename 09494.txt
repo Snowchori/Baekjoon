@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+while True:
+	num = int(sys.stdin.readline())
+	if num == 0:
+		break
+	result = 0
+	for i in range(num):
+		sen = sys.stdin.readline().rstrip()
+		n = len(sen)
+		if n > result:
+			r = sen.find(" ",result)
+			if r > 0:
+				result = r
+			else:
+				result = n
+	print(result+1)
