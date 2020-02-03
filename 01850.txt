@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n1 = nlist[0]
+n2 = nlist[1]
+while True:
+	if n1%n2 == 0:
+		break
+	n1,n2 = n2,n1%n2
+print("1"*n2)
