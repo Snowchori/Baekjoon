@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+pdict = {}
+for i in range(nlist[0]):
+	pokemon = sys.stdin.readline().strip()
+	pdict.update({str(i+1):pokemon,pokemon:str(i+1)})
+for i in range(nlist[1]):
+	fpokemon = sys.stdin.readline().strip()
+	print(pdict.get(fpokemon))
