@@ -1,0 +1,9 @@
+# python3
+
+import sys
+
+bi = sys.stdin.readline().split()
+b1 = int(bi[0],2)
+b2 = int(bi[1],2)
+result = bin(b1+b2)
+print(result[2:])
