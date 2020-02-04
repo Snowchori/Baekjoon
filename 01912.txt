@@ -1,0 +1,24 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+result = nlist[0]
+sn = 0
+for i in nlist:
+	if sn == 0:
+		sn = i
+		if i <= 0 and result < sn:
+			result = sn
+	else:
+		if i <= 0 and result < sn:
+			result = sn
+		sn += i
+	if sn < 0:
+		if result < sn:
+			result = sn
+		sn = 0
+if sn != 0 and result < sn:
+	result = sn
+print(result)
