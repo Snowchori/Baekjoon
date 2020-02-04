@@ -1,0 +1,27 @@
+# python3
+
+import sys
+
+sen = sys.stdin.read().split("\n")
+for i in sen:
+	if i == ".":
+		break
+	stack = []
+	isb = True
+	for j in i:
+		if j == "(" or j == "[":
+			stack.append(j)
+		elif j == ")":
+			if len(stack) == 0 or stack.pop() != "(":
+				isb = False
+				break
+		elif j == "]":
+			if len(stack) == 0 or stack.pop() != "[":
+				isb = False
+				break
+	if len(stack) != 0:
+		isb = False
+	if isb:
+		print("yes")
+	else:
+		print("no")
