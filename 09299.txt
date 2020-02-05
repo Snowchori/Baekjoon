@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	digree, *nlist = [int(x) for x in sys.stdin.readline().split()]
+	for j in range(digree+1):
+		nlist[j] *= digree-j
+	print("Case "+str(i+1)+": "+str(digree-1),end=" ")
+	for j in range(digree):
+		print(nlist[j],end=" ")
+	print()
