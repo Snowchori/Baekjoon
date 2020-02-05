@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = sys.stdin.read().split()
+result = 0
+for i in nlist:
+	result += pow(int(i[:-1]),int(i[-1]))
+print(result)
