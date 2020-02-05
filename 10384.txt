@@ -1,0 +1,23 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+for i in range(num):
+	adict = Counter(alpha)
+	sen = sys.stdin.readline().strip().upper()
+	for j in sen:
+		if ord(j) >= 65 and ord(j) <= 90:
+			adict.update(j)
+	result = min(list(adict.values()))
+	print("Case "+str(i+1)+": ",end="")
+	if result == 1:
+		print("Not a pangram")
+	elif result == 2:
+		print("Pangram!")
+	elif result == 3:
+		print("Double pangram!!")
+	else:
+		print("Triple pangram!!!")
