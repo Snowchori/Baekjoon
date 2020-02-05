@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+seat = sys.stdin.readline().strip()
+s = seat.count("S")
+l = seat.count("L")
+if l == 0:
+	print(s)
+else:
+	print(s+l//2+1)
