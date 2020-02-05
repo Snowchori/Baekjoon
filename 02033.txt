@@ -1,0 +1,14 @@
+# python3
+
+import sys
+import math
+
+num = int(sys.stdin.readline())
+n = 10
+while num > n:
+	if num%n >= 5*n//10:
+		num = num//n*n + n
+	else:
+		num = num//n*n
+	n *= 10
+print(num)
