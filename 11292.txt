@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+while True:
+	num = int(sys.stdin.readline())
+	if num == 0:
+		break
+	hdict = {}
+	for i in range(num):
+		hlist = sys.stdin.readline().split()
+		if hdict.get(float(hlist[1])):
+			hdict[float(hlist[1])].append(hlist[0])
+		else:
+			hdict.update({float(hlist[1]):[hlist[0]]})
+	hm = max(hdict.keys())
+	for i in hdict[hm]:
+		print(i,end=" ")
+	print()
