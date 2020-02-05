@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+dice = {}
+for i in range(1,7):
+	for j in range(i,7):
+		n = i+j
+		getn = dice.get(n)
+		if getn:
+			dice[n].append((i,j))
+		else:
+			dice.update({n:[(i,j)]})
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	print("Case "+str(i+1)+":")
+	for j in sorted(dice.get(n)):
+		print("("+str(j[0])+","+str(j[1])+")")
