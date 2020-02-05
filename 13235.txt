@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+sen = sys.stdin.readline().strip()
+isf = True
+for i,v in enumerate(reversed(sen)):
+	if sen[i] == v:
+		continue
+	else:
+		isf = False
+		break
+if isf:
+	print("true")
+else:
+	print("false")
