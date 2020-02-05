@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n = nlist[0]
+p = nlist[1]
+rlist = [n]
+a = -1
+while True:
+	n = n*nlist[0]%p
+	if n in rlist:
+		a = rlist.index(n)
+		break
+	rlist.append(n)
+print(len(rlist)-a)
