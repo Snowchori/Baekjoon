@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+count = 0
+while True:
+	hide = sys.stdin.readline().split()
+	if hide[0] == hide[1] == "#":
+		break
+	num = int(sys.stdin.readline())
+	count += 1
+	print("Case "+str(count))
+	for i in range(num):
+		sen = sys.stdin.readline().strip()
+		for j in sen:
+			if j.lower() in hide:
+				print("_",end="")
+			else:
+				print(j,end="")
+		print()
+	print()
