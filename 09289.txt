@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+mossign = {".-":"A","-...":"B","-.-.":"C","-..":"D",".":"E","..-.":"F","--.":"G","....":"H","..":"I",".---":"J","-.-":"K",".-..":"L","--":"M","-.":"N","---":"O",".--.":"P","--.-":"Q",".-.":"R","...":"S","-":"T","..-":"U","...-":"V",".--":"W","-..-":"X","-.--":"Y","--..":"Z"}
+num = int(sys.stdin.readline())
+for i in range(num):
+	mos = sys.stdin.readline().split()
+	word = ""
+	for j in mos:
+		word += mossign.get(j)
+	print("Case "+str(i+1)+": "+word)
