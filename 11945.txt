@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+fsb = []
+for i in range(nlist[0]):
+	sen = sys.stdin.readline().strip()
+	fsb.append(sen)
+for i in range(nlist[0]):
+	for j in range(nlist[1]):
+		print(fsb[i][nlist[1]-1-j],end="")
+	print()
