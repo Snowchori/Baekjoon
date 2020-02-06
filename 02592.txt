@@ -1,0 +1,9 @@
+# python3
+
+import sys
+from collections import Counter
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+print(sum(nlist)//10)
+ndict = Counter(nlist)
+print(ndict.most_common(1)[0][0])
