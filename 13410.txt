@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+def rev(n):
+	return int(str(n)[::-1])
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+result = []
+for i in range(nlist[1]):
+	result.append(rev(nlist[0]*(i+1)))
+print(max(result))
