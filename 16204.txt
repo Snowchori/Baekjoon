@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+print(min(nlist[1],nlist[2])+min(nlist[0]-nlist[1],nlist[0]-nlist[2]))
