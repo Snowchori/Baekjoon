@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+b1 = int(sys.stdin.readline())
+b2 = int(sys.stdin.readline())
+n = 10
+result = 0
+for i in range(b2+1):
+	result += b1*pow(n,i)
+print(result)
