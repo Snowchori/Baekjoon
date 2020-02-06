@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+def gau(n,m):
+	return m*(m+1)//2 - n*(n-1)//2
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	print("Scenario #"+str(i+1)+":")
+	print(gau(nlist[0],nlist[1]))
+	if i != num-1:
+		print()
