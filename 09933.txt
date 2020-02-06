@@ -1,0 +1,14 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+word = sys.stdin.read().split()
+wdic = Counter(word)
+for i in word:
+	wdic.update([i[::-1]])
+result = wdic.most_common(1)[0][0]
+n = len(result)
+r = result[n//2]
+print(str(n),r)
