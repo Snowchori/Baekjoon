@@ -1,0 +1,28 @@
+# python3
+
+import sys
+
+a = sys.stdin.readline().strip()
+b = sys.stdin.readline().strip()
+r1 = ""
+r2 = ""
+r3 = ""
+r4 = ""
+r5 = ""
+for i,v in enumerate(a):
+	r1 += str(int(v) & int(b[i]))
+	r2 += str(int(v) | int(b[i]))
+	r3 += str(int(v) ^ int(b[i]))
+	if v == "0":
+		r4 += "1"
+	else:
+		r4 += "0"
+	if b[i] == "0":
+		r5 += "1"
+	else:
+		r5 += "0"
+print(r1)
+print(r2)
+print(r3)
+print(r4)
+print(r5)
