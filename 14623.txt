@@ -1,0 +1,8 @@
+# python3
+
+import sys
+
+b1 = sys.stdin.readline().strip()
+b2 = sys.stdin.readline().strip()
+b3 = int(b1,2)*int(b2,2)
+print(bin(b3)[2:])
