@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+alist = [int(x) for x in sys.stdin.readline().split()]
+blist = [int(x) for x in sys.stdin.readline().split()]
+while True:
+	alist[1] -= blist[0]
+	blist[1] -= alist[0]
+	if alist[1] <= 0 and blist[1] <= 0:
+		print("DRAW")
+		break
+	elif blist[1] <= 0:
+		print("PLAYER A")
+		break
+	elif alist[1] <= 0:
+		print("PLAYER B")
+		break
