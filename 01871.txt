@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+for i in range(num):
+	car = sys.stdin.readline().split("-")
+	f = 0
+	for i in range(3):
+		f += alpha.find(car[0][i])*pow(26,2-i)
+	if abs(f-int(car[1])) <= 100:
+		print("nice")
+	else:
+		print("not nice")
