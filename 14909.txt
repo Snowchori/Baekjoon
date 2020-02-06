@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+count = 0
+for i in nlist:
+	if i > 0:
+		count += 1
+print(count)
