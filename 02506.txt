@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+count = 0
+result = 0
+for i in nlist:
+	if i == 1:
+		count += 1
+		result += count
+	else:
+		count = 0
+print(result)
