@@ -1,0 +1,28 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+hlist = sys.stdin.read().split()
+incre = False
+decre = False
+if hlist[0] < hlist[1]:
+	incre = True
+else:
+	decre = True
+if incre:
+	for i in range(len(hlist)-1):
+		if hlist[i] > hlist[i+1]:
+			incre = False
+			break
+elif decre:
+	for i in range(len(hlist)-1):
+		if hlist[i] < hlist[i+1]:
+			decre = False
+			break
+if incre:
+	print("INCREASING")
+elif decre:
+	print("DECREASING")
+else:
+	print("NEITHER")
