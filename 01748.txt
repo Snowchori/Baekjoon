@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+result = 0
+n = 10
+c = 1
+while True:
+	if num//n == 0:
+		result += c*(num-n//10+1)
+		break
+	result += c*(n-n//10)
+	c += 1
+	n *= 10
+print(result)
