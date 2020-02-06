@@ -1,0 +1,9 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+ndict = Counter(nlist)
+print(sum(list(ndict.values()))-len(list(ndict.keys())))
