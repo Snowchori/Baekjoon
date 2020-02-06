@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+hiden = sys.stdin.readline()
+number = "0123456789"
+result = 0
+hnum = ""
+for i in hiden:
+	if i in number:
+		if len(hnum) == 6:
+			result += int(hnum)
+			hnum = ""
+		hnum += i
+	elif len(hnum) > 0:
+		result += int(hnum)
+		hnum = ""
+print(result)
