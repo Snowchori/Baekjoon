@@ -1,0 +1,15 @@
+# python3
+
+import sys
+from collections import Counter
+
+sen = sys.stdin.readline().strip().replace(" ","").upper()
+sdict = Counter(sen)
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+for i in alpha:
+	print(i+" | ",end="")
+	n = sdict.get(i)
+	if n:
+		print("*"*n)
+	else:
+		print()
