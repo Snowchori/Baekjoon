@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+def gcd(a,b):
+	while True:
+		if a%b == 0:
+			return b
+		a,b = b,a%b
+
+n1 = [int(x) for x in sys.stdin.readline().split()]
+n2 = [int(x) for x in sys.stdin.readline().split()]
+down = n1[1]*n2[1]//gcd(n1[1],n2[1])
+up = n1[0]*down//n1[1]+n2[0]*down//n2[1]
+g = gcd(down,up)
+print(up//g, down//g)
