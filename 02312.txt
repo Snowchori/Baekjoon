@@ -1,0 +1,18 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	ndict = Counter()
+	count = 2
+	while n > 1:
+		if n//count == n/count:
+			ndict.update([count])
+			n = n//count
+		else:
+			count += 1
+	for i,j in ndict.items():
+		print(i,j)
