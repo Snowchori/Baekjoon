@@ -1,0 +1,19 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+first = sys.stdin.read().split()
+flist = []
+for i in first:
+	flist.append(i[0])
+fdict = Counter(flist)
+result = ""
+for i in sorted(fdict.keys()):
+	if fdict[i] >= 5:
+		result += i
+if len(result) == 0:
+	print("PREDAJA")
+else:
+	print(result)
