@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n = nlist[0]-1
+k = min(nlist[0]-nlist[1],nlist[1]-1)
+plist = []
+for i in range(n+1):
+	p = []
+	for j in range(k+1):
+		if i < j:
+			break
+		if j == 0 or i == j:
+			p.append(1)
+		else:
+			p.append(plist[i-1][j-1]+plist[i-1][j])
+	plist.append(p)
+print(plist[n][k])
