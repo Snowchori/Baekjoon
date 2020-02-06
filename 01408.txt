@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+start = [int(x) for x in sys.stdin.readline().split(":")]
+end = [int(x) for x in sys.stdin.readline().split(":")]
+second = end[2] - start[2]
+if second < 0:
+	second += 60
+	end[1] -= 1
+minute = end[1] - start[1]
+if minute < 0:
+	minute += 60
+	end[0] -= 1
+hour = end[0] - start[0]
+if hour < 0:
+	hour += 24
+print("%02d"%hour+":"+"%02d"%minute+":"+"%02d"%second)
