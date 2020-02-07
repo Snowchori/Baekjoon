@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n, *nlist = [int(x) for x in sys.stdin.readline().split()]
+	result = 0
+	nlist.sort()
+	for j in range(n-1):
+		if result < nlist[j+1] - nlist[j]:
+			result = nlist[j+1] - nlist[j]
+	print("Class "+str(i+1))
+	print("Max "+str(max(nlist))+", Min "+str(min(nlist))+", Largest gap "+str(result))
