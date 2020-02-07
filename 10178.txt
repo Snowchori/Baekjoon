@@ -1,0 +1,8 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n1, n2 = [int(x) for x in sys.stdin.readline().split()]
+	print("You get "+str(n1//n2)+" piece(s) and your dad gets "+str(n1%n2)+" piece(s).")
