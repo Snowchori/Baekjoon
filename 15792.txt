@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+n1, n2 = [int(x) for x in sys.stdin.readline().split()]
+print(n1//n2,end="")
+if n1%n2 != 0:
+	print(".",end="")
+	n1 = (n1%n2)*10
+	count = 0
+	while count < 1002:
+		print(n1//n2,end="")
+		if n1%n2 == 0:
+			break
+		n1 = (n1%n2)*10
+		count += 1
