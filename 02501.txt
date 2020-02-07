@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+c = 1
+clist = []
+for i in range(nlist[1]):
+	while True:
+		if c > nlist[0]:
+			break
+		if nlist[0]%c == 0:
+			clist.append(c)
+			break
+		else:
+			c += 1
+	c += 1
+if len(clist) < nlist[1]:
+	print(0)
+else:
+	print(clist[nlist[1]-1])
