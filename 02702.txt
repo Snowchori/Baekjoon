@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+def gcd(a,b):
+	while True:
+		if a%b == 0:
+			return b
+		a,b = b,a%b
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	g = gcd(nlist[0],nlist[1])
+	print(nlist[0]*nlist[1]//g,g)
