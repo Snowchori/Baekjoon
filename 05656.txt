@@ -1,0 +1,28 @@
+# python3
+
+import sys
+
+count = 1
+while True:
+	n1, n2, n3 = sys.stdin.readline().split()
+	if n2 == "E":
+		break
+	r = True
+	if n2 == ">":
+		r = int(n1) > int(n3)
+	elif n2 == ">=":
+		r = int(n1) >= int(n3)
+	elif n2 == "<":
+		r = int(n1) < int(n3)
+	elif n2 == "<=":
+		r = int(n1) <= int(n3)
+	elif n2 == "==":
+		r = int(n1) == int(n3)
+	elif n2 == "!=":
+		r = int(n1) != int(n3)
+	print("Case "+str(count)+": ",end="")
+	if r:
+		print("true")
+	else:
+		print("false")
+	count += 1
