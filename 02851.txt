@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+score = [int(x) for x in sys.stdin.read().split()]
+result = 0
+for i in score:
+	result += i
+	if result >= 100:
+		if abs(100-result) <= abs(100-result+i):
+			break
+		else:
+			result -= i
+			break
+print(result)
