@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+rm = "aiueo"
+sen = sys.stdin.readline().strip()
+n = 0
+while n < len(sen):
+	print(sen[n],end="")
+	if sen[n] in rm:
+		n += 2
+	n += 1
