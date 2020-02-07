@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+def factorial(n):
+	if n == 0 or n == 1:
+		return 1
+	return factorial(n-1)*n
+
+while True:
+	num = sys.stdin.readline().strip()
+	if num == "0":
+		break
+	result = 0
+	n = len(num)
+	for i in range(n):
+		result += factorial(n-i)*int(num[i])
+	print(result)
