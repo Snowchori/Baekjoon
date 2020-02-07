@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	sen = sys.stdin.readline().strip()
+	n = len(sen)
+	if sen[n//2] == sen[n//2-1]:
+		print("Do-it")
+	else:
+		print("Do-it-Not")
