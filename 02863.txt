@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+def tbt(lu,ru,ld,rd):
+	return lu/ld + ru/rd
+
+a,b = [int(x) for x in sys.stdin.readline().split()]
+c,d = [int(x) for x in sys.stdin.readline().split()]
+result = []
+result.append(tbt(a,b,c,d))
+result.append(tbt(c,a,d,b))
+result.append(tbt(d,c,b,a))
+result.append(tbt(b,d,a,c))
+print(result.index(max(result)))
