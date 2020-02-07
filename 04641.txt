@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+while True:
+	num = [int(x) for x in sys.stdin.readline().split()]
+	if num == [-1]:
+		break
+	num.sort()
+	ma = num[-1]//2
+	count = 0
+	for i in num:
+		if i == 0:
+			continue
+		if i > ma:
+			break
+		if i*2 in num:
+			count += 1
+	print(count)
