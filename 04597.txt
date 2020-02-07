@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+while True:
+	sen = sys.stdin.readline().strip()
+	if sen == "#":
+		break
+	one = sen.count("1")
+	print(sen[:-1],end="")
+	if sen[-1] == "e":
+		if one%2 == 0:
+			print("0")
+		else:
+			print("1")
+	else:
+		if one%2 == 0:
+			print("1")
+		else:
+			print("0")
