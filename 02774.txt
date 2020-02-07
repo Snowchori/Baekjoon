@@ -1,0 +1,10 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = sys.stdin.readline().strip()
+	ndict = Counter(n)
+	print(len(list(ndict.keys())))
