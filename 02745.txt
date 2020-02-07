@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+nlist = sys.stdin.readline().split()
+print(int(nlist[0],int(nlist[1])))
