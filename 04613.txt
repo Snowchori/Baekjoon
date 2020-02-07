@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+while True:
+	sen = sys.stdin.readline().strip()
+	if sen == "#":
+		break
+	result = 0
+	for i,v in enumerate(sen):
+		result += (i+1)*(alpha.find(v)+1)
+	print(result)
