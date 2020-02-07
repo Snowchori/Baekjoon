@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	sen = sys.stdin.readline().strip()
+	alpha = sys.stdin.readline().strip()
+	for i in sen:
+		if ord(i) >= 65 and ord(i) <= 90:
+			print(alpha[ord(i)-65],end="")
+		else:
+			print(i,end="")
+	print()
