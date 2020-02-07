@@ -1,0 +1,23 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+gan = [1,2,3,3,4,10]
+sau = [1,2,2,2,3,5,10]
+for i in range(num):
+	glist = [int(x) for x in sys.stdin.readline().split()]
+	slist = [int(x) for x in sys.stdin.readline().split()]
+	g = 0
+	s = 0
+	for j in range(6):
+		g += glist[j]*gan[j]
+	for j in range(7):
+		s += slist[j]*sau[j]
+	print("Battle "+str(i+1)+": ",end="")
+	if g > s:
+		print("Good triumphs over Evil")
+	elif g < s:
+		print("Evil eradicates all trace of Good")
+	else:
+		print("No victor on this battle field")
