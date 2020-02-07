@@ -1,0 +1,9 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+rlist = [int(x) for x in sys.stdin.readline().split()]
+avg = nlist[0]*nlist[1]
+for i in rlist:
+	print(i-avg,end=" ")
