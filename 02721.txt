@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+n = max(nlist)
+w = [0,3]
+for i in range(2,n+1):
+	w.append(w[i-1]+i*(i+1)*(i+2)//2)
+for i in nlist:
+	print(w[i])
