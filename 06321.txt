@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+num = int(sys.stdin.readline())
+for i in range(num):
+	sen = sys.stdin.readline().strip()
+	print("String #"+str(i+1))
+	for j in sen:
+		print(alpha[alpha.find(j)-25],end="")
+	print()
+	if i != num-1:
+		print()
