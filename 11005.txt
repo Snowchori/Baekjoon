@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+num = ""
+while nlist[0] > 0:
+	num += base[nlist[0]%nlist[1]]
+	nlist[0] = nlist[0]//nlist[1]
+print(num[::-1])
