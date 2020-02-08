@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+
+while True:
+	sen = sys.stdin.readline().strip()
+	if sen == "EOI":
+		break
+	sen = sen.lower()
+	if sen.find("nemo") > -1:
+		print("Found")
+	else:
+		print("Missing")
