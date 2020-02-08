@@ -1,0 +1,25 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	isa = True
+	slist = sys.stdin.readline().split()
+	sdict = Counter(slist[0])
+	for j in slist[1]:
+		if sdict.get(j):
+			sdict[j] -= 1
+		else:
+			isa = False
+			break
+	for j in sdict.values():
+		if j != 0:
+			isa = False
+			break
+	print(slist[0]+" & "+slist[1]+" are ",end="")
+	if isa:
+		print("anagrams.")
+	else:
+		print("NOT anagrams.")
