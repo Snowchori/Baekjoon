@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	nlist.sort()
+	print("Case #"+str(i+1)+": ",end="")
+	if nlist[0]+nlist[1] <= nlist[2]:
+		print("invalid!")
+	else:
+		if nlist[0] == nlist[1] == nlist[2]:
+			print("equilateral")
+		elif nlist[0] == nlist[1] or nlist[1] == nlist[2]:
+			print("isosceles")
+		else:
+			print("scalene")
