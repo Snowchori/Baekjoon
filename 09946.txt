@@ -1,0 +1,29 @@
+# python3
+
+import sys
+from collections import Counter
+
+c = 1
+while True:
+	before = sys.stdin.readline().strip()
+	after = sys.stdin.readline().strip()
+	if before == after == "END":
+		break
+	issame = True
+	count = Counter(before)
+	for i in after:
+		if count.get(i):
+			count[i] -= 1
+		else:
+			issame = False
+			break
+	for i in count.values():
+		if i != 0:
+			issame = False
+			break
+	print("Case "+str(c)+": ",end="")
+	if issame:
+		print("same")
+	else:
+		print("different")
+	c += 1
