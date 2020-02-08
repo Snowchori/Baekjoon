@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+nlist = sys.stdin.readline().split()
+n = len(nlist[0])-len(nlist[1])
+if n < 0:
+	nlist[0] = "0"*(-n) + nlist[0]
+else:
+	nlist[1] = "0"*n + nlist[1]
+for i in range(len(nlist[0])):
+	print(int(nlist[0][i])+int(nlist[1][i]),end="")
