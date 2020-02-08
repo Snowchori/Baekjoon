@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+before = ""
+after = ""
+for i in range(nlist[0]):
+	sen = sys.stdin.readline().strip()
+	for j in sen:
+		before += j*2
+	before += "\n"
+for i in range(nlist[0]):
+	sen = sys.stdin.readline().strip()
+	after += sen
+	after += "\n"
+if before == after:
+	print("Eyfa")
+else:
+	print("Not Eyfa")
