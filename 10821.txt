@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+num = sys.stdin.read().split(",")
+print(len(num))
