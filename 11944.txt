@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n = len(str(nlist[0]))
+if n*nlist[0] <= nlist[1]:
+	print(str(nlist[0])*nlist[0])
+else:
+	print(str(nlist[0])*(nlist[1]//n)+str(nlist[0])[:nlist[1]%n])
