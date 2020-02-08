@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+def kipa(n):
+	result = 1
+	for i in str(n):
+		result *= int(i)
+	return result
+
+num = int(sys.stdin.readline())
+count = 0
+while num > 9:
+	num = kipa(num)
+	count += 1
+print(count)
