@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+count = 1
+while True:
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if nlist == [0]:
+		break
+	print("Pizza "+str(count),end=" ")
+	if pow(nlist[0],2) >= pow(nlist[1]/2,2)+pow(nlist[2]/2,2):
+		print("fits",end=" ")
+	else:
+		print("does not fit",end=" ")
+	print("on the table.")
+	count += 1
