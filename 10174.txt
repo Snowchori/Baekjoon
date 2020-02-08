@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	sen = sys.stdin.readline().lower().strip()
+	isf = True
+	for j,v in enumerate(sen[::-1]):
+		if sen[j] != v:
+			isf = False
+			break
+	if isf:
+		print("Yes")
+	else:
+		print("No")
