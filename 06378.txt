@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+while True:
+	num = int(sys.stdin.readline())
+	if num == 0:
+		break
+	while num > 9:
+		result = 0
+		for i in str(num):
+			result += int(i)
+		num = result
+	print(num)
