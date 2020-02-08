@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+def D(n,p):
+	result = 0
+	for i in str(n):
+		result += pow(int(i),p)
+	return result
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+rlist = [nlist[0]]
+while True:
+	r = D(rlist[-1],nlist[1])
+	if r in rlist:
+		d = rlist.index(r)
+		break
+	rlist.append(r)
+print(d)
