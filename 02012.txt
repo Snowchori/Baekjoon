@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+nlist.sort()
+result = 0
+for i in range(num):
+	result += abs(nlist[i]-i-1)
+print(result)
