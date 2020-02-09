@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+plist = [int(x) for x in sys.stdin.readline().split()]
+nlist = [int(x) for x in sys.stdin.readline().split()]
+for i in range(plist[0]*nlist[0]):
+	for j in range(plist[1]*nlist[1]):
+		if (i//nlist[0]+j//nlist[1])%2 == 0:
+			print("X",end="")
+		else:
+			print(".",end="")
+	print()
