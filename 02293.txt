@@ -1,0 +1,25 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+coin = [int(x) for x in sys.stdin.read().split()]
+coin.sort()
+n = len(coin)
+result = [[0]]
+for i in range(1,nlist[1]+1):
+	r = []
+	for v in coin:
+		if v > i:
+			break
+		a = result[i-v][0]
+		if v == i and a == 0:
+			a += 1
+		r.append(a)
+		if len(result[i-v]) > 1:
+			result[i-v][:2] = [result[i-v][0]+result[i-v][1]]
+	if len(r) == 0:
+		result.append([0])
+	else:
+		result.append(r)
+print(sum(result[nlist[1]]))
