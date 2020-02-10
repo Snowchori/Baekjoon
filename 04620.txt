@@ -1,0 +1,33 @@
+# python3
+
+import sys
+
+while True:
+	num = int(sys.stdin.readline())
+	if num == -1:
+		break
+	jlist = []
+	rlist = []
+	for i in range(num):
+		r = []
+		for j in range(num):
+			r.append(0)
+		rlist.append(r)
+	for i in range(num):
+		nlist = sys.stdin.readline().strip()
+		jlist.append([int(x) for x in list(nlist)])
+	for i in range(num):
+		for j in range(num):
+			n = jlist[i][j]
+			if i == 0 and j == 0:
+				if j+n < num:
+					rlist[i][j+n] += rlist[i][j]+1
+				if i+n < num:
+					rlist[i+n][j] += rlist[i][j]+1
+			else:
+				if rlist[i][j] != 0 and n != 0:
+					if j+n < num:
+						rlist[i][j+n] += rlist[i][j]
+					if i+n < num:
+						rlist[i+n][j] += rlist[i][j]
+	print(rlist[-1][-1])
