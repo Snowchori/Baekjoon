@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+q = n1//n2
+r = n1%n2
+if r < 0:
+	q += 1
+	r -= n2
+print(q)
+print(r)
