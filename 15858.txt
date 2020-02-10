@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+n1,n2,n3 = [int(x) for x in sys.stdin.readline().split()]
+n = n1*n2
+print(str(n//n3)+".",end="")
+n %= n3
+n *= 10
+for i in range(20):
+	print(n//n3,end="")
+	n %= n3
+	n *= 10
