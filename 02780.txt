@@ -1,0 +1,22 @@
+# python3
+
+import sys
+
+plist = [[1,1,1,1,1,1,1,1,1,1]]
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+m = max(nlist)
+for i in range(m-1):
+	p0 = plist[i][7]
+	p1 = plist[i][2]+plist[i][4]
+	p2 = plist[i][1]+plist[i][3]+plist[i][5]
+	p3 = plist[i][2]+plist[i][6]
+	p4 = plist[i][1]+plist[i][5]+plist[i][7]
+	p5 = plist[i][2]+plist[i][4]+plist[i][6]+plist[i][8]
+	p6 = plist[i][3]+plist[i][5]+plist[i][9]
+	p7 = plist[i][4]+plist[i][8]+plist[i][0]
+	p8 = plist[i][5]+plist[i][7]+plist[i][9]
+	p9 = plist[i][6]+plist[i][8]
+	plist.append([p0,p1,p2,p3,p4,p5,p6,p7,p8,p9])
+for i in nlist:
+	print(sum(plist[i-1])%1234567)
