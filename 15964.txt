@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+print(pow(n1,2)-pow(n2,2))
