@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+result = [0]
+for i in range(1,num+1):
+	r = []
+	count = 1
+	while count*count <= i:
+		r.append(result[i-count*count]+1)
+		count += 1
+	result.append(min(r))
+print(result[num])
