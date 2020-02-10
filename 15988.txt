@@ -1,0 +1,24 @@
+# python3
+
+import sys
+
+def ott(n,nlist):
+	if 1 in nlist:
+		result.update({1:1})
+	if 2 in nlist:
+		result.update({2:2})
+	if 3 in nlist:
+		result.update({3:4})
+	n1,n2,n3 = 1,2,4
+	for i in range(4,n+1):
+		n1,n2,n3 = n2,n3,(n1+n2+n3)%1000000009
+		if i in nlist:
+			result.update({i:n3})
+
+num = int(sys.stdin.readline())
+result = {}
+nlist = [int(x) for x in sys.stdin.read().split()]
+n = max(nlist)
+ott(n,nlist)
+for i in nlist:
+	print(result.get(i))
