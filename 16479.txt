@@ -1,0 +1,7 @@
+# python3
+
+import sys
+
+k = int(sys.stdin.readline())
+d1,d2 = [int(x) for x in sys.stdin.readline().split()]
+print(pow(k,2)-pow((d1-d2)/2,2))
