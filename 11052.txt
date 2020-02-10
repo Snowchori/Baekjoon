@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+result = [0]
+for i in range(num+1):
+	r = []
+	for j,v in enumerate(nlist):
+		if i < j:
+			break
+		r.append(result[i-j]+v)
+	result.append(max(r))
+print(result[num])
