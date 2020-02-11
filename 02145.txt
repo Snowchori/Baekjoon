@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+def snum(n):
+	while n > 9:
+		result = 0
+		for i in str(n):
+			result += int(i)
+		n = result
+	return n
+
+while True:
+	num = int(sys.stdin.readline())
+	if num == 0:
+		break
+	print(snum(num))
