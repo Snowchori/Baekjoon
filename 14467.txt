@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+cow = [-1]*10
+num = int(sys.stdin.readline())
+count = 0
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if cow[nlist[0]-1] != -1 and cow[nlist[0]-1] != nlist[1]:
+		count += 1
+	cow[nlist[0]-1] = nlist[1]
+print(count)
