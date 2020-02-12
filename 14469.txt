@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+cow = []
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	cow.append(nlist)
+cow.sort()
+result = 0
+for i,j in cow:
+	if i > result:
+		result = i
+	result += j
+print(result)
