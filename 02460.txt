@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+human = 0
+result = 0
+for i in range(10):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	human += nlist[1] - nlist[0]
+	if result < human:
+		result = human
+print(result)
