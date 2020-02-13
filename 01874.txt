@@ -1,0 +1,32 @@
+# python3
+
+import sys
+from collections import deque
+
+deq = deque([])
+num = int(sys.stdin.readline())
+sign = []
+count = 1
+impossible = False
+nlist = [int(x) for x in sys.stdin.read().split()]
+for i in nlist:
+	while True:
+		if i > count:
+			deq.append(count)
+			count += 1
+			sign.append("+")
+		elif i == count:
+			count += 1
+			sign.append("+")
+			sign.append("-")
+			break
+		else:
+			sign.append("-")
+			if deq.pop() != i:
+				impossible = True
+			break
+if impossible:
+	print("NO")
+else:
+	for i in sign:
+		print(i)
