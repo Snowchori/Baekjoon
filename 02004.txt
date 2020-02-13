@@ -1,0 +1,25 @@
+# python3
+
+import sys
+
+def getfive(n):
+	count = 0
+	a = 5
+	while a <= n:
+		count += n//a
+		a *= 5
+	return count
+
+def gettwo(n):
+	count = 0
+	a = 2
+	while a <= n:
+		count += n//a
+		a *= 2
+	return count
+
+n,k = [int(x) for x in sys.stdin.readline().split()]
+k = min(n-k,k)
+result1 = getfive(n)-getfive(n-k)-getfive(k)
+result2 = gettwo(n)-gettwo(n-k)-gettwo(k)
+print(min(result1,result2))
