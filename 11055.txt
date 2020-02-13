@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+lis = nlist[:]
+for i,v in enumerate(nlist):
+	for j in range(i):
+		if nlist[j] < v:
+			lis[i] = max(lis[i],lis[j]+nlist[i])
+print(max(lis))
