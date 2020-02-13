@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+elist = []
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	elist.append(nlist)
+elist.sort()
+lis = [1]*num
+for i,v in enumerate(elist):
+	for j in range(i):
+		if elist[j][1] < v[1]:
+			lis[i] = max(lis[i],lis[j]+1)
+print(num-max(lis))
