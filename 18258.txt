@@ -1,0 +1,34 @@
+# python3
+
+import sys
+from collections import deque
+
+deq = deque([])
+num = int(sys.stdin.readline())
+clist = sys.stdin.read().split("\n")
+for i in clist:
+	if i == "pop":
+		if len(deq) == 0:
+			print(-1)
+		else:
+			print(deq.popleft())
+	elif i == "size":
+		print(len(deq))
+	elif i == "empty":
+		if len(deq) == 0:
+			print(1)
+		else:
+			print(0)
+	elif i == "front":
+		if len(deq) == 0:
+			print(-1)
+		else:
+			print(deq[0])
+	elif i == "back":
+		if len(deq) == 0:
+			print(-1)
+		else:
+			print(deq[-1])
+	elif i.split(" ")[0] == "push":
+		i = i.split(" ")
+		deq.append(i[1])
