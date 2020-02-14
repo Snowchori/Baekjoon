@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+sen = sys.stdin.readline().strip()
+n = len(sen)
+slist = []
+for i in range(0,n-2):
+	for j in range(i+1,n-1):
+		slist.append(sen[i::-1]+sen[j:i:-1]+sen[:j:-1])
+slist.sort()
+print(slist[0])
