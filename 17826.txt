@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+n = int(sys.stdin.readline())
+rank = nlist.index(n)
+if rank <= 4:
+	print("A+")
+elif rank <= 14:
+	print("A0")
+elif rank <= 29:
+	print("B+")
+elif rank <= 34:
+	print("B0")
+elif rank <= 44:
+	print("C+")
+elif rank <= 47:
+	print("C0")
+else:
+	print("F")
