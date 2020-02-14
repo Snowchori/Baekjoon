@@ -1,0 +1,17 @@
+# python3
+
+import sys
+import heapq
+
+n1 = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+hlist = []
+heapq.heapify(hlist)
+for i in nlist:
+	if i == 0:
+		if len(hlist) == 0:
+			print(0)
+		else:
+			print(-heapq.heappop(hlist))
+	else:
+		heapq.heappush(hlist,-i)
