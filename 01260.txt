@@ -1,0 +1,54 @@
+# python3
+
+import sys
+import copy
+from collections import deque
+
+def ins(n,m):
+	r = ndict.get(n)
+	if r:
+		ndict[n].append(m)
+	else:
+		ndict.update({n:[m]})
+
+def dfs(n):
+	stack = deque([])
+	vd = copy.deepcopy(visit)
+	stack.append(n)
+	while stack:
+		p = stack.pop()
+		if vd.get(p):
+			continue
+		vd[p] = True
+		print(p,end=" ")
+		if ndict.get(p):
+			stack.extend(reversed(ndict.get(p)))
+	print()
+
+def bfs(n):
+	queue = deque([])
+	vb = copy.deepcopy(visit)
+	queue.append(n)
+	while queue:
+		p = queue.popleft()
+		if vb.get(p):
+			continue
+		vb[p] = True
+		print(p,end=" ")
+		if ndict.get(p):
+			queue.extend(ndict.get(p))
+	print()
+
+n1,n2,n3 = [int(x) for x in sys.stdin.readline().split()]
+ndict = {}
+visit = {}
+for i in range(n1):
+	visit[i+1] = False
+for i in range(n2):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	ins(nlist[0],nlist[1])
+	ins(nlist[1],nlist[0])
+for i,v in ndict.items():
+	ndict[i] = sorted(v)
+dfs(n3)
+bfs(n3)
