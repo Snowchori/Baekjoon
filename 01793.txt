@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+m = max(nlist)
+result = [1,1,3]
+for i in range(3,m+1):
+	result.append(result[i-1]+result[i-2]*2)
+for i in nlist:
+	print(result[i])
