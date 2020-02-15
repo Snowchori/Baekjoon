@@ -1,0 +1,36 @@
+# python3
+
+import sys
+from collections import deque
+
+def ins(n1,n2):
+	if bdict.get(n1):
+		bdict[n1].append(n2)
+	else:
+		bdict[n1] = [n2]
+
+def dfs(n):
+	stack = deque([])
+	count = 0
+	stack.append(n)
+	while stack:
+		r = stack.pop()
+		if visit[r]:
+			continue
+		visit[r] = True
+		count += 1
+		if bdict.get(r):
+			stack.extend(bdict[r])
+	return count
+
+num = int(sys.stdin.readline())
+n = int(sys.stdin.readline())
+visit = {}
+bdict = {}
+for i in range(num):
+	visit[i+1] = False
+for i in range(n):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	ins(nlist[0],nlist[1])
+	ins(nlist[1],nlist[0])
+print(dfs(1)-1)
