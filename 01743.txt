@@ -1,0 +1,45 @@
+# python3
+
+import sys
+from collections import deque
+
+def dfs(i,j):
+	global n1, n2
+	stack = deque([])
+	count = 0
+	stack.append([i,j])
+	while stack:
+		r1, r2 = stack.pop()
+		if meal[r1][r2] == 0 or visit.get((r1,r2)):
+			continue
+		count += 1
+		visit[(r1,r2)] = True
+		if r1-1 >= 0:
+			stack.append([r1-1,r2])
+		if r1+1 < n1:
+			stack.append([r1+1,r2])
+		if r2-1 >= 0:
+			stack.append([r1,r2-1])
+		if r2+1 < n2:
+			stack.append([r1,r2+1])
+	return count
+
+n1, n2, n3 = [int(x) for x in sys.stdin.readline().split()]
+meal = []
+visit = {}
+for i in range(n1):
+	m = []
+	for j in range(n2):
+		m.append(0)
+		visit[(i,j)] = False
+	meal.append(m)
+for i in range(n3):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	meal[nlist[0]-1][nlist[1]-1] = 1
+result = 0
+for i in range(n1):
+	for j in range(n2):
+		r = dfs(i,j)
+		if result < r:
+			result = r
+print(result)
