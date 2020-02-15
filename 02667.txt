@@ -1,0 +1,46 @@
+# python3
+
+import sys
+from collections import deque
+
+def dfs(i,j):
+	global num
+	stack = deque([])
+	count = 0
+	if danji[i][j] == "1":
+		stack.append([i,j])
+		while stack:
+			r1,r2 = stack.pop()
+			if visit[(r1,r2)]:
+				continue
+			visit[(r1,r2)] = True
+			count += 1
+			if r1-1 >= 0 and danji[r1-1][r2] == "1":
+				stack.append([r1-1,r2])
+			if r1+1 < num and danji[r1+1][r2] == "1":
+				stack.append([r1+1,r2])
+			if r2-1 >= 0 and danji[r1][r2-1] == "1":
+				stack.append([r1,r2-1])
+			if r2+1 < num and danji[r1][r2+1] == "1":
+				stack.append([r1,r2+1])
+	return count
+
+num = int(sys.stdin.readline())
+danji = []
+for i in range(num):
+	sen = sys.stdin.readline().strip()
+	danji.append(sen)
+visit = {}
+for i in range(num):
+	for j in range(num):
+		visit[(i,j)] = False
+nlist = []
+for i in range(num):
+	for j in range(num):
+		n = dfs(i,j)
+		if n != 0:
+			nlist.append(n)
+nlist.sort()
+print(len(nlist))
+for i in nlist:
+	print(i)
