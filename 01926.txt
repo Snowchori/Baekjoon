@@ -1,0 +1,45 @@
+# python3
+
+import sys
+from collections import deque
+
+def dfs(i,j):
+	global n1, n2
+	stack = deque([])
+	count = 0
+	stack.append([i,j])
+	while stack:
+		r1, r2 = stack.pop()
+		if picture[r1][r2] == 0 or visit.get((r1,r2)):
+			continue
+		count += 1
+		visit[(r1,r2)] = True
+		if r1-1 >= 0:
+			stack.append([r1-1,r2])
+		if r1+1 < n1:
+			stack.append([r1+1,r2])
+		if r2-1 >= 0:
+			stack.append([r1,r2-1])
+		if r2+1 < n2:
+			stack.append([r1,r2+1])
+	return count
+
+n1, n2 = [int(x) for x in sys.stdin.readline().split()]
+picture = []
+visit = {}
+for i in range(n1):
+	p = [int(x) for x in sys.stdin.readline().split()]
+	picture.append(p)
+	for j in range(n2):
+		visit[(i,j)] = False
+result = []
+for i in range(n1):
+	for j in range(n2):
+		r = dfs(i,j)
+		if r != 0:
+			result.append(r)
+print(len(result))
+if len(result) == 0:
+	print(0)
+else:
+	print(max(result))
