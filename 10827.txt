@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+nlist = sys.stdin.readline().split()
+l = len(nlist[0])-nlist[0].find(".")-1
+l *= int(nlist[1])
+n = "".join(nlist[0].split("."))
+result = str(pow(int(n),int(nlist[1])))
+if len(result) > l:
+	r = len(result)-l
+	result = result[:r] + "." + result[r:]
+else:
+	r = l-len(result)
+	result = "0."+"0"*r+result
+print(result)
