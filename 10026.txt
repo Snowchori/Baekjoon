@@ -1,0 +1,50 @@
+# python3
+
+import sys
+from collections import deque
+
+def dfs(i,j,rgb,visit):
+	if visit[(i,j)]:
+		return 0
+	a = rgb[i][j]
+	stack = deque([])
+	stack.append([i,j])
+	while stack:
+		r1, r2 = stack.pop()
+		if visit[(r1,r2)]:
+			continue
+		visit[(r1,r2)] = True
+		if r1-1 >= 0 and rgb[r1-1][r2] == a:
+			stack.append([r1-1,r2])
+		if r1+1 < n and rgb[r1+1][r2] == a:
+			stack.append([r1+1,r2])
+		if r2-1 >= 0 and rgb[r1][r2-1] == a:
+			stack.append([r1,r2-1])
+		if r2+1 < n and rgb[r1][r2+1] == a:
+			stack.append([r1,r2+1])
+	return 1
+
+n = int(sys.stdin.readline())
+visit1 = {}
+visit2 = {}
+rgb1 = []
+rgb2 = []
+for i in range(n):
+	sen = sys.stdin.readline().strip()
+	rgb1.append(sen)
+	r2 = []
+	for j in range(n):
+		visit1[(i,j)] = False
+		visit2[(i,j)] = False
+		if sen[j] == "G":
+			r2.append("R")
+		else:
+			r2.append(sen[j])
+	rgb2.append(r2)
+result1 = 0
+result2 = 0
+for i in range(n):
+	for j in range(n):
+		result1 += dfs(i,j,rgb1,visit1)
+		result2 += dfs(i,j,rgb2,visit2)
+print(result1,result2)
