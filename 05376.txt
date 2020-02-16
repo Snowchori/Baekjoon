@@ -1,0 +1,24 @@
+# python3
+
+import sys
+
+def gcd(n1,n2):
+	while n1%n2 > 0:
+		n1, n2 = n2, n1%n2
+	return n2
+
+n = int(sys.stdin.readline())
+for i in range(n):
+	sen = sys.stdin.readline().strip().split(".")
+	if sen[1].find("(") == -1:
+		up = int(sen[1])
+		down = pow(10,len(sen[1]))		
+	else:
+		zero = sen[1].find("(")
+		nine = sen[1].find(")") - zero-1
+		up = int(sen[1].replace("(","").replace(")",""))
+		if zero != 0:
+			up -= int(sen[1][:zero])
+		down = int("9"*nine + "0"*zero)
+	g = gcd(up,down)
+	print(str(up//g)+"/"+str(down//g))
