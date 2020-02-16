@@ -1,0 +1,24 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+plist = [float(x) for x in sys.stdin.readline().split()]
+if nlist[1] == 0:
+	flist = [1,0]
+else:
+	flist = [0,1]
+for i in range(nlist[0]):
+	flist[0],flist[1] = flist[0]*plist[0]+flist[1]*plist[2],flist[0]*plist[1]+flist[1]*plist[3]
+result1 = flist[0]*10000
+result2 = flist[1]*10000
+if result1%10 < 5:
+	result1 = result1//10
+else:
+	result1 = result1//10+1
+if result2%10 < 5:
+	result2 = result2//10
+else:
+	result2 = result2//10+1
+print(int(result1))
+print(int(result2))
