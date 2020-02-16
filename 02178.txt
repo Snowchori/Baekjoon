@@ -1,0 +1,52 @@
+# python3
+
+import sys
+from collections import deque
+
+n1, n2 = [int(x) for x in sys.stdin.readline().split()]
+maze = []
+lenmaze = []
+visit = {}
+for i in range(n1):
+	m = sys.stdin.readline().strip()
+	maze.append(m)
+	l = []
+	for j in range(n2):
+		visit[(i,j)] = False
+		if i== 0 and j == 0:
+			l.append(1)
+		else:
+			l.append(0)
+	lenmaze.append(l)
+queue = deque([])
+queue.append([0,0])
+while queue:
+	r1, r2 = queue.popleft()
+	if visit[(r1,r2)]:
+		continue
+	visit[(r1,r2)] = True
+	if r1-1 >= 0 and maze[r1-1][r2] == "1":
+		if lenmaze[r1-1][r2] == 0:
+			lenmaze[r1-1][r2] = lenmaze[r1][r2]+1
+		else:
+			lenmaze[r1-1][r2] = min(lenmaze[r1-1][r2],lenmaze[r1][r2]+1)
+		queue.append([r1-1,r2])
+	if r1+1 < n1 and maze[r1+1][r2] == "1":
+		if lenmaze[r1+1][r2] == 0:
+			lenmaze[r1+1][r2] = lenmaze[r1][r2]+1
+		else:
+			lenmaze[r1+1][r2] = min(lenmaze[r1+1][r2],lenmaze[r1][r2]+1)
+		queue.append([r1+1,r2])
+	if r2-1 >= 0 and maze[r1][r2-1] == "1":
+		if lenmaze[r1][r2-1] == 0:
+			lenmaze[r1][r2-1] = lenmaze[r1][r2]+1
+		else:
+			lenmaze[r1][r2-1] = min(lenmaze[r1][r2-1],lenmaze[r1][r2]+1)
+		queue.append([r1,r2-1])
+	if r2+1 < n2 and maze[r1][r2+1] == "1":
+		if lenmaze[r1][r2+1] == 0:
+			lenmaze[r1][r2+1] = lenmaze[r1][r2]+1
+		else:
+			lenmaze[r1][r2+1] = min(lenmaze[r1][r2+1],lenmaze[r1][r2]+1)
+		queue.append([r1,r2+1])
+print(lenmaze[n1-1][n2-1])
