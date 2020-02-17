@@ -1,0 +1,31 @@
+# python3
+
+import sys
+
+def rev(t):
+	if t:
+		return False
+	return True
+
+num = int(sys.stdin.readline())-1
+a = [0,1,1,0]
+b = [1,0,0,1]
+nlist = []
+isa = True
+while num > 0:
+	n1,n2 = divmod(num,4)
+	nlist.append(n2)
+	num = n1
+n = len(nlist)
+for i,v in enumerate(reversed(nlist)):
+	if i == n-1:
+		break
+	if v in [1,2]:
+		isa = rev(isa)
+if len(nlist) == 0:
+	print(0)
+else:
+	if isa:
+		print(a[nlist[0]])
+	else:
+		print(b[nlist[0]])
