@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+n1, n2, n3 = [int(x) for x in sys.stdin.readline().split()]
+r1 = bin(n1)[2:]
+r2 = bin(n2)[2:]
+if len(r1) > len(r2):
+	r2 = "0"*(len(r1)-len(r2)) + r2
+else:
+	r1 = "0"*(len(r2)-len(r1)) + r1
+result = ""
+if n3%2 == 0:
+	result = r1
+else:
+	for i in range(len(r1)):
+		result += str(int(r1[i])^int(r2[i]))
+print(int(result,2))
