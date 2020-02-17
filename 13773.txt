@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+while True:
+	num = int(sys.stdin.readline())
+	if num == 0:
+		break
+	print(num,end=" ")
+	if num >= 1896 and num%4 == 0:
+		if (num >= 1914 and num <= 1918) or (num >= 1939 and num <= 1945):
+			print("Games cancelled")
+		elif num > 2020:
+			print("No city yet chosen")
+		else:
+			print("Summer Olympics")
+	else:
+		print("No summer games")
