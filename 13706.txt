@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+up = num
+down = 0
+while True:
+	mid = (up+down)//2
+	r = pow(mid,2)
+	if r > num:
+		up = mid-1
+	elif r < num:
+		down = mid+1
+	else:
+		print(mid)
+		break
