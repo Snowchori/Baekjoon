@@ -1,0 +1,13 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+ndict = Counter(nlist)
+n = int(sys.stdin.readline())
+if ndict.get(n):
+	print(ndict.get(n))
+else:
+	print(0)
