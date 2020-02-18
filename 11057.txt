@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+up = [1,1,1,1,1,1,1,1,1,1]
+num = int(sys.stdin.readline())
+size = 10007
+for i in range(num-1):
+	n0 = up[0]%size
+	n1 = n0+up[1]%size
+	n2 = n1+up[2]%size
+	n3 = n2+up[3]%size
+	n4 = n3+up[4]%size
+	n5 = n4+up[5]%size
+	n6 = n5+up[6]%size
+	n7 = n6+up[7]%size
+	n8 = n7+up[8]%size
+	n9 = n8+up[9]%size
+	up = [n0,n1,n2,n3,n4,n5,n6,n7,n8,n9]
+print(sum(up)%size)
