@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+b1,b2,b3,j1,j2 = [int(x) for x in sys.stdin.read().split()]
+print(min(b1,b2,b3)+min(j1,j2)-50)
