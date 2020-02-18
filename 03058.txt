@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+def even(n):
+	if n%2 == 0:
+		return n
+	else:
+		return
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	result = list(filter(even,nlist))
+	print(sum(result),min(result))
