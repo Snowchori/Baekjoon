@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+def pdis(x1,y1,x2,y2):
+	return pow(x1-x2,2)+pow(y1-y2,2)
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	x1,y1,x2,y2 = [int(x) for x in sys.stdin.readline().split()]
+	n = int(sys.stdin.readline())
+	count = 0
+	for j in range(n):
+		n1,n2,n3 = [int(x) for x in sys.stdin.readline().split()]
+		r1 = pdis(x1,y1,n1,n2)
+		r2 = pdis(x2,y2,n1,n2)
+		r3 = pow(n3,2)
+		if (r1 < r3 and r2 > r3) or (r1 > r3 and r2 < r3):
+			count += 1
+	print(count)
