@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+result = []
+for i in range(1,46):
+	for j in range(i):
+		result.append(i)
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+print(sum(result[n1-1:n2]))
