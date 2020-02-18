@@ -1,0 +1,30 @@
+# python3
+
+import sys
+
+n1, n2 = [int(x) for x in sys.stdin.readline().split()]
+candy = []
+result = []
+for i in range(n1):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	candy.append(nlist)
+	r = []
+	for j in range(n2):
+		if i == j == 0:
+			r.append(candy[0][0])
+		else:
+			r.append(-1)
+	result.append(r)
+for i in range(n1):
+	for j in range(n2):
+		if i+1 < n1:
+			if result[i+1][j] < 0:
+				result[i+1][j] = result[i][j] + candy[i+1][j]
+			else:
+				result[i+1][j] = max(result[i+1][j],result[i][j] + candy[i+1][j])
+		if j+1 < n2:
+			if result[i][j+1] < 0:
+				result[i][j+1] = result[i][j] + candy[i][j+1]
+			else:
+				result[i][j+1] = max(result[i][j+1],result[i][j] + candy[i][j+1])
+print(result[n1-1][n2-1])
