@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+num = int(sys.stdin.readline())
+for i in range(num):
+	a1, a2 = sys.stdin.readline().split()
+	print("Distances: ",end="")
+	for j,v in enumerate(a2):
+		n = alpha.find(v)-alpha.find(a1[j])
+		if n < 0:
+			n += 26
+		print(n,end=" ")
+	print()
