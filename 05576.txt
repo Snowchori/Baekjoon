@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+w = []
+k = []
+for i in range(10):
+	n = int(sys.stdin.readline())
+	w.append(n)
+w.sort(reverse=True)
+for i in range(10):
+	n = int(sys.stdin.readline())
+	k.append(n)
+k.sort(reverse=True)
+print(sum(w[:3]),sum(k[:3]))
