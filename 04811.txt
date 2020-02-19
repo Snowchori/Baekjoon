@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+m = max(nlist)
+result = [1,2]
+for i in range(2,m+1):
+	r = result[i-1]
+	result.append(r*2*i*(2*i-1)//i//i)
+for i in nlist:
+	if i == 0:
+		break
+	print(result[i]//(i+1))
