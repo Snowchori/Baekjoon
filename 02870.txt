@@ -1,0 +1,22 @@
+# python3
+
+import sys
+
+num = "0123456789"
+n = int(sys.stdin.readline())
+result = []
+for i in range(n):
+	sen = sys.stdin.readline().strip()
+	r = ""
+	for j in sen:
+		if j in num:
+			r += j
+		elif len(r) > 0:
+			result.append(int(r))
+			r = ""
+	if len(r) > 0:
+		result.append(int(r))
+		r = ""
+result.sort()
+for i in result:
+	print(i)
