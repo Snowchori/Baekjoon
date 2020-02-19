@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+while True:
+	n = int(sys.stdin.readline())
+	if n == 0:
+		break
+	word = []
+	for i in range(n):
+		w = sys.stdin.readline().strip()
+		word.append([w.lower(),w])
+	word.sort()
+	print(word[0][1])
