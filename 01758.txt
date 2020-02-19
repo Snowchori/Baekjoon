@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+nlist.sort(reverse = True)
+result = 0
+for i in range(num):
+	money = nlist[i]-i
+	if money > 0:
+		result += money
+print(result)
