@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+num = "0123456789"
+n = int(sys.stdin.readline())
+serial = []
+for i in range(n):
+	s = sys.stdin.readline().strip()
+	r = 0
+	for j in s:
+		if j in num:
+			r += int(j)
+	serial.append([len(s),r,s])
+serial.sort()
+for i in serial:
+	print(i[2])
