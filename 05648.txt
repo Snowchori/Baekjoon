@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+nlist = sys.stdin.read().split()
+result = []
+for i in range(1,int(nlist[0])+1):
+	result.append(int(nlist[i][::-1]))
+result.sort()
+for i in result:
+	print(i)
