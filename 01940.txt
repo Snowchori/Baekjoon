@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+n = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+nlist.sort()
+count = 0
+for i in nlist:
+	if i >= n/2:
+		break
+	if n-i in nlist:
+		count += 1
+print(count)
