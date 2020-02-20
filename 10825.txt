@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+student = []
+for i in range(num):
+	s = sys.stdin.readline().split()
+	student.append([-int(s[1]),int(s[2]),-int(s[3]),s[0]])
+student.sort()
+for i in student:
+	print(i[3])
