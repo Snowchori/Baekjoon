@@ -1,0 +1,13 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+word = sys.stdin.read().split()
+wdict = Counter(word)
+m = max(wdict.values())
+for i in sorted(wdict.keys(),reverse=True):
+	if wdict[i] == m:
+		print(i,m)
+		break
