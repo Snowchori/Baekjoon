@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+word = sys.stdin.readline().strip()
+r = ""
+result = []
+for i in word[::-1]:
+	r = i+r
+	result.append(r)
+result.sort()
+for i in result:
+	print(i)
