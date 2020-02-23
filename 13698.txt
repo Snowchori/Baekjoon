@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+s = sys.stdin.readline().strip()
+n = [1,0,0,2]
+for i in s:
+	if i == "A":
+		n[0],n[1] = n[1],n[0]
+	elif i == "B":
+		n[0],n[2] = n[2],n[0]
+	elif i == "C":
+		n[0],n[3] = n[3],n[0]
+	elif i == "D":
+		n[1],n[2] = n[2],n[1]
+	elif i == "E":
+		n[1],n[3] = n[3],n[1]
+	else:
+		n[2],n[3] = n[3],n[2]
+print(n.index(1)+1)
+print(n.index(2)+1)
