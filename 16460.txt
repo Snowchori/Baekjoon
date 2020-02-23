@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+n,g,a = sys.stdin.readline().split()
+num = int(sys.stdin.readline())
+gender = []
+if "F" in g:
+	gender.append("F")
+if "M" in g:
+	gender.append("M")
+result = []
+for i in range(num):
+	n1, g1, a1 = sys.stdin.readline().split()
+	if g1 in gender and int(a1) <= int(a):
+		result.append(n1)
+if len(result) == 0:
+	print("No one yet")
+else:
+	for i in sorted(result):
+		print(i)
