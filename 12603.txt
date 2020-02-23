@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+n = int(sys.stdin.readline())
+for i in range(n):
+	r = int(sys.stdin.readline())
+	n = int(sys.stdin.readline())
+	l = [int(x) for x in sys.stdin.readline().split()]
+	isanswer = False
+	for a in range(n-1):
+		for b in range(a+1,n):
+			if l[a]+l[b] == r:
+				isanswer = True
+				break
+		if isanswer:
+			break
+	print("Case #"+str(i+1)+": "+str(a+1)+" "+str(b+1))
