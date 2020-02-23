@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+n = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+nlist.sort(reverse = True)
+result = 0
+r = sum(nlist)
+for i in nlist:
+	result += i*(r-i)
+	r -= i
+print(result)
