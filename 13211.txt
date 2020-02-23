@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+n1 = int(sys.stdin.readline())
+passport = {}
+for i in range(n1):
+	p = sys.stdin.readline().strip()
+	passport[p] = 1
+n2 = int(sys.stdin.readline())
+count = 0
+for i in range(n2):
+	p = sys.stdin.readline().strip()
+	if passport.get(p):
+		count += 1
+print(count)
