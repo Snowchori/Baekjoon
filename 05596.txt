@@ -1,0 +1,7 @@
+# python3
+
+import sys
+
+n1 = [int(x) for x in sys.stdin.readline().split()]
+n2 = [int(x) for x in sys.stdin.readline().split()]
+print(max(sum(n1),sum(n2)))
