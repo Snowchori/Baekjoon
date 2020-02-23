@@ -1,0 +1,16 @@
+# python3
+
+import sys
+from collections import Counter
+
+n1, n2 = [int(x) for x in sys.stdin.readline().split()]
+nlist = [int(x) for x in sys.stdin.readline().split()]
+ndict = Counter(nlist)
+result = []
+count = 0
+for i in ndict.keys():
+	result.append([-ndict[i],count,i])
+	count += 1
+result.sort()
+for i in range(len(result)):
+	print((str(result[i][2])+" ")*(-result[i][0]),end="")
