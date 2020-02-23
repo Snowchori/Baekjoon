@@ -1,0 +1,8 @@
+# python3
+
+import sys
+
+n = int(sys.stdin.readline())
+flist = [float(x) for x in sys.stdin.read().split()]
+flist.sort()
+print("%.2f"%flist[1])
