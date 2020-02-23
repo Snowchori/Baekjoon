@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+site = {}
+for i in range(n1):
+	s1, s2 = sys.stdin.readline().split()
+	site[s1] = s2
+for j in range(n2):
+	s = sys.stdin.readline().strip()
+	print(site[s])
