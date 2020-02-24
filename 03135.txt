@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+n1, n2 = [int(x) for x in sys.stdin.readline().split()]
+n = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+result = [abs(n1-n2)]
+for i in nlist:
+	result.append(abs(n2-i)+1)
+print(min(result))
