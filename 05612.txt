@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+time = int(sys.stdin.readline())
+car = int(sys.stdin.readline())
+clist = []
+for i in range(time):
+	c1, c2 = [int(x) for x in sys.stdin.readline().split()]
+	car += c1-c2
+	clist.append(car)
+if min(clist) < 0:
+	print(0)
+else:
+	print(max(clist))
