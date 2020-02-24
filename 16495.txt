@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+sen = sys.stdin.readline().strip()
+result = 0
+n = 1
+l = len(sen)
+for i in range(l):
+	result += (alpha.find(sen[l-1-i])+1)*n
+	n *= 26
+print(result)
