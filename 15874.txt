@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+big = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+small = big.lower()
+isbig = True
+n1, n2 = [int(x) for x in sys.stdin.readline().split()]
+sen = sys.stdin.readline().strip()
+for i in sen:
+	b = big.find(i)
+	if b > -1:
+		i = big[(b+n1)%26]
+	s = small.find(i)
+	if s > -1:
+		i = small[(s+n1)%26]
+	print(i,end="")
