@@ -1,0 +1,29 @@
+# python3
+
+import sys
+
+def muti(s):
+	result = 1
+	for i in s:
+		result *= int(i)
+	return result
+
+num = sys.stdin.readline().strip()
+r1 = muti(num)
+r2 = 1
+isu = False
+if num == "1":
+	isu = False
+elif num.count("0") > 1:
+	isu = True
+elif num.count("0") == 0:
+	for i in num:
+		r1 = r1//int(i)
+		r2 *= int(i)
+		if r1 == r2:
+			isu = True
+			break
+if isu:
+	print("YES")
+else:
+	print("NO")
