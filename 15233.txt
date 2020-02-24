@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+team = [int(x) for x in sys.stdin.readline().split()]
+A = sys.stdin.readline().split()
+B = sys.stdin.readline().split()
+C = sys.stdin.readline().split()
+a = 0
+b = 0
+for i in C:
+	if i in A:
+		a += 1
+	elif i in B:
+		b += 1
+if a > b:
+	print("A")
+elif a < b:
+	print("B")
+else:
+	print("TIE")
