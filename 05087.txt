@@ -1,0 +1,23 @@
+# python3
+
+import sys
+
+ch = ["A","3","5","7","9"]
+ta = ["2","4","6","8","10"]
+while True:
+	card = sys.stdin.readline().split()
+	if card == ["#"]:
+		break
+	c = 0
+	t = 0
+	for i in card:
+		if i in ch:
+			c += 1
+		elif i in ta:
+			t += 1
+	if c > t:
+		print("Cheryl")
+	elif c < t:
+		print("Tania")
+	else:
+		print("Draw")
