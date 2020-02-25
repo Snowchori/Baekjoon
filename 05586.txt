@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+sen = sys.stdin.readline().strip()
+n = len(sen)
+joi = 0
+ioi = 0
+for i in range(n-2):
+	if sen[i+1] == "O" and sen[i+2] == "I":
+		if sen[i] == "J":
+			joi += 1
+		elif sen[i] == "I":
+			ioi += 1
+print(joi)
+print(ioi)
