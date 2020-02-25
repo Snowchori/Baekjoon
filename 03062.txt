@@ -1,0 +1,21 @@
+# python3
+
+import sys
+
+def revnum(n):
+	return int(n) + int(n[::-1])
+
+def isp(n):
+	l = len(n)
+	for i in range(l//2):
+		if n[i] != n[l-1-i]:
+			return False
+	return True
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+for i in nlist:
+	if isp(str(revnum(str(i)))):
+		print("YES")
+	else:
+		print("NO")
