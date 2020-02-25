@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+money = [350.34,230.90,190.55,125.30,180.90]
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	result = 0
+	for j in range(5):
+		result += nlist[j]*money[j]
+	print("$"+"%.2f"%result)
