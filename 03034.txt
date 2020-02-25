@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+n1, n2, n3 = [int(x) for x in sys.stdin.readline().split()]
+nlist = [int(x) for x in sys.stdin.read().split()]
+r = pow(n2,2)+pow(n3,2)
+for i in nlist:
+	if r >= pow(i,2):
+		print("DA")
+	else:
+		print("NE")
