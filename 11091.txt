@@ -1,0 +1,18 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+alpha = "abcdefghijklmnopqrstuvwxyz"
+for i in range(num):
+	sen = sys.stdin.readline().strip().lower()
+	ncount = Counter(sen)
+	miss = ""
+	for j in alpha:
+		if not ncount.get(j):
+			miss += j
+	if miss == "":
+		print("pangram")
+	else:
+		print("missing "+miss)
