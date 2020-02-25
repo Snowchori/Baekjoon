@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n1, n2 = [int(x) for x in sys.stdin.readline().split()]
+	if n1/n2 == n1//n2:
+		print(n1//n2)
+	else:
+		print(n1//n2+1)
