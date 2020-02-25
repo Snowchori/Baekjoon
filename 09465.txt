@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+n = int(sys.stdin.readline())
+for i in range(n):
+	num = int(sys.stdin.readline())
+	n1 = [int(x) for x in sys.stdin.readline().split()]
+	n2 = [int(x) for x in sys.stdin.readline().split()]
+	result = [[0,0,0]]
+	for j in range(num):
+		r1 = max(result[j])
+		r2 = max(result[j][0],result[j][2])+n1[j]
+		r3 = max(result[j][0],result[j][1])+n2[j]
+		result.append([r1,r2,r3])
+	print(max(result[num]))
