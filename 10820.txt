@@ -1,0 +1,25 @@
+# python3
+
+import sys
+
+sen = sys.stdin.read().split("\n")
+up = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+low = up.lower()
+num = "0123456789"
+for i in sen:
+	if i == "":
+		break
+	u = 0
+	l = 0
+	n = 0
+	s = 0
+	for j in i:
+		if j in up:
+			u += 1
+		elif j in low:
+			l += 1
+		elif j in num:
+			n += 1
+		elif j == " ":
+			s += 1
+	print(l,u,n,s)
