@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+word = sys.stdin.readline().strip()
+count = 0
+n = int(sys.stdin.readline())
+for i in range(n):
+	s = sys.stdin.readline().strip()*2
+	if s.find(word) > -1:
+		count += 1
+print(count)
