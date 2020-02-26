@@ -1,0 +1,31 @@
+# python3
+
+import sys
+
+A = [int(x) for x in sys.stdin.readline().split()]
+B = [int(x) for x in sys.stdin.readline().split()]
+lastwin = "D"
+a = 0
+b = 0
+for i in range(10):
+	if A[i] > B[i]:
+		a += 3
+		lastwin = "A"
+	elif A[i] < B[i]:
+		b += 3
+		lastwin = "B"
+	else:
+		a += 1
+		b += 1
+print(a,b)
+if a > b:
+	print("A")
+elif a < b:
+	print("B")
+else:
+	if lastwin == "A":
+		print("A")
+	elif lastwin == "B":
+		print("B")
+	else:
+		print("D")
