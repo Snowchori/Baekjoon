@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+change = [2.2046,0.4536,0.2642,3.7854]
+for i in range(num):
+	n,s = sys.stdin.readline().split()
+	if s == "kg":
+		r = float(n)*change[0]
+		print("%.4f"%r+" lb")
+	elif s == "lb":
+		r = float(n)*change[1]
+		print("%.4f"%r+" kg")
+	elif s == "l":
+		r = float(n)*change[2]
+		print("%.4f"%r+" g")
+	else:
+		r = float(n)*change[3]
+		print("%.4f"%r+" l")
