@@ -1,0 +1,13 @@
+# python3
+
+import sys
+from collections import deque
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	sen = sys.stdin.readline().split()
+	queue = deque(sen)
+	queue.rotate(-2)
+	for j in queue:
+		print(j,end=" ")
+	print()
