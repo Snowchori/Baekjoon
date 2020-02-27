@@ -1,0 +1,9 @@
+# python3
+
+import sys
+
+while True:
+	s1,s2,e1,e2 = [int(x) for x in sys.stdin.readline().split()]
+	if s1 == s2 == e1 == e2 == 0:
+		break
+	print(e1-s2,e2-s1)
