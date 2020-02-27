@@ -1,0 +1,15 @@
+# python3
+
+import sys
+from collections import Counter
+
+n1, n2 = [int(x) for x in sys.stdin.readline().split()]
+ndict = Counter()
+for i in range(n2):
+	f = [int(x) for x in sys.stdin.readline().split()]
+	ndict.update(f)
+for i in range(n1):
+	if ndict.get(i+1):
+		print(ndict.get(i+1))
+	else:
+		print(0)
