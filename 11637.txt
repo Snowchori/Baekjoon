@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	nlist = []
+	for j in range(n):
+		n1 = int(sys.stdin.readline())
+		nlist.append(n1)
+	m = max(nlist)
+	if nlist.count(m) > 1:
+		print("no winner")
+	else:
+		ind = nlist.index(m)+1
+		if sum(nlist)/2 < m:
+			print("majority winner "+str(ind))
+		else:
+			print("minority winner "+str(ind))
