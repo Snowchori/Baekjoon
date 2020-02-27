@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	retest = True
+	for j,v in enumerate(nlist):
+		if v != j%5+1:
+			retest = False
+			break
+	if retest:
+		print(i+1)
