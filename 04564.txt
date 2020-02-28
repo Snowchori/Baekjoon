@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+def numcard(n):
+	result = 1
+	for i in n:
+		result *= int(i)
+	return str(result)
+
+while True:
+	num = sys.stdin.readline().strip()
+	if num == '0':
+		break
+	print(num,end=" ")
+	while int(num) > 9:
+		num = numcard(num)
+		print(num,end=" ")
+	print()
