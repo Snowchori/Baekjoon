@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+nlist = [0]
+num = 1
+count = 0
+for i in range(n2):
+	nlist.append(nlist[i]+num)
+	count += 1
+	if num == count:
+		count = 0
+		num += 1
+print(nlist[n2]-nlist[n1-1])
