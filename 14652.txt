@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+n1,n2,n3 = [int(x) for x in sys.stdin.readline().split()]
+print(n3//n2,n3%n2)
