@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+word = sys.stdin.readline().strip()
+code = str(word.encode('utf-8'))
+a = int(code[4:6],16)-234
+b = int(code[8:10],16)-128
+c = int(code[12:14],16)-128
+print(a*64*64+b*64+c-3071)
