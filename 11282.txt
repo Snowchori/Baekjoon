@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())+3071
+c = num%64+128
+num = num//64
+b = num%64+128
+a = num//64+234
+han = bytes([a,b,c])
+print(han.decode('utf-8'))
