@@ -1,0 +1,7 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+day = (nlist[0]-1)//nlist[1]
+print(day*nlist[2]*nlist[3])
