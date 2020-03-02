@@ -1,0 +1,6 @@
+# python3
+
+import sys
+
+n1,n2,n12 = [int(x) for x in sys.stdin.readline().split()]
+print((n1+1)*(n2+1)//(n12+1)-1)
