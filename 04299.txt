@@ -1,0 +1,9 @@
+# python3
+
+import sys
+
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+if (n1+n2)%2 == 1 or n1 < n2:
+	print(-1)
+else:
+	print((n1+n2)//2,(n1-n2)//2)
