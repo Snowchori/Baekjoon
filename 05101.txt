@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+while True:
+	n1,n2,n3 = [int(x) for x in sys.stdin.readline().split()]
+	if n1 == n2 == n3 == 0:
+		break
+	if n1%n2 == n3%n2:
+		print((n3-n1)//n2+1)
+	else:
+		print("X")
