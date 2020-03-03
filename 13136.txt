@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+n1,n2,n3 = [int(x) for x in sys.stdin.readline().split()]
+w = n1//n3
+if n1%n3 > 0:
+	w += 1
+h = n2//n3
+if n2%n3 > 0:
+	h += 1
+print(w*h)
