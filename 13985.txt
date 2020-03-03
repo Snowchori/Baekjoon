@@ -1,0 +1,9 @@
+# python3
+
+import sys
+
+sen = sys.stdin.readline().split()
+if int(sen[0])+int(sen[2]) == int(sen[4]):
+	print("YES")
+else:
+	print("NO")
