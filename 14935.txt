@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+def fa(n):
+	return str(int(n[0])*len(n))
+
+num = sys.stdin.readline().strip()
+nlist = [int(num)]
+while True:
+	num = fa(num)
+	if num == nlist[-1]:
+		print("FA")
+		break
+	elif num in nlist:
+		print("NFA")
+		break
+	nlist.append(num)
