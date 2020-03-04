@@ -1,0 +1,7 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+result = pow(3,0.5)*pow(num,2)/4
+print(result)
