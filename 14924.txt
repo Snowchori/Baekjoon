@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+n1, n2, n3 = [int(x) for x in sys.stdin.readline().split()]
+result = n3*n2/(2*n1)
+if result == int(result):
+	print(int(result))
+else:
+	print(result)
