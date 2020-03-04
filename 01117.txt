@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+w,h,f,c,x1,y1,x2,y2 = [int(x) for x in sys.stdin.readline().split()]
+twice = min(f,w-f)
+w = max(f,w-f)
+mult = c+1
+h = h//(c+1)
+result = w*h - abs((x1-x2)*(y1-y2))
+if x1 >= twice:
+	result += twice*h
+elif x2 <= twice:
+	result += twice*h - abs((x1-x2)*(y1-y2))
+else:
+	result += twice*h - abs((x1-twice)*(y1-y2))
+print(result*mult)
