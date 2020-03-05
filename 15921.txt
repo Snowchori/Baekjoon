@@ -1,0 +1,11 @@
+# python3
+
+import sys
+import math
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+if num == 0:
+	print("divide by zero")
+else:
+	print("%.2f"%1)
