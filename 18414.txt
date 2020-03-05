@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+x,l,r = [int(x) for x in sys.stdin.readline().split()]
+if x <= l:
+	print(l)
+elif x >= r:
+	print(r)
+else:
+	print(x)
