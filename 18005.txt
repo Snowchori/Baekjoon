@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+if num%4 == 1 or num%4 == 3:
+	print(0)
+elif num%4 == 2:
+	print(1)
+else:
+	print(2)
