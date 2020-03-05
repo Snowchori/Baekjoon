@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+n,a,b,c,d = [int(x) for x in sys.stdin.readline().split()]
+result = []
+r1 = n//a
+if n%a != 0:
+	r1 += 1
+result.append(r1*b)
+r2 = n//c
+if n%c != 0:
+	r2 += 1
+result.append(r2*d)
+print(min(result))
