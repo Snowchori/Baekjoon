@@ -1,0 +1,13 @@
+# python3
+
+import sys
+import math
+
+a,p1 = [int(x) for x in sys.stdin.readline().split()]
+r,p2 = [int(x) for x in sys.stdin.readline().split()]
+s = a/p1
+w = r*r*math.pi/p2
+if w > s:
+	print("Whole pizza")
+else:
+	print("Slice of pizza")
