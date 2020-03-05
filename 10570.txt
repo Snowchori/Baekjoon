@@ -1,0 +1,17 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	nlist = Counter()
+	for j in range(n):
+		a = int(sys.stdin.readline())
+		nlist.update([a])
+	m = max(nlist.values())
+	for j in sorted(nlist.keys()):
+		if m == nlist[j]:
+			print(j)
+			break
