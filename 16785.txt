@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+n1,n2,n3 = [int(x) for x in sys.stdin.readline().split()]
+result = n3//(n1*7+n2)*7
+n3 %= n1*7+n2
+if n1*6 >= n3:
+	r = n3//n1
+	if n3%n1 != 0:
+		r += 1
+else:	
+	r = 7
+print(result+r)
