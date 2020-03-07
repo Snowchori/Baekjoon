@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+if n1 == n2 == 0:
+	print("Not a moose")
+elif n1 == n2:
+	print("Even",n1+n2)
+else:
+	print("Odd",max(n1,n2)*2)
