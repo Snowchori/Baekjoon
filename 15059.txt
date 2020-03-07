@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+ulist = [int(x) for x in sys.stdin.readline().split()]
+dlist = [int(x) for x in sys.stdin.readline().split()]
+result = 0
+for i in range(3):
+	if dlist[i]-ulist[i] > 0:
+		result += dlist[i]-ulist[i]
+print(result)
