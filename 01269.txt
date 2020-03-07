@@ -1,0 +1,8 @@
+# python3
+
+import sys
+
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+a = set([int(x) for x in sys.stdin.readline().split()])
+b = set([int(x) for x in sys.stdin.readline().split()])
+print(len(a-b)+len(b-a))
