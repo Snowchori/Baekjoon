@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	p = nlist[0] + nlist[1]*nlist[3]
+	s = nlist[1]*nlist[2]
+	if p > s:
+		print("do not parallelize")
+	elif p < s:
+		print("parallelize")
+	else:
+		print("does not matter")
