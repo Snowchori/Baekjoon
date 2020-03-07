@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+n1,n2,n3 = [int(x) for x in sys.stdin.readline().split()]
+count = 0
+while n2 != n3:
+	n2 = (n2+1)//2
+	n3 = (n3+1)//2
+	count += 1
+print(count)
