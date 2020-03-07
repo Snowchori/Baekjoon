@@ -1,0 +1,16 @@
+# python3
+
+import sys
+from collections import Counter
+
+alpha = "abcdefghijklmnopqrstuvwxyz"
+while True:
+	sen = sys.stdin.readline().strip().lower()
+	if sen == "#":
+		break
+	sdict = Counter(sen)
+	count = 0
+	for i in sdict.keys():
+		if i in alpha:
+			count += 1
+	print(count)
