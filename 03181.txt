@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+word = sys.stdin.readline().split()
+result = ""
+noword = ["i",'pa',"te","ni","niti","a","ali","nego","no","ili"]
+for i,v in enumerate(word):
+	if i == 0 or v not in noword:
+		result += v[0].upper()
+print(result)
