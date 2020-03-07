@@ -1,0 +1,18 @@
+# python3
+
+import sys
+
+h1,m1,s1 = [int(x) for x in sys.stdin.readline().split(":")]
+h2,m2,s2 = [int(x) for x in sys.stdin.readline().split(":")]
+second = s2 - s1
+if second < 0:
+	second += 60
+	m2 -= 1
+minute = m2 - m1
+if minute < 0:
+	minute += 60
+	h2 -= 1
+hour = h2 - h1
+if hour < 0:
+	hour += 24
+print(hour*60*60+minute*60+second)
