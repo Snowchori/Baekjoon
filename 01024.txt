@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+n,l = [int(x) for x in sys.stdin.readline().split()]
+isr = True
+while True:
+	r = n/l-l/2+1/2
+	if r < 0 or l > 100:
+		isr = False
+		break
+	if r%1 == 0:
+		break
+	l += 1
+if isr:
+	for i in range(l):
+		print(int(r+i),end=" ")
+else:
+	print(-1)
