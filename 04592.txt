@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+while True:
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if nlist == [0]:
+		break
+	pre = -1
+	for i in nlist[1:]:
+		if pre != i:
+			print(i,end=" ")
+		pre = i
+	print("$")
