@@ -1,0 +1,13 @@
+# python3
+
+import sys
+from collections import Counter
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+ndict = Counter(nlist)
+m = max(ndict.values())
+for i in sorted(ndict.keys()):
+	if ndict[i] == m:
+		print(i)
+		break
