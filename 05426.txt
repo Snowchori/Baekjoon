@@ -1,0 +1,16 @@
+# python3
+
+import sys
+import math
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	sen = sys.stdin.readline().strip()
+	n = int(math.sqrt(len(sen)))
+	result = []
+	for j in range(n):
+		result.append(sen[j*n:j*n+n])
+	for a in range(n-1,-1,-1):
+		for b in range(n):
+			print(result[b][a],end="")
+	print()
