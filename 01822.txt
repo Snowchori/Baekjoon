@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+a = set([int(x) for x in sys.stdin.readline().split()])
+b = set([int(x) for x in sys.stdin.readline().split()])
+c = list(a-b)
+if len(c) == 0:
+	print(0)
+else:
+	print(len(c))
+	for i in sorted(c):
+		print(i,end=" ")
