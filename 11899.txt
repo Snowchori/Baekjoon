@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+sen = sys.stdin.readline().strip()
+stack = []
+for i in sen:
+	if i == "(":
+		stack.append(i)
+	else:
+		if len(stack) == 0 or stack[-1] == ")":
+			stack.append(i)
+		else:
+			stack.pop()
+print(len(stack))
