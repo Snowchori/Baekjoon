@@ -1,0 +1,14 @@
+# python3
+
+import sys
+
+sen = sys.stdin.readline().strip()
+word = sys.stdin.readline().strip()
+count = 0
+ind = -1
+while True:
+	ind = sen.find(word,ind+1)
+	if ind < 0:
+		break
+	count += 1
+print(count)
