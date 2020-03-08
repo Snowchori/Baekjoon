@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+n = int(sys.stdin.readline())
+for i in range(n):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	n0 = 9.23076*pow(26.7-nlist[0],1.835)
+	n1 = 1.84523*pow(nlist[1]-75,1.348)
+	n2 = 56.0211*pow(nlist[2]-1.5,1.05)
+	n3 = 4.99087*pow(42.5-nlist[3],1.81)
+	n4 = 0.188807*pow(nlist[4]-210,1.41)
+	n5 = 15.9803*pow(nlist[5]-3.8,1.04)
+	n6 = 0.11193*pow(254-nlist[6],1.88)
+	result = int(n0)+int(n1)+int(n2)+int(n3)+int(n4)+int(n5)+int(n6)
+	print(result)
