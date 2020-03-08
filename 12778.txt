@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+num = int(sys.stdin.readline())
+for i in range(num):
+	num,s = sys.stdin.readline().split()
+	if s == "C":
+		a = sys.stdin.readline().split()
+		for j in a:
+			print(alpha.find(j)+1,end=" ")
+	else:
+		n = [int(x) for x in sys.stdin.readline().split()]
+		for j in n:
+			print(alpha[j-1],end=" ")
+	print()
