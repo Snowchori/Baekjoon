@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+w = [4,2,3,3,3,3,3,3,3,3]
+while True:
+	sen = sys.stdin.readline().strip()
+	if sen == "0":
+		break
+	result = 0
+	for i in sen:
+		result += w[int(i)]
+	print(result+len(sen)+1)
