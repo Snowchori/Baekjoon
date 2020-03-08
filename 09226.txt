@@ -1,0 +1,21 @@
+# python3
+
+import sys
+from collections import deque
+
+alpha = "aeiou"
+while True:
+	sen = sys.stdin.readline().strip()
+	if sen == "#":
+		break
+	deq = deque(sen)
+	result = []
+	for i in alpha:
+		a = sen.find(i)
+		if a > -1:
+			result.append(a)
+	if len(result) != 0:
+		deq.rotate(-min(result))
+	for i in deq:
+		print(i,end="")
+	print("ay")
