@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+n = int(sys.stdin.readline())
+sen = sys.stdin.readline().strip()
+result = []
+for i in range(len(sen)//n):
+	if i%2 == 0:
+		result.append(sen[i*n:i*n+n])
+	else:
+		result.append(sen[i*n+n-1:i*n-1:-1])
+for i in range(n):
+	for j in range(len(sen)//n):
+		print(result[j][i],end="")
