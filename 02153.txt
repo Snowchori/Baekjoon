@@ -1,0 +1,20 @@
+# python3
+
+import sys
+
+prime = [True]*1041
+for i in range(2,521):
+	if prime[i]:
+		count = 2
+		while i*count <= 1040:
+			prime[i*count] = False
+			count += 1
+alpha="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+sen = sys.stdin.readline().strip()
+result = 0
+for i in sen:
+	result += alpha.find(i)+1
+if prime[result]:
+	print("It is a prime word.")
+else:
+	print("It is not a prime word.")
