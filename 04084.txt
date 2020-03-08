@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+while True:
+	n1,n2,n3,n4 = [int(x) for x in sys.stdin.readline().split()]
+	if n1 == n2 == n3 == n4 == 0:
+		break
+	count = 0
+	while True:
+		if n1 == n2 == n3 == n4:
+			break
+		n1,n2,n3,n4 = abs(n1-n2),abs(n2-n3),abs(n3-n4),abs(n4-n1)
+		count += 1
+	print(count)
