@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+n,m = [int(x) for x in sys.stdin.readline().split()]
+nlist = [int(x) for x in sys.stdin.readline().split()]
+result = [0]
+for i in range(n):
+	result.append(result[i]+nlist[i])
+for i in range(m):
+	n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+	print(result[n2]-result[n1-1])
