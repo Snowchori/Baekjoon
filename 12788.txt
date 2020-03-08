@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+result = n1*n2
+nlist = [int(x) for x in sys.stdin.readline().split()]
+nlist.sort(reverse = True)
+if result > sum(nlist):
+	print("STRESS")
+else:
+	count = 0
+	for i in nlist:
+		result -= i
+		count += 1
+		if result <= 0:
+			break
+	print(count)
