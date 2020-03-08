@@ -1,0 +1,19 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	result = []
+	for a in range(n):
+		r = ""
+		for b in range(n):
+			if a == 0 or a == n-1 or b == 0 or b == n-1:
+				r += "#"
+			else:
+				r += "J"
+		result.append(r)
+	for j in result:
+		print(j)
+	print()
