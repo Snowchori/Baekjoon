@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+	result = [0]*n1
+	for j in range(n2):
+		nlist = [int(x) for x in sys.stdin.readline().split()]
+		for k in range(n1):
+			result[k] += nlist[k]
+	print(result.index(max(result))+1)
