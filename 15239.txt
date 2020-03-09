@@ -1,0 +1,32 @@
+# python3
+
+import sys
+
+l = "abcdefghijklmnopqrstuvwxyz"
+u = l.upper()
+d = "0123456789"
+s = "+_)(*&^%$#@!./,;{}"
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())	
+	sen = sys.stdin.readline().strip()
+	if n < 12:
+		print("invalid")
+	else:
+		ll = False
+		uu = False
+		dd = False
+		ss = False
+		for j in sen:
+			if j in l:
+				ll = True
+			elif j in u:
+				uu = True
+			elif j in d:
+				dd = True
+			elif j in s:
+				ss = True
+		if ll and uu and dd and ss:
+			print("valid")
+		else:
+			print("invalid")
