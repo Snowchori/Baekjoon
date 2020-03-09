@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+result = [0]
+for i in range(len(nlist)):
+	result.append(result[i]+nlist[i])
+for i in range(len(nlist)+1):
+	for j in range(len(nlist)+1):
+		print(abs(result[i]-result[j]),end=" ")
+	print()
