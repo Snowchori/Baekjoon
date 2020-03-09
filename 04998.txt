@@ -1,0 +1,11 @@
+# python3
+
+import sys
+import math
+
+case = sys.stdin.read().split("\n")
+for i in case:
+	if i == "":
+		break
+	nlist = [float(x) for x in i.split()]
+	print(int(math.log(nlist[2]/nlist[0])/math.log(1+nlist[1]/100)+1))
