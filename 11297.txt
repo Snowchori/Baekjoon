@@ -1,0 +1,19 @@
+# python3
+
+import sys
+from collections import deque
+
+small = "abcdefghijklmnopqrstuvwxyz"
+while True:
+	n1,n2,n3 = [int(x) for x in sys.stdin.readline().split()]
+	if n1 == n2 == n3 == 0:
+		break
+	sen = sys.stdin.readline().strip()
+	a = (n1+n2+n3)%25+1
+	for i in sen:
+		if i in small:
+			r = (small.find(i)-a)%26
+			print(small[r],end="")
+		else:
+			print(i,end="")
+	print()
