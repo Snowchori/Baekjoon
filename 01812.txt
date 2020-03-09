@@ -1,0 +1,18 @@
+# python3
+
+import sys
+from collections import deque
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.read().split()]
+s = sum(nlist)//2
+result = []
+for i in range(num):
+	r = s
+	for j in range(num//2):
+		r -= nlist[(i+2*j)%num]
+	result.append(r)
+deq = deque(result)
+deq.rotate(-1)
+for i in deq:
+	print(i)
