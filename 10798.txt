@@ -1,0 +1,15 @@
+# python3
+
+import sys
+from collections import deque
+
+result = []
+l = []
+for i in range(5):
+	s = deque(sys.stdin.readline().strip())
+	result.append(s)
+	l.append(len(s))
+for i in range(max(l)):
+	for j in range(5):
+		if len(result[j]) != 0:
+			print(result[j].popleft(),end="")
