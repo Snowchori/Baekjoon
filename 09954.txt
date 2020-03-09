@@ -1,0 +1,22 @@
+# python3
+
+import sys
+from collections import deque
+
+big = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+small = big.lower()
+sen = sys.stdin.read().split("\n")
+for i in sen:
+	if i == "#":
+		break
+	a = big.find(i[-1])
+	for j in i[:-1]:
+		if j in big:
+			r = (big.find(j)-a)%26
+			print(big[r],end="")
+		elif j in small:
+			r = (small.find(j)-a)%26
+			print(small[r],end="")
+		else:
+			print(j,end="")
+	print()
