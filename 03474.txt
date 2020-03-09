@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = int(sys.stdin.readline())
+	result = 0
+	while n >= 5:
+		result += n//5
+		n = n//5
+	print(result)
