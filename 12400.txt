@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+alpha = "abcdefghijklmnopqrstuvwxyz"
+result = "yhesocvxduiglbkrztnwjpfmaq"
+num = int(sys.stdin.readline())
+for i in range(num):
+	sen = sys.stdin.readline().strip()
+	print("Case #"+str(i+1)+":",end=" ")
+	for j in sen:
+		if j in alpha:
+			print(result[alpha.find(j)],end="")
+		else:
+			print(j,end="")
+	print()
