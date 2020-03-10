@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+nlist = [int(x) for x in sys.stdin.readline().split()]
+result = 0
+for i in nlist:
+	result += (i+1)//2
+if result >= n1:
+	print("YES")
+else:
+	print("NO")
