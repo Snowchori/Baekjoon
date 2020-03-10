@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+com = []
+for i in range(num):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	com.append(nlist)
+result = [0]*(num+1)
+for i in range(num+1):
+	for j in range(i):
+		if i-j == com[j][0]:
+			result[i] = max(result[i],max(result[:j+1])+com[j][1])
+print(max(result))
