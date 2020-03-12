@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+result = 0
+count = 0
+n1 -= 1
+while n1 > 0 and n2 > 0:
+	if count%2 == 0:
+		n2 -= 1
+	else:
+		n1 -= 1
+	result += 1
+	count += 1
+print(result)
