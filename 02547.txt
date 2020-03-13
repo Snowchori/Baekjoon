@@ -1,0 +1,16 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	a = sys.stdin.readline()
+	n = int(sys.stdin.readline())
+	nlist = []
+	for j in range(n):
+		r = int(sys.stdin.readline())
+		nlist.append(r)
+	if sum(nlist)%n == 0:
+		print("YES")
+	else:
+		print("NO")
