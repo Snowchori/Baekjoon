@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+a = pow(2,num)
+n = 10
+print("0.",end="")
+while n > 0:
+	r = n//a
+	print(r,end="")
+	n = (n%a)*10
