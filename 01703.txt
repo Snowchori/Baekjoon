@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+while True:
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if nlist == [0]:
+		break
+	result = 1
+	for i,v in enumerate(nlist[1:]):
+		if i%2 == 0:
+			result *= v
+		else:
+			result -= v
+	print(result)
