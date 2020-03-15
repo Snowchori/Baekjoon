@@ -1,0 +1,10 @@
+# python3
+
+import sys
+
+while True:
+	num = float(sys.stdin.readline())
+	if num < 0:
+		break
+	r = num*0.167
+	print("Objects weighing "+"%.2f"%num+" on Earth will weigh "+"%.2f"%r+" on the moon.")
