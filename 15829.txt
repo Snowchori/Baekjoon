@@ -1,0 +1,12 @@
+# python3
+
+import sys
+
+alpha = "abcdefghijklmnopqrstuvwxyz"
+num = int(sys.stdin.readline())
+sen = sys.stdin.readline().strip()
+result = 0
+for i,v in enumerate(sen):
+	result += pow(31,i)*(alpha.find(v)+1)
+	result %= 1234567891
+print(result)
