@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+n1,n2,n3 = [int(x) for x in sys.stdin.readline().split()]
+result = n3
+isa = False
+while result < n1*(n2+5)-5:
+	if result%(n2+5) >= n2 and result%(n2+5) < n2+5:
+		isa = True
+		break
+	result += n3
+print(result)
