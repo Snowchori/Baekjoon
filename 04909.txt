@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+while True:
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	if nlist == [0,0,0,0,0,0]:
+		break
+	result = sum(nlist)-max(nlist)-min(nlist)
+	result /= 4
+	if result%1 == 0:
+		result = int(result)
+	print(result)
