@@ -1,0 +1,23 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+Y = 0
+M = 0
+for i in nlist:
+	r = i//30*10+10
+	if i == 0:
+		r-=10
+	Y += r
+	u = i//60*15+15
+	if i == 0:
+		u -= 15
+	M += u
+if Y < M:
+	print("Y",Y)
+elif Y > M:
+	print("M",M)
+else:
+	print("Y","M",Y)
