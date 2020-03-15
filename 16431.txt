@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+b1,b2 = [int(x) for x in sys.stdin.readline().split()]
+d1,d2 = [int(x) for x in sys.stdin.readline().split()]
+j1,j2 = [int(x) for x in sys.stdin.readline().split()]
+d = abs(j1-d1)+abs(j2-d2)
+b = max(abs(j1-b1),abs(j2-b2))
+if d > b:
+	print("bessie")
+elif d < b:
+	print("daisy")
+else:
+	print("tie")
