@@ -1,0 +1,39 @@
+# python3
+
+import sys
+
+r,c = [int(x) for x in sys.stdin.readline().split()]
+dis = []
+cross = []
+for i in range(r):
+	sen = sys.stdin.readline().strip()
+	a = []
+	cross.append(sen)
+	for j in range(c):
+		a.append([True,True])
+	dis.append(a)
+word = []
+for i in range(r):
+	for j in range(c):
+		if dis[i][j][0]:
+			re = ""
+			for x in range(i,r):
+				if cross[x][j] == "#":
+					break
+				else:
+					re += cross[x][j]
+					dis[x][j][0] = False
+			if len(re) > 1:
+				word.append(re)
+		if dis[i][j][1]:
+			re = ""
+			for x in range(j,c):
+				if cross[i][x] == "#":
+					break
+				else:
+					re += cross[i][x]
+					dis[i][x][1] = False
+			if len(re) > 1:
+				word.append(re)
+word.sort()
+print(word[0])
