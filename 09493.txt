@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+while True:
+	m,a,b = [int(x) for x in sys.stdin.readline().split()]
+	if m == a == b == 0:
+		break
+	result = round(abs(m/a-m/b)*3600,0)
+	hour = result//3600
+	result %= 3600
+	minute = str(int(result//60)).zfill(2)
+	result %= 60
+	second = str(int(result)).zfill(2)
+	print("%.0f"%hour+":"+minute+":"+second)
