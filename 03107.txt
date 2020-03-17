@@ -1,0 +1,17 @@
+# python3
+
+import sys
+
+s = sys.stdin.readline().strip()
+if s.find("::") > -1:
+	r = ":"
+	for i in range(8-s.count(":")):
+		r += "0000:"
+	s = s.replace("::",r)
+sen = s.split(":")
+result = ""
+for i,v in enumerate(sen):
+	result += "0"*(4-len(v))+v
+	if i != len(sen)-1:
+		result += ":"
+print(result)
