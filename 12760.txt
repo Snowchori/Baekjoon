@@ -1,0 +1,22 @@
+# python3
+
+import sys
+import math
+
+n,m = [int(x) for x in sys.stdin.readline().split()]
+result = [0]*n
+card = []
+for i in range(n):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	nlist.sort(reverse=True)
+	card.append(nlist)
+for i in range(m):
+	r = []
+	for j in range(n):
+		r.append(card[j][i])
+	for j in range(n):
+		if max(r) == r[j]:
+			result[j] += 1
+for i in range(n):
+	if result[i] == max(result):
+		print(i+1,end=" ")
