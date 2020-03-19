@@ -1,0 +1,15 @@
+# python3
+
+import sys
+
+n,k,a = [int(x) for x in sys.stdin.readline().split()]
+coke = k//a
+result = []
+for i in range(n):
+	n1,n2 = [int(x) for x in sys.stdin.readline().split()]
+	r1 = coke//n1
+	if coke%n1 == 0:
+		result.append(coke+(r1-1)*n2)
+	else:
+		result.append(coke+r1*n2)
+print(min(result))
