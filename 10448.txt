@@ -1,0 +1,32 @@
+# python3
+
+import sys
+
+def ureka(number):
+	isa = False
+	l = len(tri)
+	for a in range(l):
+		for b in range(a,l):
+			for c in range(b,l):
+				if tri[a]+tri[b]+tri[c] == number:
+					print(1)
+					isa = True
+					break
+			if isa:
+				break
+		if isa:
+			break
+	if not isa:
+		print(0)
+
+tri = []
+s = 1
+n = 1
+while s < 1000:
+	tri.append(s)
+	n += 1
+	s += n
+num = int(sys.stdin.readline())
+slist = [int(x) for x in sys.stdin.read().split()]
+for i in slist:
+	ureka(i)
