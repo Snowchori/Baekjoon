@@ -1,0 +1,33 @@
+import sys
+
+n = int(sys.stdin.readline())
+m = int(sys.stdin.readline())
+s = sys.stdin.readline().strip()
+
+IOI = False
+count = 0
+result = 0
+pre = ''
+
+for i in s:
+	if i == 'I':
+		if IOI:
+			if pre == 'O':
+				count += 1
+			elif pre == 'I':
+				if count >= n:
+					result += count - n + 1
+				count = 0
+		else:
+			IOI = True
+	else:
+		if IOI:
+			if pre == 'O':
+				IOI = False
+				if count >= n:
+					result += count - n + 1
+				count = 0
+	pre = i
+if count >= n:
+	result += count - n + 1
+print(result)
