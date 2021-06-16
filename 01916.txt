@@ -1,0 +1,30 @@
+import sys
+import heapq
+
+dic = dict()
+heap = []
+city = int(sys.stdin.readline())
+n = int(sys.stdin.readline())
+visit = [False]*(city+1)
+distance = [-1]*(city+1)
+for i in range(n):
+	c1, c2, pay = [int(x) for x in sys.stdin.readline().split()]
+	if dic.get(c1):
+		dic.get(c1).append((c2,pay))
+	else:
+		dic[c1] = [(c2,pay)]
+start, end = [int(x) for x in sys.stdin.readline().split()]
+heapq.heappush(heap, (0,start))
+distance[start] = 0
+while heap:
+	dist, s = heapq.heappop(heap)
+	if visit[s]:
+		continue
+	visit[s] = True
+	if not dic.get(s):
+		continue
+	for i, p in dic.get(s):
+		if distance[i] == -1 or distance[i] > dist + p:
+			distance[i] = dist + p
+			heapq.heappush(heap,(dist + p, i))
+print(distance[end])
