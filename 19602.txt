@@ -1,0 +1,7 @@
+import sys
+
+s, m, l = [int(x) for x in sys.stdin.read().split()]
+if s + 2*m + 3*l >= 10:
+	print('happy')
+else:
+	print('sad')
