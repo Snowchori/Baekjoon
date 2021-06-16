@@ -1,0 +1,5 @@
+import sys
+import math
+
+n = int(sys.stdin.readline())
+print(2*pow(math.pi*n,0.5))
