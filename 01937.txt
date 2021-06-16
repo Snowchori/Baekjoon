@@ -1,0 +1,31 @@
+import sys
+sys.setrecursionlimit(10**6)
+
+def getdp(x,y):
+	global n
+	if dp[x][y] != -1:
+		return dp[x][y]
+	r = []
+	for i, j in move:
+		if 0 <= x+i < n and 0 <= y+j < n:
+			if panda[x][y] < panda[x+i][y+j]:
+				r.append(getdp(x+i,y+j))
+	if r:
+		dp[x][y] = max(r)+1
+	else:
+		dp[x][y] = 1
+	return dp[x][y]
+
+n = int(sys.stdin.readline())
+dp = []
+panda = []
+move = [(0,1),(0,-1),(1,0),(-1,0)]
+result = 1
+for i in range(n):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	panda.append(nlist)
+	dp.append([-1]*n)
+for i in range(n):
+	for j in range(n):
+		result = max(result, getdp(i,j))
+print(result)			
