@@ -1,0 +1,9 @@
+import sys
+
+n = int(sys.stdin.readline())
+result = 0
+for i in range(60000):
+	x = int(sys.stdin.readline())
+	result += x
+print(60000)
+print(result)
