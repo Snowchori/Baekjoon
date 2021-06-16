@@ -1,0 +1,15 @@
+import sys
+import bisect
+
+n = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+
+dp = [nlist[0]]
+for i in range(n):
+	if nlist[i] > dp[-1]:
+		dp.append(nlist[i])
+	else:
+		ind = bisect.bisect_left(dp, nlist[i])
+		dp[ind] = nlist[i]
+
+print(len(dp))
