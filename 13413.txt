@@ -1,0 +1,16 @@
+import sys
+
+n = int(sys.stdin.readline())
+for i in range(n):
+	l = int(sys.stdin.readline())
+	start = sys.stdin.readline().strip()
+	end = sys.stdin.readline().strip()
+	w = 0
+	b = 0
+	for j in range(l):
+		if start[j] != end[j]:
+			if start[j] == 'W':
+				w += 1
+			else:
+				b += 1
+	print(max(w,b))
