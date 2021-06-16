@@ -1,0 +1,14 @@
+# python3
+
+import sys
+from collections import deque
+
+num = int(sys.stdin.readline())
+nlist = []
+for i in range(num):
+	nlist.append(i+1)
+deq = deque(nlist)
+while len(deq) > 1:
+	deq.popleft()
+	deq.rotate(-1)
+print(deq[0])
