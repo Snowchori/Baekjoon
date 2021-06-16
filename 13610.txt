@@ -1,0 +1,11 @@
+import sys
+
+x, y = [int(x) for x in sys.stdin.readline().split()]
+t = 2*x
+result = 2
+while True:
+	if t/x-t/y >= 1:
+		break
+	t += x
+	result += 1
+print(result)
