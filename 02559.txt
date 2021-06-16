@@ -1,0 +1,10 @@
+import sys
+
+n, k = [int(x) for x in sys.stdin.readline().split()]
+tem = [int(x) for x in sys.stdin.readline().split()]
+result = sum(tem[:k])
+pre = result
+for i in range(n-k):
+	pre = pre + tem[k+i] - tem[i]
+	result = max(result, pre)
+print(result)
