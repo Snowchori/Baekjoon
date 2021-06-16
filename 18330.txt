@@ -1,0 +1,10 @@
+import sys
+
+n, k = [int(x) for x in sys.stdin.read().split()]
+a = 60 + k
+result = 0
+if n > a:
+	result += 1500*a+(n-a)*3000
+else:
+	result += 1500*n
+print(result)
