@@ -1,0 +1,10 @@
+import sys
+
+b = [0]
+for i in range(999):
+	if i%2 == 0:
+		b.append(b[-1]*2+1)
+	else:
+		b.append(b[-1]*2-1)
+n = int(sys.stdin.readline())
+print(b[n-1])
