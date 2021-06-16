@@ -1,0 +1,65 @@
+import sys
+
+def comp(s1,s2):
+	if s1 == ')':
+		if s2 == '[' or s2 == ']':
+			return False
+		else:
+			return True
+	elif s1 == ']':
+		if s2 == '(' or s2 == ')':
+			return False
+		else:
+			return True
+
+br = sys.stdin.readline().strip()
+stack = []
+iscor = True
+for i in br:
+	if i == ')':
+		num = 0
+		while True:
+			if len(stack) == 0:
+				iscor = False
+				break
+			p = stack.pop()
+			if not comp(')',p):
+				iscor = False
+				break
+			if p == '(':
+				if num == 0:
+					num += 1
+				stack.append(2*num)
+				break
+			else:
+				num += p
+	elif i == ']':
+		num = 0
+		while True:
+			if len(stack) == 0:
+				iscor = False
+				break
+			p = stack.pop()
+			if not comp(']',p):
+				iscor = False
+				break
+			if p == '[':
+				if num == 0:
+					num += 1
+				stack.append(3*num)
+				break
+			else:
+				num += p
+	else:
+		stack.append(i)
+	if not iscor:
+		break
+result = 0
+if iscor:
+	for i in stack:
+		if i == '(' or i == '[':
+			result = 0
+			break
+		else:
+			result += i
+print(result)
