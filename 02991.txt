@@ -1,0 +1,12 @@
+import sys
+
+a, b, c, d = [int(x) for x in sys.stdin.readline().split()]
+delivery = [int(x) for x in sys.stdin.readline().split()]
+
+for i in delivery:
+	bite = 0
+	if 0 < i%(a+b) <= a:
+		bite += 1
+	if 0 < i%(c+d) <= c:
+		bite += 1
+	print(bite)
