@@ -1,0 +1,39 @@
+import sys
+
+dragon = [(0,0),(1,0)]
+for i in range(10):
+	ind = pow(2,i)
+	for j in range(ind,0,-1):
+		x = dragon[j][0] - dragon[j-1][0]
+		y = dragon[j][1] - dragon[j-1][1]
+		dragon.append((dragon[-1][0]+y, dragon[-1][1]-x))
+
+direction = (((1,0),(0,1)),((0,1),(-1,0)),((-1,0),(0,-1)),((0,-1),(1,0)))
+
+board = []
+for i in range(101):
+	board.append([False]*101)
+
+case = int(sys.stdin.readline())
+for i in range(case):
+	x, y, d, g = [int(x) for x in sys.stdin.readline().split()]
+	for j in range(pow(2,g)+1):
+		px = x + dragon[j][0]*direction[d][0][0] + dragon[j][1]*direction[d][0][1]
+		py = y + dragon[j][0]*direction[d][1][0] + dragon[j][1]*direction[d][1][1]
+		board[px][py] = True
+
+result = 0
+reboard = []
+for i in range(101):
+	r = []
+	pre = board[i][0]
+	for j in range(100):
+		if pre and board[i][j+1]:
+			r.append(True)
+			if i > 0 and reboard[i-1][j]:
+				result += 1
+		else:
+			r.append(False)
+		pre = board[i][j+1]
+	reboard.append(r)
+print(result)
