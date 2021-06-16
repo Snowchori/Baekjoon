@@ -1,0 +1,9 @@
+# python3
+
+import sys
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	n = float(sys.stdin.readline())
+	disc = n*0.8
+	print("$%.2f"%disc)
