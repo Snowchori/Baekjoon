@@ -1,0 +1,13 @@
+N=int(input())
+L=list(map(int, input().split()))
+
+p1, p0=[], []
+for l in range(N):
+    p2, p1, p0 = p1, p0, []
+    for i in range(N-l):
+        if l==0: p0.append(0)
+        else:
+            if L[i]==L[i+l]: p0.append(0 if l==1 else p2[i+1])
+            else: p0.append(min(p1[i], p1[i+1])+1)
+
+print(p0[0])
