@@ -1,0 +1,15 @@
+import sys
+import heapq
+
+heap = []
+heapq.heappush(heap,0)
+nlist = []
+n = int(sys.stdin.readline())
+for i in range(n):
+	nlist.append([int(x) for x in sys.stdin.readline().split()])
+nlist.sort()
+for i, j in nlist:
+	if heap[0] <= i:
+		heapq.heappop(heap)
+	heapq.heappush(heap,j)
+print(len(heap))
