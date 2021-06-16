@@ -1,0 +1,59 @@
+import sys
+import heapq
+from collections import deque
+
+def findposition(nowx,nowy,siz):
+	global n
+	visit = []
+	for i in range(n):
+		visit.append([False]*n)
+	visit[nowx][nowy] = True
+	queue = []
+	heapq.heappush(queue,(0,nowx,nowy))
+	while queue:
+		s, x, y = heapq.heappop(queue)
+		fishsize = fishbowl[x][y]
+		if 0 < fishsize < siz:
+			fish[fishsize] -= 1
+			fishbowl[x][y] = 0
+			return x, y, s
+		for i, j in move:
+			nx = x+i
+			ny = y+j
+			if -1 < nx < n and -1 < ny < n and not visit[nx][ny]:
+				visit[nx][ny] = True
+				if fishbowl[nx][ny] <= siz:
+					heapq.heappush(queue,(s+1,nx,ny))
+	return nowx, nowy, -1
+
+fishbowl = []
+nowx = -1
+nowy = -1
+siz = 2
+eat = 0
+result = 0
+fish = [0]*9
+move = [[-1,0],[0,-1],[0,1],[1,0]]
+n = int(sys.stdin.readline())
+for i in range(n):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	for j, k in enumerate(nlist):
+		if k == 9:
+			nowx = i
+			nowy = j
+			nlist[j] = 0
+		else:
+			fish[k] += 1
+	fishbowl.append(nlist)
+
+while sum(fish[1:siz]) > 0:
+	nowx, nowy, l = findposition(nowx,nowy,siz)
+	if l == -1:
+		break
+	eat += 1
+	if eat == siz:
+		eat = 0
+		siz += 1
+	result += l
+
+print(result)
