@@ -1,0 +1,45 @@
+# python3
+
+import sys
+from collections import deque
+
+num = int(sys.stdin.readline())
+for i in range(num):
+	sen = sys.stdin.readline().strip()
+	isrev = False
+	iserr = False
+	n = int(sys.stdin.readline())
+	nlist = []
+	if n != 0:
+		nlist = sys.stdin.readline().strip()[1:-1].split(",")
+	else:
+		sys.stdin.readline()
+	deq = deque(nlist)
+	for j in sen:
+		if iserr:
+			break
+		if j == "D":
+			if len(deq) == 0:
+				iserr = True
+				break
+			else:
+				if isrev:
+					deq.pop()
+				else:
+					deq.popleft()
+		else:
+			if isrev:
+				isrev = False
+			else:
+				isrev = True
+	if iserr:
+		print("error")
+	else:
+		if isrev:
+			deq.reverse()
+		print("[",end="")
+		for i,v in enumerate(deq):
+			print(v,end="")
+			if i < len(deq)-1:
+				print(",",end="")
+		print("]")
