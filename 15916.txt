@@ -1,0 +1,20 @@
+import sys
+
+n = int(sys.stdin.readline())
+istouch = False
+nlist = [int(x) for x in sys.stdin.readline().split()]
+k = int(sys.stdin.readline())
+if n == 1 and k == nlist[0]:
+	istouch = True
+for i in range(1,n):
+	ny1 = nlist[i-1]
+	ky1 = k*i
+	ny2 = nlist[i]
+	ky2 = k*(i+1)
+	if (ny1-ky1)*(ny2-ky2) <= 0:
+		istouch = True
+		break
+if istouch:
+	print('T')
+else:
+	print('F')
