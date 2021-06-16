@@ -1,0 +1,63 @@
+from collections import deque
+import sys
+def knight(queue,l,s1,s2,e1,e2):
+	if s1==e1 and s2==e2:
+		return 0
+
+	board = []
+	for i in range(l):
+		r = []
+		for j in range(l):
+			r.append(0)
+		board.append(r)
+	board[s1][s2] = 1
+	while True:
+		p1,p2,n = queue.popleft()
+		if p1-1 >= 0 and p2+2 < l and board[p1-1][p2+2] == 0:
+			if p1-1 == e1 and p2+2 == e2:
+				return n+1
+			board[p1-1][p2+2] = 1
+			queue.append([p1-1,p2+2,n+1])
+		if p1-1 >= 0 and p2-2 >= 0 and board[p1-1][p2-2] == 0:
+			if p1-1 == e1 and p2-2 == e2:
+				return n+1
+			board[p1-1][p2-2] = 1
+			queue.append([p1-1,p2-2,n+1])
+		if p1-2 >= 0 and p2+1 < l and board[p1-2][p2+1] == 0:
+			if p1-2 == e1 and p2+1 == e2:
+				return n+1
+			board[p1-2][p2+1] = 1
+			queue.append([p1-2,p2+1,n+1])
+		if p1-2 >= 0 and p2-1 >= 0 and board[p1-2][p2-1] == 0:
+			if p1-2 == e1 and p2-1 == e2:
+				return n+1
+			board[p1-2][p2-1] = 1
+			queue.append([p1-2,p2-1,n+1])
+		if p1+1 < l and p2+2 < l and board[p1+1][p2+2] == 0:
+			if p1+1 == e1 and p2+2 == e2:
+				return n+1
+			board[p1+1][p2+2] = 1
+			queue.append([p1+1,p2+2,n+1])
+		if p1+1 < l and p2-2 >= 0 and board[p1+1][p2-2] == 0:
+			if p1+1 == e1 and p2-2 == e2:
+				return n+1
+			board[p1+1][p2-2] = 1
+			queue.append([p1+1,p2-2,n+1])
+		if p1+2 < l and p2+1 < l and board[p1+2][p2+1] == 0:
+			if p1+2 == e1 and p2+1 == e2:
+				return n+1
+			board[p1+2][p2+1] = 1
+			queue.append([p1+2,p2+1,n+1])
+		if p1+2 < l and p2-1 >= 0 and board[p1+2][p2-1] == 0:
+			if p1+2 == e1 and p2-1 == e2:
+				return n+1
+			board[p1+2][p2-1] = 1
+			queue.append([p1+2,p2-1,n+1])
+
+case_number = int(sys.stdin.readline().strip())
+for i in range(case_number):
+	l = int(sys.stdin.readline().strip())
+	s1, s2 = [int(x) for x in sys.stdin.readline().split()]
+	e1, e2 = [int(x) for x in sys.stdin.readline().split()]
+	queue = deque([[s1,s2,0]])
+	print(knight(queue,l,s1,s2,e1,e2))
