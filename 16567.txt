@@ -1,0 +1,33 @@
+import sys
+
+n, m = [int(x) for x in sys.stdin.readline().split()]
+dirty = [int(x) for x in sys.stdin.readline().split()]
+result = 0
+for i,d in enumerate(dirty):
+	if i == 0:
+		if d == 1:
+			result += 1
+		pre = d
+	else:
+		if pre != d:
+			result += 1
+		pre = d
+
+result = int((result+1)/2)
+
+for i in range(m):
+	test = [int(x) for x in sys.stdin.readline().split()]
+	if test[0] == 0:
+		print(result)
+	else:
+		loc = test[1]-1
+		if dirty[loc] == 0:
+			if loc > 0 and loc < n-1 and dirty[loc-1] == dirty[loc+1] == 1:
+				result -= 1
+			elif loc > 0 and loc < n-1 and dirty[loc-1] == dirty[loc+1] == 0:
+				result += 1
+			elif loc == 0 and dirty[loc+1] == 0:
+				result += 1
+			elif loc == n-1 and dirty[loc-1] == 0:
+				result += 1
+			dirty[loc] = 1
