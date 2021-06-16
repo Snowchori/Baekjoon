@@ -1,0 +1,27 @@
+import sys
+
+s = sys.stdin.readline().strip()
+stack = []
+for i in s:
+	if i == ')':
+		slen = 0
+		while True:
+			b,q = stack.pop()
+			if q == '(':
+				k = int(stack.pop()[1])
+				slen *= k
+				stack.append([True,slen])
+				break
+			elif b:
+				slen += q
+			else:
+				slen += 1
+	else:
+		stack.append([False,i])
+result = 0
+for i, j in stack:
+	if i:
+		result += j
+	else:
+		result += 1
+print(result)
