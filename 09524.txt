@@ -1,0 +1,5 @@
+import sys
+
+year = [1,7,2,3]
+n = int(sys.stdin.readline())
+print(year[n-1])
