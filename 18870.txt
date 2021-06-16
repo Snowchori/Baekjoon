@@ -1,0 +1,16 @@
+import sys
+
+n = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+dic = dict()
+slist = sorted(nlist)
+cnt = 0
+pre = slist[0]
+dic[pre] = cnt
+for i in slist:
+	if i != pre:
+		cnt += 1
+		dic[i] = cnt
+	pre = i
+for i in nlist:
+	print(dic[i],end=" ")
