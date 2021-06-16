@@ -1,0 +1,11 @@
+import sys
+
+x, k = [int(x) for x in sys.stdin.readline().split()]
+if 7*k <= x:
+	print(7*k*1000)
+elif 7*k/2 <= x:
+	print(7*k*500)
+elif 7*k/4 <= x:
+	print(7*k*250)
+else:
+	print(0)
