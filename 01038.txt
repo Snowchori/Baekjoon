@@ -1,0 +1,19 @@
+import sys
+
+def dfs(s,n,m):
+	if n == 1:
+		for i in range(m):
+			decrease_number.append(s+str(i))
+	else:
+		for i in range(m):
+			dfs(s+str(i),n-1,i)
+
+decrease_number = []
+cnt = 1
+for i in range(1,11):
+	dfs("",i,10)
+num = int(sys.stdin.readline())
+if num < len(decrease_number):
+	print(decrease_number[num])
+else:
+	print(-1)
