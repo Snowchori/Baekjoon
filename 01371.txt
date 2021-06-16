@@ -1,0 +1,13 @@
+# python3
+
+import sys
+
+sen = sys.stdin.read()
+alphalist = [0]*26
+for i in sen:
+	if ord(i) >= 97 and ord(i) <= 122:
+		alphalist[ord(i)-97] += 1
+mnum = max(alphalist)
+for i in range(26):
+	if alphalist[i] == mnum:
+		print(chr(i+97),end="")
