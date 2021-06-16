@@ -1,0 +1,40 @@
+import sys
+from collections import deque
+
+n, m = [int(x) for x in sys.stdin.readline().split()]
+dic = dict()
+know = [int(x) for x in sys.stdin.readline().split()]
+know = know[1:]
+party = []
+for i in range(m):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	party.append(nlist[1:])
+	a = nlist[1]
+	nlist = nlist[2:]
+	for j in nlist:
+		if dic.get(a):
+			dic.get(a).append(j)
+		else:
+			dic[a] = [j]
+		if dic.get(j):
+			dic.get(j).append(a)
+		else:
+			dic[j] = [a]
+visit = [False]*(n+1)
+queue = deque(know)
+while queue:
+	ind = queue.pop()
+	if visit[ind]:
+		continue
+	visit[ind] = True
+	if dic.get(ind):
+		for i in dic.get(ind):
+			queue.append(i)
+result = 0
+for par in party:
+	possible = False
+	for i in par:
+		possible |= visit[i]
+	if not possible:
+		result += 1
+print(result)
