@@ -1,0 +1,8 @@
+import sys
+
+l, w, m = [int(x) for x in sys.stdin.readline().split()]
+result = (w-l)//m
+if result * m == w-l:
+	print(result)
+else:
+	print(result+1)
