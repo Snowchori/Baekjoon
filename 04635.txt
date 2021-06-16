@@ -1,0 +1,13 @@
+import sys
+
+while True:
+	n = int(sys.stdin.readline())
+	if n == -1:
+		break
+	result = 0
+	pre = 0
+	for i in range(n):
+		s, t  = [int(x) for x in sys.stdin.readline().split()]
+		result += s*(t-pre)
+		pre = t
+	print(result, "miles")
