@@ -1,0 +1,9 @@
+import sys
+
+case = int(sys.stdin.readline())
+for i in range(case):
+	n, c = [int(x) for x in sys.stdin.readline().split()]
+	if (bin(n).count('1'))%2 == c:
+		print("Valid")
+	else:
+		print("Corrupt")
