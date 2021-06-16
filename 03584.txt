@@ -1,0 +1,33 @@
+import sys
+
+case = int(sys.stdin.readline())
+for i in range(case):
+	n = int(sys.stdin.readline())
+	node_tree = dict()
+	for j in range(n-1):
+		p, c = [int(x) for x in sys.stdin.readline().split()]
+		if node_tree.get(c):
+			node_tree.get(c).append(p)
+		else:
+			node_tree[c] = [p]
+	node1, node2 = [int(x) for x in sys.stdin.readline().split()]
+	nlist1 = [node1]
+	while node_tree.get(node1):
+		parent = node_tree.get(node1)[0]
+		nlist1.append(parent)
+		node1 = parent
+	nlist2 = [node2]
+	while node_tree.get(node2):
+		parent = node_tree.get(node2)[0]
+		nlist2.append(parent)
+		node2 = parent
+	nlist1.reverse()
+	nlist2.reverse()
+	l = min(len(nlist1),len(nlist2))
+	if nlist1[l-1] == nlist2[l-1]:
+		print(nlist1[l-1])
+	else:
+		for i in range(l):
+			if nlist1[i] != nlist2[i]:
+				print(nlist1[i-1])
+				break
