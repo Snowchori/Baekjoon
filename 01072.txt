@@ -1,0 +1,13 @@
+import sys
+
+x, y = [int(x) for x in sys.stdin.readline().split()]
+result = -1
+if x != 0:
+	z = 100*y//x
+	if z < 99:
+		r = ((z+1)*x-100*y)/(99-z)
+		if r%1 == 0:
+			result = int(r)
+		else:
+			result = int(r)+1
+print(result)
