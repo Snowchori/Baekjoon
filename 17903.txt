@@ -1,0 +1,7 @@
+import sys
+
+n, k = [int(x) for x in sys.stdin.readline().split()]
+if n >= 8:
+	print('satisfactory')
+else:
+	print('unsatisfactory')
