@@ -1,0 +1,4 @@
+import sys
+
+w, h = [int(x) for x in sys.stdin.readline().split()]
+print(w + h - pow(w*w + h*h,0.5))
