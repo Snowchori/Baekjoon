@@ -1,0 +1,46 @@
+import sys
+from collections import deque
+
+n, m = [int(x) for x in sys.stdin.readline().split()]
+dic = {}
+kb = []
+result = []
+
+def bfs(i):
+	queue = deque([])
+	for j in dic.get(i+1):
+		queue.append([j,2])
+	while len(queue) > 0:
+		node, count = queue.popleft()
+		for k in dic.get(node):
+			if kb[i][k-1] == -1:
+				kb[i][k-1] = count
+				queue.append([k,count+1])
+
+for i in range(n):
+	lst = []
+	for j in range(n):
+		if i == j:
+			lst.append(0)
+		else:
+			lst.append(-1)
+	kb.append(lst)
+
+for i in range(m):
+	f1, f2 = [int(x) for x in sys.stdin.readline().split()]
+	if dic.get(f1):
+		dic.get(f1).append(f2)
+	else:
+		dic[f1] = [f2]
+	if dic.get(f2):
+		dic.get(f2).append(f1)
+	else:
+		dic[f2] = [f1]
+	kb[f1-1][f2-1] = 1
+	kb[f2-1][f1-1] = 1
+
+for i in range(n):
+	if -1 in kb[i]:
+		bfs(i)
+	result.append(sum(kb[i]))
+print(result.index(min(result))+1)
