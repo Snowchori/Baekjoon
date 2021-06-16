@@ -1,0 +1,17 @@
+import sys
+
+prison = [0]*101
+result = [0]*101
+bol = [False,True]
+for i in range(1,101):
+	for j in range(i,101,i):
+		prison[j] += 1
+	if bol[prison[i]%2]:
+		result[i] = result[i-1] + 1
+	else:
+		result[i] = result[i-1]
+
+t = int(sys.stdin.readline())
+for i in range(t):
+	n = int(sys.stdin.readline())
+	print(result[n])
