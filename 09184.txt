@@ -1,0 +1,32 @@
+import sys
+
+w = []
+for i in range(21):
+	r1 = []
+	for j in range(21):
+		r2 = []
+		for k in range(21):
+			r2.append(1)
+		r1.append(r2)
+	w.append(r1)
+
+for i in range(21):
+	for j in range(21):
+		for k in range(21):
+			if i != 0 and j != 0 and k != 0:
+				if k < j < i:
+					w[k][j][i] = w[k][j][i-1] + w[k][j-1][i-1] - w[k][j-1][i]
+				else:
+					w[k][j][i] = w[k-1][j][i] + w[k-1][j-1][i] + w[k-1][j][i-1] - w[k-1][j-1][i-1]
+
+while True:
+	a, b, c = [int(x) for x in sys.stdin.readline().split()]
+	if a == -1 and b == -1 and c == -1:
+		break
+	print("w("+str(a)+", "+str(b)+", "+str(c)+") = ",end="")
+	if a <= 0 or b <= 0 or c <= 0:
+		print(1)
+	elif a > 20 or b > 20 or c > 20:
+		print(w[20][20][20])
+	else:
+		print(w[a][b][c])
