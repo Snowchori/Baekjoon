@@ -1,0 +1,12 @@
+import sys
+
+n, m = [int(x) for x in sys.stdin.readline().split()]
+sup = [int(x) for x in sys.stdin.readline().split()]
+gj = [0]*n
+for j in range(m):
+	i, w = [int(x) for x in sys.stdin.readline().split()]
+	gj[i-1] += w
+for i in range(1,n):
+	gj[i] += gj[sup[i]-1]
+for i in gj:
+	print(i,end = " ")
