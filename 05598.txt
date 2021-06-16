@@ -1,0 +1,11 @@
+# python3
+
+import sys
+
+word = sys.stdin.readline().strip()
+n = len(word)
+for i in range(n):
+	a = ord(word[i])-3
+	if a < 65:
+		a += 26
+	print(chr(a),end="")
