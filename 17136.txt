@@ -1,0 +1,56 @@
+import sys
+
+def dfs():
+	global result
+	if sum(paper) > result:
+		return
+	for i in range(10):
+		for j in range(10):
+			if board[i][j] == 1:
+				for k in range(5):
+					if paper[4-k] < 5 and ispossible(i,j,5-k):
+						paper[4-k] += 1
+						seton(i,j,5-k)
+						dfs()
+						setoff(i,j,5-k)
+						paper[4-k] -= 1
+				return
+	result = min(result, sum(paper))
+
+def seton(x,y,n):
+	for i in range(n):
+		for j in range(n):
+			board[x+i][y+j] = 0
+
+def setoff(x,y,n):
+	for i in range(n):
+		for j in range(n):
+			board[x+i][y+j] = 1
+
+def ispossible(x,y,n):
+	if x+n > 10 or y+n > 10:
+		return False
+	for i in range(n):
+		for j in range(n):
+			if board[x+i][y+j] == 0:
+				return False
+	return True
+
+def isco():
+	for i in range(10):
+		for j in range(10):
+			if board[i][j] == 1:
+				return False
+	return True
+
+board = []
+result = 26
+for i in range(10):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	board.append(nlist)
+
+paper = [0,0,0,0,0]
+dfs()
+if result == 26:
+	result = -1
+print(result)
