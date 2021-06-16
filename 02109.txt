@@ -1,0 +1,15 @@
+import sys
+import heapq
+
+n = int(sys.stdin.readline())
+nlist = []
+heap = []
+for i in range(n):
+	d, p = [int(x) for x in sys.stdin.readline().split()]
+	nlist.append([p, d])
+nlist.sort(key = lambda x : (x[0], -x[1]))
+for i, j in nlist:
+	heapq.heappush(heap,j)
+	if len(heap) > i:
+		heapq.heappop(heap)
+print(sum(heap))
