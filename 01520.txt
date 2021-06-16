@@ -1,0 +1,32 @@
+import sys
+
+def getrou(a,b):
+	if a == 0 and b == 0:
+		route[a][b] = 1
+		return route[a][b]
+	if route[a][b] > -1:
+		return route[a][b]
+	result = 0
+	for i, j in move:
+		na = a+i
+		nb = b+j
+		if 0 <= na < len(route) and 0 <= nb < len(route[0]):
+			if ma[a][b] < ma[na][nb]:
+				if route[na][nb] == -1:
+					route[na][nb] = getrou(na,nb)
+				result += route[na][nb]
+	route[a][b] = result
+	return route[a][b]
+
+ma = []
+route = []
+move = [(0,1),(1,0),(0,-1),(-1,0)]
+n, m = [int(x) for x in sys.stdin.readline().split()]
+for i in range(n):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	ma.append(nlist)
+	route.append([-1]*m)
+for i in range(n):
+	for j in range(m):
+		getrou(i,j)
+print(route[-1][-1])
