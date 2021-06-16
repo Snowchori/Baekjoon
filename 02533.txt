@@ -1,0 +1,35 @@
+import sys
+sys.setrecursionlimit(10**6)
+
+def isea(num,p):
+	if early[num] != -1:
+		return early[num]
+	dlist = friend.get(num)
+	if len(dlist) == 0:
+		early[num] = 0
+	else:
+		result = 1
+		for i in dlist:
+			if i != p:
+				result *= isea(i,num)
+		if result == 1:
+			early[num] = 0
+		else:
+			early[num] = 1
+	return early[num]
+
+n = int(sys.stdin.readline())
+friend = dict()
+early = [-1]*(n+1)
+for i in range(n-1):
+	p1, p2 = [int(x) for x in sys.stdin.readline().split()]
+	if friend.get(p1):
+		friend.get(p1).append(p2)
+	else:
+		friend[p1] = [p2]
+	if friend.get(p2):
+		friend.get(p2).append(p1)
+	else:
+		friend[p2] = [p1]
+isea(1,0)
+print(early.count(1))
