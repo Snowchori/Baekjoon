@@ -1,0 +1,20 @@
+import sys
+
+n = int(sys.stdin.readline())
+loseheart = [int(x) for x in sys.stdin.readline().split()]
+getgood = [int(x) for x in sys.stdin.readline().split()]
+
+saejun = [[-1]*101]
+saejun[0][100] = 0
+for i in range(n):
+	slist = saejun[-1].copy()
+	for j in range(1,101):
+		if saejun[i][j] >= 0:
+			x = j - loseheart[i]
+			if x > 0:
+				if slist[x] == -1:
+					slist[x] = saejun[i][j] + getgood[i]
+				else:
+					slist[x] = max(slist[x], saejun[i][j] + getgood[i])
+	saejun.append(slist)
+print(max(saejun[n]))
