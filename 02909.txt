@@ -1,6 +1,0 @@
-# python3
-
-import sys
-
-nlist = [int(x) for x in sys.stdin.readline().split()]
-print(round(nlist[0],-nlist[1]))
