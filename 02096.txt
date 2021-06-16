@@ -1,0 +1,10 @@
+import sys
+
+n = int(sys.stdin.readline())
+maxresult = [0,0,0]
+minresult = [0,0,0]
+for i in range(n):
+	n1, n2, n3 = [int(x) for x in sys.stdin.readline().split()]
+	maxresult = [max(maxresult[0],maxresult[1])+n1,max(maxresult)+n2,max(maxresult[1],maxresult[2])+n3]
+	minresult = [min(minresult[0],minresult[1])+n1,min(minresult)+n2,min(minresult[1],minresult[2])+n3]
+print(max(maxresult),min(minresult))
