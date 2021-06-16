@@ -1,0 +1,5 @@
+import sys
+
+a1 = int(sys.stdin.readline())
+a2 = int(sys.stdin.readline())
+print(a2*2-a1)
