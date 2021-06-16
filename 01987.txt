@@ -1,0 +1,22 @@
+import sys
+from collections import deque
+
+move = [[1,0],[-1,0],[0,1],[0,-1]]
+
+r, c = [int(x) for x in sys.stdin.readline().split()]
+board = ["."*(c+2)]
+for i in range(r):
+	board.append("."+sys.stdin.readline().strip()+".")
+board.append("."*(c+2))
+result = 1
+
+queue = set()
+queue.add((1,1,board[1][1]))
+while queue:
+	x, y, alpha = queue.pop()
+	for i, j in move:
+		a = board[x+i][y+j]
+		if a != '.' and a not in alpha:
+			result = max(result, len(alpha)+1)
+			queue.add((x+i, y+j, alpha + a))
+print(result)
