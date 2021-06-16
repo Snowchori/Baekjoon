@@ -1,0 +1,4 @@
+import sys
+
+ur, tr, uo, to = [int(x) for x in sys.stdin.readline().split()]
+print(56*ur + 24*tr + 14*uo + 6*to)
