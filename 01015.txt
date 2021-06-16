@@ -1,0 +1,13 @@
+import sys
+
+n = int(sys.stdin.readline())
+a = [int(x) for x in sys.stdin.readline().split()]
+dic = dict()
+for i, j in enumerate(sorted(a)):
+	if dic.get(j):
+		dic.get(j).append(i)
+	else:
+		dic[j] = [i]
+for i in a:
+	result = dic.get(i).pop(0)
+	print(result, end = " ")
