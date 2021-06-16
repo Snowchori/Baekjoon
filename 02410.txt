@@ -1,0 +1,11 @@
+import sys
+
+n = int(sys.stdin.readline())
+n = n//2
+plist = [1]*(n+1)
+p = 1
+while p <= n:
+	for i in range(p,n+1):
+		plist[i] = (plist[i] + plist[i-p])%1000000000
+	p *= 2
+print(plist[-1])
