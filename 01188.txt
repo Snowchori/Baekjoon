@@ -1,0 +1,27 @@
+import sys
+import heapq
+
+def getcut(a,b):
+	cut = 0
+	heap = []
+	for i in range(b):
+		heapq.heappush(heap,a)
+	so = 0
+	while heap:
+		so += heapq.heappop(heap)
+		if so > b:
+			cut += 1
+			heapq.heappush(heap,so-b)
+			so = 0
+		elif so == b:
+			so = 0
+	return cut
+
+n, m = [int(x) for x in sys.stdin.readline().split()]
+result = 0
+n = n%m
+if n > 0:
+	cut = (m-1)//n
+	result += cut*n
+	result += getcut(m%n,n)
+print(result)
