@@ -1,0 +1,10 @@
+import sys
+
+n = int(sys.stdin.readline())
+up = sys.stdin.readline().strip()
+down = sys.stdin.readline().strip()
+cnt = 0
+for i in range(n):
+	if up[i] != down[i]:
+		cnt += 1
+print(cnt)
