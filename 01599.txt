@@ -1,0 +1,25 @@
+import sys
+
+min = {'a' : 0, 'b' : 1, 'k' : 2, 'd' : 3, 'e' : 4, 'g' : 5, 'h' : 6, 'i' : 7, 'l' : 8, 'm' : 9, 'n' : 10, 'ng' : 11, 'o' : 12, 'p' : 13, 'r' : 14, 's' : 15, 't' : 16, 'u' : 17, 'w' : 18, 'y' : 19}
+sik = ['a', 'b', 'k', 'd', 'e', 'g', 'h', 'i', 'l', 'm', 'n', 'ng', 'o', 'p', 'r', 's', 't', 'u', 'w', 'y']
+
+n = int(sys.stdin.readline())
+word = []
+for i in range(n):
+	w = sys.stdin.readline().strip()
+	s = []
+	cnt = 0
+	l = len(w)
+	while cnt < l:
+		if w[cnt] == 'n' and cnt+1 < l and w[cnt+1] == 'g':
+			s.append(11)
+			cnt += 2
+		else:
+			s.append(min.get(w[cnt]))
+			cnt += 1
+	word.append(s)
+word.sort()
+for i in word:
+	for j in i:
+		print(sik[j],end="")
+	print()
