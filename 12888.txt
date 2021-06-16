@@ -1,0 +1,7 @@
+import sys
+
+city = [1,1]
+for i in range(1,60):
+	city.append(city[i] + city[i-1]*2)
+n = int(sys.stdin.readline())
+print(city[n])
