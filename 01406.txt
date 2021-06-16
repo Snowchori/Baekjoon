@@ -1,0 +1,20 @@
+import sys
+
+word = list(sys.stdin.readline().strip())
+n = int(sys.stdin.readline())
+left = word
+right = []
+for i in range(n):
+	c = sys.stdin.readline().split()
+	if c[0] == 'L':
+		if len(left) != 0:
+			right.append(left.pop())
+	elif c[0] == 'D':
+		if len(right) != 0:
+			left.append(right.pop())
+	elif c[0] == 'B':
+		if len(left) != 0:
+			left.pop()
+	else:
+		left.append(c[1])
+print("".join(left)+"".join(reversed(right)))
