@@ -1,0 +1,10 @@
+import sys
+
+a, x, b, y, t = [int(x) for x in sys.stdin.read().split()]
+ar = a
+br = b
+if t-30 > 0:
+	ar += 21*(t-30)*x
+if t-45 > 0:
+	br += 21*(t-45)*y
+print(ar, br)
