@@ -1,0 +1,15 @@
+import sys
+
+n, m = [int(x) for x in sys.stdin.readline().split()]
+result = 0
+box = [0]*m
+highest = set()
+for i in range(n):
+	r = [int(x) for x in sys.stdin.readline().split()]
+	result += sum(r)
+	highest.add(max(r))
+	for j, high in enumerate(r):
+		box[j] = max(box[j], high)
+for i in box:
+	highest.add(i)
+print(result-sum(highest))
