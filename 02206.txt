@@ -1,0 +1,39 @@
+import sys
+from collections import deque
+
+def con(x,y,b,c):
+	if maze[x][y] == "0":
+		if navi[x][y][b] > c:
+			navi[x][y][b] = c
+			queue.append([x,y,b,c])
+	elif maze[x][y] == "1" and b < 1:
+		if navi[x][y][b+1] > c:
+			navi[x][y][b+1] = c
+			queue.append([x,y,b+1,c])
+
+def bfs():
+	while len(queue) > 0:
+		x,y,b,c = queue.popleft()
+		if x == n and y == m:
+			return c
+		con(x,y+1,b,c+1)
+		con(x,y-1,b,c+1)
+		con(x+1,y,b,c+1)
+		con(x-1,y,b,c+1)
+	return -1
+
+n,m = [int(x) for x in sys.stdin.readline().split()]
+maze = []
+navi = []
+queue = deque([])
+queue.append([1,1,0,1])
+for i in range(n+2):
+	if i == 0 or i == n+1:
+		maze.append("."*(m+2))
+	else:
+		maze.append("."+sys.stdin.readline().strip()+".")
+	r = []
+	for j in range(m+2):
+		r.append([n*m]*2)
+	navi.append(r)
+print(bfs())
