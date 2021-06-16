@@ -1,0 +1,10 @@
+import sys
+
+t, p = [int(x) for x in sys.stdin.readline().split()]
+if p >= 20:
+	x = (100-p)/t
+	result = (p-20)/x+40/x
+else:
+	x = (60-p)/t
+	result = p/x
+print(result)
