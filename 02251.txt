@@ -1,0 +1,38 @@
+import sys
+from collections import deque
+
+def move(start, end, bot):
+	r = bot.copy()
+	r[end] += r[start]
+	r[start] = 0
+	if r[end] > bsize[end]:
+		r[start] += r[end] - bsize[end]
+		r[end] = bsize[end]
+	return r
+
+bsize = [int(x) for x in sys.stdin.readline().split()]
+bottle = deque([[0,0,bsize[2],-1]])
+order = [[0,1],[0,2],[1,0],[1,2],[2,0],[2,1]]
+check = []
+for i in range(201):
+	check.append([False]*201)
+able = [False]*(201)
+
+while bottle:
+	blist = bottle.popleft()
+	if blist[0] == 0:
+		if able[blist[2]]:
+			continue
+		else:
+			able[blist[2]] = True
+	for i,j in order:
+		if i+j != blist[3] and blist[i] != 0 and blist[j] < bsize[j]:
+			mv = move(i,j,blist[:3])
+			mv.append(i+j)
+			if not check[mv[0]][mv[1]]:
+				check[mv[0]][mv[1]] = True
+				bottle.append(mv)
+                
+for i in range(201):
+	if able[i]:
+		print(i,end = " ")
