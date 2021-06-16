@@ -1,0 +1,10 @@
+import sys
+
+nlist = [int(x) for x in sys.stdin.readline().split()]
+nlist.sort()
+if nlist[0] == nlist[1] == nlist[2]:
+	print(2)
+elif pow(nlist[0],2) + pow(nlist[1],2) == pow(nlist[2],2):
+	print(1)
+else:
+	print(0)
