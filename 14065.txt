@@ -1,0 +1,4 @@
+import sys
+
+x = float(sys.stdin.readline())
+print(378.5411754/1.609344/x)
