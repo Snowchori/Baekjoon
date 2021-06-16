@@ -1,0 +1,34 @@
+import sys
+
+word = sys.stdin.readline().strip()
+dic = dict()
+for i,w in enumerate(word):
+	if dic.get(w):
+		dic[w].append(i)
+	else:
+		dic[w] = [i]
+
+zoac = [False]*len(word)
+order = []
+
+for i in sorted(dic.keys()):
+	for j in dic.get(i):
+		order.append(j)
+while order:
+	for i, o in enumerate(order):
+		id = o
+		c = 0
+		for j in range(len(word)):
+			if j < id and zoac[j]:
+				c += 1
+			elif j > id:
+				break
+		if i == 0 or cnt < c:
+			ind = i
+			cnt = c
+	nxt = order.pop(ind)
+	zoac[nxt] = True
+	for i, j in enumerate(zoac):
+		if j:
+			print(word[i],end="")
+	print()
