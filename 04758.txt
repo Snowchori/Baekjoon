@@ -1,0 +1,19 @@
+import sys
+
+while True:
+	sp, wei, st = [float(x) for x in sys.stdin.readline().split()]
+	if sp == wei == st == 0:
+		break
+	np = True
+	if sp <= 4.5 and wei >= 150 and st >= 200:
+		np = False
+		print("Wide Receiver ",end ="")
+	if sp <= 6.0 and wei >= 300 and st >= 500:
+		np = False
+		print("Lineman ",end ="")
+	if sp <= 5.0 and wei >= 200 and st >= 300:
+		np = False
+		print("Quarterback ",end ="") 
+	if np:
+		print("No positions",end ="")
+	print()
