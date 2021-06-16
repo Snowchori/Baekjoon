@@ -1,0 +1,11 @@
+import sys
+
+nlist = [int(x) for x in sys.stdin.read().split()]
+if nlist[0] < nlist[1] < nlist[2] < nlist[3]:
+	print("Fish Rising")
+elif nlist[0] > nlist[1] > nlist[2] > nlist[3]:
+	print("Fish Diving")
+elif nlist[0] == nlist[1] == nlist[2] == nlist[3]:
+	print("Fish At Constant Depth")
+else:
+	print("No Fish")
