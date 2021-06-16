@@ -1,0 +1,12 @@
+import sys
+
+game = sys.stdin.read().split()
+w = game.count('W')
+if w > 4:
+	print(1)
+elif w > 2:
+	print(2)
+elif w > 0:
+	print(3)
+else:
+	print(-1)
