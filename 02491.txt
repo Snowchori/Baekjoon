@@ -1,0 +1,23 @@
+import sys
+
+n = int(sys.stdin.readline())
+nlist = [int(x) for x in sys.stdin.readline().split()]
+up = 1
+down = 1
+upmax = 0
+downmax = 0
+pre = nlist[0]
+for i in range(1,n):
+	if pre < nlist[i]:
+		up += 1
+		downmax = max(downmax,down)
+		down = 1
+	elif pre > nlist[i]:
+		down += 1
+		upmax = max(upmax,up)
+		up = 1
+	else:
+		up += 1
+		down += 1
+	pre = nlist[i]
+print(max(up,down,upmax,downmax))
