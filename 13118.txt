@@ -1,0 +1,9 @@
+import sys
+
+human = [int(x) for x in sys.stdin.readline().split()]
+x, y, r = [int(x) for x in sys.stdin.readline().split()]
+result = 0
+for i, n in enumerate(human):
+	if n == x:
+		result = i+1
+print(result)
