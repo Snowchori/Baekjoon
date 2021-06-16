@@ -1,0 +1,35 @@
+import sys
+
+n, m = [int(x) for x in sys.stdin.readline().split()]
+r, c, d = [int(x) for x in sys.stdin.readline().split()]
+room = []
+for i in range(n):
+	room.append([int(x) for x in sys.stdin.readline().split()])
+
+look = ((-1,0),(0,1),(1,0),(0,-1))
+check = ((0,-1),(-1,0),(0,1),(1,0))
+result = 0
+
+while True:
+	if room[r][c] == 0:
+		result += 1
+		room[r][c] = 2
+	move = 0
+	while move < 4:
+		x, y = check[d]
+		if room[r+x][c+y] == 0:
+			d = (d-1)%4
+			r += x
+			c += y
+			break
+		else:
+			d = (d-1)%4
+			move += 1
+	if move == 4:
+		x, y = look[(d-2)%4]
+		if room[r+x][c+y] == 1:
+			break
+		else:
+			r += x
+			c += y
+print(result)
