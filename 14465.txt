@@ -1,0 +1,25 @@
+import sys
+
+n, k ,b = [int(x) for x in sys.stdin.readline().split()]
+road = [True]*n
+r = []
+broken = 0
+result = b
+pre = False
+for i in range(b):
+	num = int(sys.stdin.readline())
+	road[num-1] = False
+for i in road:
+	if not i:
+		broken += 1
+	r.append(broken)
+for i,ro in enumerate(road):
+	if not pre and ro:
+		if i + k < n:
+			if result > r[i+k-1]-r[i]:
+				result = r[i+k-1]-r[i]
+		else:
+			if result > r[n-1]-r[n-k-1]:
+				result = r[n-1]-r[n-k]
+	pre = ro
+print(result)
