@@ -1,0 +1,44 @@
+import sys
+import copy
+from collections import deque
+
+def getcnt(p):
+	global n, m
+	l = copy.deepcopy(lab)
+	q = copy.deepcopy(queue)
+	for i in p:
+		if l[i//m][i%m] != 0:
+			return -n*m
+		l[i//m][i%m] = 1
+	r = -3
+	while q:
+		i, j = q.popleft()
+		for x, y in move:
+			nx, ny = i + x, j + y
+			if 0 <= nx < n and 0 <= ny < m and l[nx][ny] == 0:
+				l[nx][ny] = 2
+				r -= 1
+				q.append((nx,ny))
+	return r
+
+n, m = [int(x) for x in sys.stdin.readline().split()]
+lab = []
+queue = deque()
+cnt = 0
+move = ((0,1),(1,0),(0,-1),(-1,0))
+for i in range(n):
+	nlist = [int(x) for x in sys.stdin.readline().split()]
+	lab.append(nlist)
+	for ind, j in enumerate(nlist):
+		if j == 2:
+			queue.append((i,ind))
+		if j == 0:
+			cnt += 1
+
+nm = n*m
+result = 0
+for i in range(nm):
+	for j in range(i+1,nm):
+		for k in range(j+1,nm):
+			result = max(result,cnt+getcnt([i,j,k]))
+print(result)
