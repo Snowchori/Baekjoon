@@ -1,0 +1,40 @@
+import sys
+
+dic = dict()
+n, m = [int(x) for x in sys.stdin.readline().split()]
+num = int(sys.stdin.readline())
+for i in range(num):
+	a,b,c,d = [int(x) for x in sys.stdin.readline().split()]
+	if dic.get((a,b)):
+		dic.get((a,b)).append((c,d))
+	else:
+		dic[(a,b)] = [(c,d)]
+	if dic.get((c,d)):
+		dic.get((c,d)).append((a,b))
+	else:
+		dic[(c,d)] = [(a,b)]
+
+road = []
+for i in range(n+1):
+	r = []
+	for j in range(m+1):
+		ro = 0
+		if i == 0 and j == 0:
+			r.append(1)
+			continue
+		if i != 0:
+			if dic.get((i-1,j)):
+				if (i,j) not in dic.get((i-1,j)):
+					ro += road[i-1][j]
+			else:
+				ro += road[i-1][j]
+		if j != 0:
+			if dic.get((i,j-1)):
+				if (i,j) not in dic.get((i,j-1)):
+					ro += r[j-1]
+			else:
+				ro += r[j-1]
+		r.append(ro)
+	road.append(r)
+
+print(road[n][m])
