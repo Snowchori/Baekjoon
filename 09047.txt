@@ -1,0 +1,21 @@
+import sys
+
+def kaprekar(n):
+	if kap[n] == -1:
+		sn = list(str(n))
+		if len(sn) == 3:
+			sn.append('0')
+		sn.sort()
+		minn = int("".join(sn))
+		sn.sort(reverse=True)
+		maxn = int("".join(sn))
+		kap[n] = kaprekar(maxn-minn)+1
+	return kap[n]
+
+kap = [-1]*10000
+kap[6174] = 0
+
+t = int(sys.stdin.readline())
+for i in range(t):
+	n = int(sys.stdin.readline())
+	print(kaprekar(n))
