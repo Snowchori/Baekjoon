@@ -1,0 +1,23 @@
+import sys
+
+n, h = [int(x) for x in sys.stdin.readline().split()]
+cave = [0]*h
+up = [0]*h
+down = [0]*h
+upmax = 0
+downmax = 0
+for i in range(n):
+	num = int(sys.stdin.readline())-1
+	if i%2 == 0:
+		up[num] += 1
+	else:
+		down[num] += 1
+
+for i in range(1,h):
+	up[h-i-1] += up[h-i]
+	down[h-i-1] += down[h-i]
+
+for i in range(h):
+	cave[i] = up[h-i-1] + down[i]
+
+print(min(cave),cave.count(min(cave)))
