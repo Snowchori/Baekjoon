@@ -1,0 +1,32 @@
+# python3
+
+import sys
+
+def quad(i,j,n):
+	r = video[i][j]
+	if n == 1:
+		print(r,end="")
+		return
+	issame = True
+	for a in range(i,i+n):
+		for b in range(j,j+n):
+			if video[a][b] != r:
+				issame = False
+				print("(",end="")
+				quad(i,j,n//2)
+				quad(i,j+n//2,n//2)
+				quad(i+n//2,j,n//2)
+				quad(i+n//2,j+n//2,n//2)
+				print(")",end="")
+				break
+		if not issame:
+			break
+	if issame:
+		print(r,end="")
+
+num = int(sys.stdin.readline())
+video = []
+for i in range(num):
+	v = sys.stdin.readline().strip()
+	video.append(v)
+quad(0,0,num)
