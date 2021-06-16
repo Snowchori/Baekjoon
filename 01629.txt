@@ -1,0 +1,12 @@
+import sys
+
+def merge(a,b,c):
+	if b == 1:
+		return a%c
+	elif b%2 == 0:
+		return pow(merge(a,b//2,c),2)%c
+	else:
+		return (pow(merge(a,b//2,c),2)*a)%c
+
+a, b, c = [int(x) for x in sys.stdin.readline().split()]
+print(merge(a,b,c)%c)
