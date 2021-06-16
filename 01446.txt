@@ -1,0 +1,28 @@
+import sys
+import heapq
+
+n, d = [int(x) for x in sys.stdin.readline().split()]
+heap = []
+for i in range(n):
+	heapq.heappush(heap,[int(x) for x in sys.stdin.readline().split()])
+distance = [-1]*10001
+for i in range(10001):
+	if i == 0:
+		distance[0] = 0
+	else:
+		if distance[i] == -1:
+			distance[i] = distance[i-1] + 1
+		else:
+			distance[i] = min(distance[i], distance[i-1] + 1)
+	while heap:
+		if heap[0][0] == i:
+			s, e, dist = heapq.heappop(heap)
+			if distance[e] == -1:
+				distance[e] = distance[s] + dist
+			else:
+				distance[e] = min(distance[e], distance[s] + dist)
+		else:
+			break
+	if i == d:
+		break
+print(distance[d])
