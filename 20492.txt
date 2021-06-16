@@ -1,0 +1,4 @@
+import sys
+
+price = int(sys.stdin.readline())
+print(int(price*0.78),int(price*(0.8+0.2*0.78)))
